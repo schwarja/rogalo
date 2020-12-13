@@ -8,26 +8,21 @@
 import SwiftUI
 
 struct CharacteristicsTab: View {
-    let dependency: AppDependency
+    let store: EngineStoring
     
-    let engineStore: EngineStore
-    
-    init(dependency: AppDependency) {
-        self.dependency = dependency
-        
-        self.engineStore = EngineStore(bluetoothManager: dependency.bluetoothManager)
-    }
+    @State var engine = Device.mock
 
     var body: some View {
         NavigationView {
-            CharacteristicsView(store: engineStore)
+            CharacteristicsView(engine: engine)
                 .navigationBarTitle("Engine")
         }
+        .onReceive(store.engine, perform: { self.engine = $0 })
     }
 }
 
 struct CharacteristicsTab_Previews: PreviewProvider {
     static var previews: some View {
-        CharacteristicsTab(dependency: AppDependency())
+        CharacteristicsTab(store: MockEngineStore())
     }
 }

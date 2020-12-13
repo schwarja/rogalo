@@ -8,26 +8,31 @@
 import SwiftUI
 
 struct PeripheralListView: View {
-    @ObservedObject var store: PairingStore
+    let state: PairingStoreState
+    let selection: (Peripheral) -> Void
+    let openSettings: () -> Void
     
     var body: some View {
-        if case .ready(let data) = store.state {
+        switch state {
+        case .ready(let data):
             List {
                 ForEach(data) { peripheral in
                     Button(peripheral.name) {
-                        store.pair(peripheral: peripheral)
+                        selection(peripheral)
                     }
                 }
             }
-        } else {
-            Text("Loading")
+        case .loading, .initial:
+            Text("Searching")
+        case .unauthorized:
+            VStack {
+                Text("Permission denied")
+                Button("Go to Settings") {
+                    openSettings()
+                }
+            }
+        case .notAvailable:
+            Text("Bluetooth is turned off")
         }
-    }
-}
-
-struct PeripheralListView_Previews: PreviewProvider {
-    static var previews: some View {
-        PeripheralListView(store:
-                            PairingStore(bluetoothManager: BluetoothManager()))
     }
 }

@@ -8,28 +8,27 @@
 import SwiftUI
 
 struct SettingsTab: View {
-    let dependency: AppDependency
+    let store: SettingsStoring
+    weak var coordinator: SettingsTabEventHandling?
     
-    let pairingStore: PairingStore
+    @State var device: Device = .mock
     
-    init(dependency: AppDependency) {
-        self.dependency = dependency
-        
-        self.pairingStore = PairingStore(bluetoothManager: dependency.bluetoothManager)
+    init(store: SettingsStoring, coordinator: SettingsTabEventHandling?) {
+        self.store = store
+        self.coordinator = coordinator
     }
 
     var body: some View {
         NavigationView {
-            List {
-                NavigationLink("Pairing", destination: PeripheralListView(store: pairingStore))
+            VStack {
+                Text("Paired device: \(device.peripheral.name)")
+                Divider()
+                Button("Forget device") {
+                    coordinator?.handle(event: .unpair)
+                }
             }
             .navigationBarTitle("Settings")
         }
-    }
-}
-
-struct SettingsTab_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsTab(dependency: AppDependency())
+        .onReceive(store.device, perform: { self.device = $0 })
     }
 }

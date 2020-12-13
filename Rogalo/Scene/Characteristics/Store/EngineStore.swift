@@ -7,25 +7,16 @@
 
 import Combine
 
-class EngineStore: ObservableObject {
-    @Published var engine: Engine?
+class EngineStore: EngineStoring {
+    var engine: AnyPublisher<Device, Never> {
+        deviceManager.device
+    }
     
-    let bluetoothManager: BluetoothManaging
+    let deviceManager: DeviceManaging
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(bluetoothManager: BluetoothManaging) {
-        self.bluetoothManager = bluetoothManager
-        
-        listenToEngine()
-    }
-}
-
-private extension EngineStore {
-    func listenToEngine() {
-        bluetoothManager
-            .engine
-            .assign(to: \.engine, on: self)
-            .store(in: &cancellables)
+    init(deviceManager: DeviceManaging) {
+        self.deviceManager = deviceManager
     }
 }

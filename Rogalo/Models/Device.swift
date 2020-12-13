@@ -7,12 +7,30 @@
 
 import Foundation
 
-struct Engine {
+struct Device {
+    enum State: Equatable {
+        case connecting
+        case connected
+        case failed(String)
+    }
+    
     static let terminationSequence = "\r\n"
     static let separator = "|"
     
+    static let mock = Device(peripheral: .mock)
+    
     private var characteristics: [String] = []
     private var incompleteValue = ""
+    
+    let peripheral: Peripheral
+    var id: String {
+        peripheral.id
+    }
+    var state: State = .connecting {
+        didSet {
+            stateUpdated()
+        }
+    }
     
     var speed: Int? {
         guard let value = characteristics[safe: EngineCharacteristic.speed.rawValue] else {
@@ -75,6 +93,10 @@ struct Engine {
         
         return Double(value)
     }
+    
+    init(peripheral: Peripheral) {
+        self.peripheral = peripheral
+    }
 
     mutating func append(_ value: String) {
         guard let components = process(value: incompleteValue + value) else {
@@ -87,7 +109,7 @@ struct Engine {
     }
 }
 
-private extension Engine {
+private extension Device {
     func process(value: String) -> [String]? {
         guard let range = value.range(of: Self.terminationSequence) else {
             return nil
@@ -96,5 +118,11 @@ private extension Engine {
         let prefix = value.prefix(upTo: range.lowerBound)
         
         return prefix.components(separatedBy: Self.separator)
+    }
+    
+    mutating func stateUpdated() {
+        if state != .connected {
+            characteristics.removeAll()
+        }
     }
 }

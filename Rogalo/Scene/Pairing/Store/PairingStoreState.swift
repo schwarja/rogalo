@@ -10,5 +10,7 @@ import Foundation
 enum PairingStoreState {
     case initial
     case loading
+    case unauthorized
+    case notAvailable
     case ready(data: [Peripheral])
 }

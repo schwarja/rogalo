@@ -8,20 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    let dependency: AppDependency
+    enum Tab: Identifiable {
+        var id: Int {
+            switch self {
+            case .characteristics:
+                return 0
+            case .settings:
+                return 1
+            }
+        }
+        
+        case characteristics(view: CharacteristicsTab)
+        case settings(view: SettingsTab)
+    }
+    
+    let store: ContentStoring
+    let tabs: [Tab]
     
     var body: some View {
         TabView {
-            CharacteristicsTab(dependency: dependency)
-                .tabItem { Text("Engine") }
-            SettingsTab(dependency: dependency)
-                .tabItem { Text("Settings") }
+            ForEach(tabs) { tab in
+                switch tab {
+                case .characteristics(let view):
+                    view
+                        .tabItem { Text("Engine") }
+                case .settings(let view):
+                    view
+                        .tabItem { Text("Settings") }
+                }
+            }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(dependency: AppDependency())
     }
 }

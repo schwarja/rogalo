@@ -7,13 +7,27 @@
 
 import CoreBluetooth
 
-struct Peripheral {
+struct Peripheral: Codable {
+    private enum CodingKeys: CodingKey {
+        case id
+        case name
+    }
+    
     let id: String
     let name: String
+    private(set) var cbPeripheral: CBPeripheral?
+    
+    static let mock = Peripheral(id: UUID().uuidString, name: "Mock")
     
     init(with peripheral: CBPeripheral) {
         self.id = peripheral.identifier.uuidString
         self.name = peripheral.name ?? "<unknown>"
+        self.cbPeripheral = peripheral
+    }
+    
+    init(id: String, name: String) {
+        self.id = id
+        self.name = name
     }
 }
 

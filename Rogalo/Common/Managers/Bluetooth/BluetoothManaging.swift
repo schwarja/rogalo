@@ -7,9 +7,18 @@
 
 import Combine
 
+enum BluetoothStatus {
+    case initial
+    case unauthorized
+    case notAvailable
+    case scanning
+}
+
 protocol BluetoothManaging {
+    var status: AnyPublisher<BluetoothStatus, Never> { get }
     var peripherals: AnyPublisher<[Peripheral], Never> { get }
-    var engine: AnyPublisher<Engine?, Never> { get }
+    var connectedDevice: AnyPublisher<Device?, Never> { get }
     
-    func pair(peripheral: Peripheral)
+    func connect(peripheral: Peripheral)
+    func disconnect(peripheral: Peripheral)
 }
