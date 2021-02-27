@@ -8,9 +8,9 @@
 import Foundation
 
 enum TemperatureSignificantValues: Double, CaseIterable {
-    case risk = 29
-    case highRisk = 32
-    case emergency = 37
+    case risk = 180
+    case highRisk = 185
+    case emergency = 190
     
     static var sortedValues: [Self] {
         Self.allCases.sorted(by: { $0.rawValue >= $1.rawValue })
