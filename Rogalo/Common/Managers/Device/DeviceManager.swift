@@ -7,12 +7,12 @@
 
 import Combine
 import UIKit
-import UserNotifications
 
 class DeviceManager: DeviceManaging {
     let peripheral: Peripheral
     let bluetoothManager: BluetoothManaging
     let storage: Storage
+    let notificationManager: NotificationManaging
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -23,16 +23,13 @@ class DeviceManager: DeviceManaging {
             .eraseToAnyPublisher()
     }
     
-    init(peripheral: Peripheral, bluetoothManager: BluetoothManaging, storage: Storage) {
+    init(peripheral: Peripheral, bluetoothManager: BluetoothManaging, storage: Storage, notificationManager: NotificationManaging) {
         self.peripheral = peripheral
         self.bluetoothManager = bluetoothManager
         self.storage = storage
+        self.notificationManager = notificationManager
         
         setup()
-
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, _) in
-            print("Notifications: \(success)")
-        }
     }
     
     func connect() {
@@ -47,32 +44,22 @@ class DeviceManager: DeviceManaging {
 
 // MARK: - Private methods
 private extension DeviceManager {
-    func content(for state: Device.State) -> UNMutableNotificationContent {
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Connection status \(state)"
-        switch state {
-        case .connected:
-            content.sound = UNNotificationSound.default
-        case .connecting, .failed:
-            content.sound = UNNotificationSound.criticalSoundNamed(UNNotificationSoundName("Intel Chime.mp3"))
-        }
-        return content
-    }
-    
-    func sendNotification(for status: Device.State) {
-        let notification = content(for: status)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: nil)
-
-        UNUserNotificationCenter.current().add(request)
-    }
-
     func setup() {
         device
-            .map(\.state)
+            .compactMap(\.temperature)
+            .filter { $0 >= TemperatureSignificantValues.risk.rawValue }
+            .compactMap { temperature -> TemperatureSignificantValues? in
+                for value in TemperatureSignificantValues.sortedValues where temperature >= value.rawValue {
+                    return value
+                }
+                
+                return nil
+            }
             .removeDuplicates()
-            .sink { [weak self] state in
-                self?.sendNotification(for: state)
+            .debounce(for: .seconds(10), scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink { [weak self] value in
+                self?.notificationManager.sendNotification(for: .temperatureAlert(type: value))
             }
             .store(in: &cancellables)
     }
