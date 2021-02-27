@@ -12,12 +12,17 @@ struct RecordsView: View {
     let characteristics: [CharacteristicStoring]
 
     var body: some View {
-        VStack {
-            ConnectionStateView(connectionState: connectionState)
-            
-            ForEach(characteristics, id: \.value) { characteristic in
-                CharacteristicView(store: characteristic)
-                    .frame(maxHeight: .infinity)
+        GeometryReader { geometry in
+            ScrollView {
+                VStack {
+                    ConnectionStateView(connectionState: connectionState)
+                    
+                    ForEach(characteristics, id: \.value) { characteristic in
+                        CharacteristicView(store: characteristic)
+                            .frame(maxHeight: .infinity)
+                    }
+                }
+                .frame(minHeight: geometry.size.height)
             }
         }
     }
