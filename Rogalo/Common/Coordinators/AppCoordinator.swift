@@ -29,12 +29,14 @@ extension AppCoordinator: AppCoordinating {
 extension AppCoordinator {
     func assembleDependencyInjectionContainer() {
         let bluetooth = BluetoothManager()
+        let notifications = NotificationManager()
         let storage = AppStorage(container: UserDefaults.standard)
         container.register(bluetooth, for: .bluetoothManager)
         container.register(storage, for: .storage)
+        container.register(notifications, for: .notifications)
         
         let deviceRetrieve: DeviceManagerRetriever = { peripheral -> DeviceManaging in
-            DeviceManager(peripheral: peripheral, bluetoothManager: bluetooth, storage: storage)
+            DeviceManager(peripheral: peripheral, bluetoothManager: bluetooth, storage: storage, notificationManager: notifications)
         }
         container.register(deviceRetrieve, for: .deviceManagerRegistration)
     }

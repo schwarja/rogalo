@@ -11,6 +11,14 @@
 		C112C72A257D7B0100B1F8A9 /* CharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C729257D7B0100B1F8A9 /* CharacteristicsView.swift */; };
 		C112C72F257D7B2000B1F8A9 /* EngineStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C72E257D7B2000B1F8A9 /* EngineStore.swift */; };
 		C112C733257D7D9200B1F8A9 /* CharacteristicsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C732257D7D9200B1F8A9 /* CharacteristicsTab.swift */; };
+		C149F1C525EA455700F55965 /* NotificationManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1C425EA455700F55965 /* NotificationManaging.swift */; };
+		C149F1C925EA456E00F55965 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1C825EA456E00F55965 /* NotificationManager.swift */; };
+		C149F1CC25EA472800F55965 /* TemperatureSignificantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */; };
+		C149F1D225EA4EF200F55965 /* 190.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1CF25EA4EF200F55965 /* 190.m4a */; };
+		C149F1D325EA4EF200F55965 /* 185.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D025EA4EF200F55965 /* 185.m4a */; };
+		C149F1D425EA4EF200F55965 /* 180.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D125EA4EF200F55965 /* 180.m4a */; };
+		C149F1D825EA51F900F55965 /* NotificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1D725EA51F900F55965 /* NotificationEvent.swift */; };
+		C149F1DB25EA531E00F55965 /* NotificationAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1DA25EA531E00F55965 /* NotificationAuthorizationStatus.swift */; };
 		C155E191257D4C3E00A845B9 /* Peripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155E190257D4C3E00A845B9 /* Peripheral.swift */; };
 		C155E195257D4FD600A845B9 /* PairingStoreState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155E194257D4FD600A845B9 /* PairingStoreState.swift */; };
 		C155E199257D515300A845B9 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155E198257D515300A845B9 /* AppDependency.swift */; };
@@ -62,7 +70,6 @@
 		C1F36C742586999C002930B2 /* SettingsCoordinatorEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F36C732586999C002930B2 /* SettingsCoordinatorEventHandling.swift */; };
 		C1F36C782586A1FA002930B2 /* CharacteristicsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F36C772586A1FA002930B2 /* CharacteristicsCoordinator.swift */; };
 		C1F36C7D2586A2BF002930B2 /* CharacteristicsCoordinatorEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F36C7C2586A2BF002930B2 /* CharacteristicsCoordinatorEventHandling.swift */; };
-		C1F36C822586B588002930B2 /* Intel Chime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1F36C812586B588002930B2 /* Intel Chime.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +77,14 @@
 		C112C729257D7B0100B1F8A9 /* CharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsView.swift; sourceTree = "<group>"; };
 		C112C72E257D7B2000B1F8A9 /* EngineStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineStore.swift; sourceTree = "<group>"; };
 		C112C732257D7D9200B1F8A9 /* CharacteristicsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsTab.swift; sourceTree = "<group>"; };
+		C149F1C425EA455700F55965 /* NotificationManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManaging.swift; sourceTree = "<group>"; };
+		C149F1C825EA456E00F55965 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSignificantValues.swift; sourceTree = "<group>"; };
+		C149F1CF25EA4EF200F55965 /* 190.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 190.m4a; sourceTree = "<group>"; };
+		C149F1D025EA4EF200F55965 /* 185.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 185.m4a; sourceTree = "<group>"; };
+		C149F1D125EA4EF200F55965 /* 180.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 180.m4a; sourceTree = "<group>"; };
+		C149F1D725EA51F900F55965 /* NotificationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEvent.swift; sourceTree = "<group>"; };
+		C149F1DA25EA531E00F55965 /* NotificationAuthorizationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAuthorizationStatus.swift; sourceTree = "<group>"; };
 		C155E190257D4C3E00A845B9 /* Peripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peripheral.swift; sourceTree = "<group>"; };
 		C155E194257D4FD600A845B9 /* PairingStoreState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingStoreState.swift; sourceTree = "<group>"; };
 		C155E198257D515300A845B9 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
@@ -123,7 +138,6 @@
 		C1F36C732586999C002930B2 /* SettingsCoordinatorEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinatorEventHandling.swift; sourceTree = "<group>"; };
 		C1F36C772586A1FA002930B2 /* CharacteristicsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsCoordinator.swift; sourceTree = "<group>"; };
 		C1F36C7C2586A2BF002930B2 /* CharacteristicsCoordinatorEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsCoordinatorEventHandling.swift; sourceTree = "<group>"; };
-		C1F36C812586B588002930B2 /* Intel Chime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Intel Chime.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +170,28 @@
 				C1CAE7842586567D00CB60E7 /* MockEngineStore.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		C149F1C325EA454100F55965 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				C149F1C425EA455700F55965 /* NotificationManaging.swift */,
+				C149F1C825EA456E00F55965 /* NotificationManager.swift */,
+				C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */,
+				C149F1D725EA51F900F55965 /* NotificationEvent.swift */,
+				C149F1DA25EA531E00F55965 /* NotificationAuthorizationStatus.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		C149F1CE25EA4E8600F55965 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				C149F1D125EA4EF200F55965 /* 180.m4a */,
+				C149F1D025EA4EF200F55965 /* 185.m4a */,
+				C149F1CF25EA4EF200F55965 /* 190.m4a */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		C155E18F257D4C2D00A845B9 /* Models */ = {
@@ -244,7 +280,7 @@
 		C1B25D9C257D4206006E808C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C1F36C812586B588002930B2 /* Intel Chime.mp3 */,
+				C149F1CE25EA4E8600F55965 /* Audio */,
 				C1B25D88257D4095006E808C /* Assets.xcassets */,
 				C1B25D90257D4095006E808C /* Info.plist */,
 			);
@@ -310,6 +346,7 @@
 		C1B25DB5257D48A6006E808C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				C149F1C325EA454100F55965 /* Notifications */,
 				C1CAE78C2586633200CB60E7 /* Device */,
 				C1CAE76325864B2700CB60E7 /* Persistency */,
 				C1B25DB6257D48AC006E808C /* Bluetooth */,
@@ -514,9 +551,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1F36C822586B588002930B2 /* Intel Chime.mp3 in Resources */,
+				C149F1D425EA4EF200F55965 /* 180.m4a in Resources */,
+				C149F1D225EA4EF200F55965 /* 190.m4a in Resources */,
 				C1B25D8F257D4095006E808C /* LaunchScreen.storyboard in Resources */,
 				C1B25D89257D4095006E808C /* Assets.xcassets in Resources */,
+				C149F1D325EA4EF200F55965 /* 185.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +570,7 @@
 				C155E199257D515300A845B9 /* AppDependency.swift in Sources */,
 				C1CAE76B2586534C00CB60E7 /* ContentCoordinatorEventHandling.swift in Sources */,
 				C1F36C6D258696F6002930B2 /* SettingsTabEventHandling.swift in Sources */,
+				C149F1DB25EA531E00F55965 /* NotificationAuthorizationStatus.swift in Sources */,
 				C112C733257D7D9200B1F8A9 /* CharacteristicsTab.swift in Sources */,
 				C1CAE74225863ED000CB60E7 /* ActiveSceneSession.swift in Sources */,
 				C1CAE761258647B300CB60E7 /* PairingStoring.swift in Sources */,
@@ -553,16 +593,20 @@
 				C1B25DA1257D426A006E808C /* PairingStore.swift in Sources */,
 				C1CAE775258653FD00CB60E7 /* MockContentStore.swift in Sources */,
 				C1CAE76525864B4600CB60E7 /* Storage.swift in Sources */,
+				C149F1CC25EA472800F55965 /* TemperatureSignificantValues.swift in Sources */,
 				C1F36C7125869986002930B2 /* SettingsCoordinator.swift in Sources */,
+				C149F1D825EA51F900F55965 /* NotificationEvent.swift in Sources */,
 				C1CAE76F258653B200CB60E7 /* ContentStore.swift in Sources */,
 				C1CAE7252586394700CB60E7 /* SceneCoordinator.swift in Sources */,
 				C1B25DB3257D48A2006E808C /* BluetoothManager.swift in Sources */,
 				C155E19D257D730200A845B9 /* Device.swift in Sources */,
 				C155E195257D4FD600A845B9 /* PairingStoreState.swift in Sources */,
+				C149F1C525EA455700F55965 /* NotificationManaging.swift in Sources */,
 				C1CAE75E2586478800CB60E7 /* MockPairingStore.swift in Sources */,
 				C1CAE74F258643AD00CB60E7 /* ViewCoordinator.swift in Sources */,
 				C1B25DAF257D43F9006E808C /* SettingsTab.swift in Sources */,
 				C1CAE7852586567D00CB60E7 /* MockEngineStore.swift in Sources */,
+				C149F1C925EA456E00F55965 /* NotificationManager.swift in Sources */,
 				C1CAE73A25863BCB00CB60E7 /* Coordinator.swift in Sources */,
 				C1CAE78E2586634700CB60E7 /* DeviceManaging.swift in Sources */,
 				C1CAE76825864B5A00CB60E7 /* AppStorage.swift in Sources */,
