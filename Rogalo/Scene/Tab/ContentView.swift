@@ -13,12 +13,15 @@ struct ContentView: View {
             switch self {
             case .characteristics:
                 return 0
-            case .settings:
+            case .records:
                 return 1
+            case .settings:
+                return 2
             }
         }
         
-        case characteristics(view: CharacteristicsTab)
+        case characteristics(view: ValuesTab)
+        case records(view: RecordsTab)
         case settings(view: SettingsTab)
     }
     
@@ -31,10 +34,22 @@ struct ContentView: View {
                 switch tab {
                 case .characteristics(let view):
                     view
-                        .tabItem { Text("Engine") }
+                        .tabItem {
+                            Image(systemName: "chart.bar")
+                            Text("Values")
+                        }
+                case .records(let view):
+                    view
+                        .tabItem {
+                            Image(systemName: "clock")
+                            Text("Records")
+                        }
                 case .settings(let view):
                     view
-                        .tabItem { Text("Settings") }
+                        .tabItem {
+                            Image(systemName: "iphone.radiowaves.left.and.right")
+                            Text("Settings")
+                        }
                 }
             }
         }

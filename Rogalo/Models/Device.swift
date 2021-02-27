@@ -22,9 +22,13 @@ struct Device {
     private var characteristics: [String] = []
     private var incompleteValue = ""
     
-    let peripheral: Peripheral
+    private let peripheral: Peripheral
+    
     var id: String {
         peripheral.id
+    }
+    var name: String {
+        peripheral.name
     }
     var state: State = .connecting {
         didSet {
@@ -32,7 +36,7 @@ struct Device {
         }
     }
     
-    var speed: Int? {
+    var rpm: Int? {
         guard let value = characteristics[safe: EngineCharacteristic.speed.rawValue] else {
             return nil
         }
@@ -40,7 +44,7 @@ struct Device {
         return Int(value)
     }
     
-    var speedMax: Int? {
+    var rpmMax: Int? {
         guard let value = characteristics[safe: EngineCharacteristic.speedMax.rawValue] else {
             return nil
         }
@@ -56,26 +60,30 @@ struct Device {
         return Double(value)
     }
     
-    var flightTime: String? {
-        guard let hours = characteristics[safe: EngineCharacteristic.flightHours.rawValue] else {
+    var flightTime: TimeInterval? {
+        guard let hoursString = characteristics[safe: EngineCharacteristic.flightHours.rawValue],
+              let hours = TimeInterval(hoursString) else {
             return nil
         }
-        guard let minutes = characteristics[safe: EngineCharacteristic.flightMinutes.rawValue] else {
-            return nil
-        }
-        
-        return "\(hours):\(minutes)"
-    }
-    
-    var motoTime: String? {
-        guard let hours = characteristics[safe: EngineCharacteristic.motoHours.rawValue] else {
-            return nil
-        }
-        guard let minutes = characteristics[safe: EngineCharacteristic.motoMinutes.rawValue] else {
+        guard let minutesString = characteristics[safe: EngineCharacteristic.flightMinutes.rawValue],
+              let minutes = TimeInterval(minutesString) else {
             return nil
         }
 
-        return "\(hours):\(minutes)"
+        return hours*3600 + minutes*60
+    }
+    
+    var motoTime: TimeInterval? {
+        guard let hoursString = characteristics[safe: EngineCharacteristic.motoHours.rawValue],
+              let hours = TimeInterval(hoursString) else {
+            return nil
+        }
+        guard let minutesString = characteristics[safe: EngineCharacteristic.motoMinutes.rawValue],
+              let minutes = TimeInterval(minutesString) else {
+            return nil
+        }
+
+        return hours*3600 + minutes*60
     }
     
     var temperature: Double? {

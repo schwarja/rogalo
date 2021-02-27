@@ -21,7 +21,7 @@ struct SettingsTab: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Paired device: \(device.peripheral.name)")
+                Text("Paired device: \(device.name)")
                 Divider()
                 Button("Forget device") {
                     coordinator?.handle(event: .unpair)

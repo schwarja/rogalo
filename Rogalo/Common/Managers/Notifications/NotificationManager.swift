@@ -81,7 +81,7 @@ private extension NotificationManager {
     
     func notificationContent(for temperature: TemperatureSignificantValues) -> UNMutableNotificationContent {
         let temperatureRaw = temperature.rawValue
-        let formTemperature = formattedTemperature(for: temperatureRaw)
+        let formTemperature = Formatters.formattedTemperature(for: temperatureRaw)
         
         let content = UNMutableNotificationContent()
         content.title = "Tempareture alert: Temperature at \(formTemperature)"
@@ -89,21 +89,6 @@ private extension NotificationManager {
             .criticalSoundNamed(UNNotificationSoundName(temperature.notificationSoundFileName))
         
         return content
-    }
-        
-    func formattedTemperature(for temperature: Double) -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.maximumFractionDigits = 0
-
-        let measurementFormatter = MeasurementFormatter()
-        measurementFormatter.numberFormatter = numberFormatter
-
-        let temperatureMeasurement = Measurement(
-            value: temperature,
-            unit: UnitTemperature.celsius
-        )
-
-        return measurementFormatter.string(from: temperatureMeasurement)
     }
 }
 
