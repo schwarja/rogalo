@@ -37,6 +37,9 @@
 		C16D9E3C25EA9CC9009F3ADE /* ConnectionStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E3B25EA9CC9009F3ADE /* ConnectionStateView.swift */; };
 		C16D9E3F25EAA1B6009F3ADE /* DeviceValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E3E25EAA1B6009F3ADE /* DeviceValue.swift */; };
 		C16D9E4325EAA488009F3ADE /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4225EAA488009F3ADE /* Formatters.swift */; };
+		C16D9E4625EABEA3009F3ADE /* CharacteristicGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4525EABEA3009F3ADE /* CharacteristicGradientView.swift */; };
+		C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4925EAC016009F3ADE /* Triangle.swift */; };
+		C16D9E4E25EAC373009F3ADE /* CharacteristicScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */; };
 		C1B25D83257D4087006E808C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D82257D4087006E808C /* AppDelegate.swift */; };
 		C1B25D85257D4087006E808C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D84257D4087006E808C /* SceneDelegate.swift */; };
 		C1B25D87257D4087006E808C /* PeripheralListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D86257D4087006E808C /* PeripheralListView.swift */; };
@@ -116,6 +119,9 @@
 		C16D9E3B25EA9CC9009F3ADE /* ConnectionStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStateView.swift; sourceTree = "<group>"; };
 		C16D9E3E25EAA1B6009F3ADE /* DeviceValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceValue.swift; sourceTree = "<group>"; };
 		C16D9E4225EAA488009F3ADE /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		C16D9E4525EABEA3009F3ADE /* CharacteristicGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicGradientView.swift; sourceTree = "<group>"; };
+		C16D9E4925EAC016009F3ADE /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicScale.swift; sourceTree = "<group>"; };
 		C1B25D7F257D4087006E808C /* Rogalo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rogalo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B25D82257D4087006E808C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B25D84257D4087006E808C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +207,7 @@
 		C133B2F425EA918A00F070C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C16D9E4825EAC00B009F3ADE /* Shapes */,
 				C16D9E3625EA9C9A009F3ADE /* Connection */,
 				C133B2F825EA91AD00F070C1 /* Characteristics */,
 			);
@@ -213,6 +220,8 @@
 				C133B2F525EA91A200F070C1 /* CharacteristicView.swift */,
 				C133B2F925EA91C500F070C1 /* CharacteristicStore.swift */,
 				C16D9E3325EA979C009F3ADE /* CharacteristicStoring.swift */,
+				C16D9E4525EABEA3009F3ADE /* CharacteristicGradientView.swift */,
+				C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */,
 			);
 			path = Characteristics;
 			sourceTree = "<group>";
@@ -302,6 +311,14 @@
 				C16D9E3B25EA9CC9009F3ADE /* ConnectionStateView.swift */,
 			);
 			path = Connection;
+			sourceTree = "<group>";
+		};
+		C16D9E4825EAC00B009F3ADE /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				C16D9E4925EAC016009F3ADE /* Triangle.swift */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 		C1B25D76257D4087006E808C = {
@@ -655,6 +672,7 @@
 			files = (
 				C1CAE7522586440700CB60E7 /* ParentCoordinatorContaining.swift in Sources */,
 				C155E199257D515300A845B9 /* AppDependency.swift in Sources */,
+				C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */,
 				C1CAE76B2586534C00CB60E7 /* ContentCoordinatorEventHandling.swift in Sources */,
 				C1F36C6D258696F6002930B2 /* SettingsTabEventHandling.swift in Sources */,
 				C149F1DB25EA531E00F55965 /* NotificationAuthorizationStatus.swift in Sources */,
@@ -679,6 +697,7 @@
 				C16D9E3425EA979C009F3ADE /* CharacteristicStoring.swift in Sources */,
 				C1CAE7822586565E00CB60E7 /* MockSettingsStore.swift in Sources */,
 				C1CAE72C25863AAC00CB60E7 /* AppCoordinating.swift in Sources */,
+				C16D9E4625EABEA3009F3ADE /* CharacteristicGradientView.swift in Sources */,
 				C155E1A1257D733E00A845B9 /* Array+Safe.swift in Sources */,
 				C1B25DB8257D48BF006E808C /* BluetoothManaging.swift in Sources */,
 				C1F36C66258677BE002930B2 /* PairingNavigationViewEventHandling.swift in Sources */,
@@ -704,6 +723,7 @@
 				C133B2F625EA91A200F070C1 /* CharacteristicView.swift in Sources */,
 				C149F1C925EA456E00F55965 /* NotificationManager.swift in Sources */,
 				C1CAE73A25863BCB00CB60E7 /* Coordinator.swift in Sources */,
+				C16D9E4E25EAC373009F3ADE /* CharacteristicScale.swift in Sources */,
 				C16D9E3C25EA9CC9009F3ADE /* ConnectionStateView.swift in Sources */,
 				C1CAE78E2586634700CB60E7 /* DeviceManaging.swift in Sources */,
 				C1CAE76825864B5A00CB60E7 /* AppStorage.swift in Sources */,

@@ -11,4 +11,6 @@ protocol CharacteristicStoring {
     var value: DeviceValue { get }
     var formattedValue: String { get }
     var valueDescription: String { get }
+    
+    var scale: CharacteristicScale? { get }
 }

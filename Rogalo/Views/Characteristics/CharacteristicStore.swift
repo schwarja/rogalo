@@ -5,7 +5,7 @@
 //  Created by Jan on 27.02.2021.
 //
 
-import Foundation
+import SwiftUI
 
 struct CharacteristicStore: CharacteristicStoring {
     let value: DeviceValue
@@ -16,6 +16,14 @@ struct CharacteristicStore: CharacteristicStoring {
     
     var valueDescription: String {
         value.description
+    }
+    
+    var scale: CharacteristicScale? {
+        guard let risk = value.riskProgress, let progress = value.progress else {
+            return nil
+        }
+        
+        return CharacteristicScale(midLocation: CGFloat(risk), progress: CGFloat(progress))
     }
     
     init(value: DeviceValue) {

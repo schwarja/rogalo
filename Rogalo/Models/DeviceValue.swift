@@ -16,6 +16,53 @@ enum DeviceValue: Hashable {
     case temperature(value: Double?)
     case temperatureMax(value: Double?)
     
+    var range: (min: Double, risk: Double, critical: Double)? {
+        switch self {
+        case .rpm:
+            return (0, 8500, 9500)
+        case .temperature:
+            return (0, 185, 195)
+        default:
+            return nil
+        }
+    }
+    
+    var riskProgress: Double? {
+        guard let range = range else {
+            return nil
+        }
+        
+        return (range.risk-range.min)/(range.critical-range.min)
+    }
+    
+    var progress: Double? {
+        guard let range = range else {
+            return nil
+        }
+        
+        let value: Double
+        switch self {
+        case let .rpm(rpm):
+            guard let rpm = rpm else {
+                return nil
+            }
+            
+            value = Double(rpm)
+            
+        case let .temperature(temp):
+            guard let temp = temp else {
+                return nil
+            }
+            
+            value = Double(temp)
+            
+        default:
+            return nil
+        }
+        
+        return (value-range.min)/(range.critical-range.min)
+    }
+    
     var description: String {
         switch self {
         case .flightTime:

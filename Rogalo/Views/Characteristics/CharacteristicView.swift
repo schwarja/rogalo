@@ -11,18 +11,24 @@ struct CharacteristicView: View {
     let store: CharacteristicStoring
     
     var body: some View {
-        VStack {
-            Text(store.valueDescription)
-                .padding(4)
-                .font(.headline)
-                .minimumScaleFactor(0.5)
+        return ZStack {
+            if let scale = store.scale {
+                CharacteristicGradientView(scale: scale)
+            }
             
-            Text(store.formattedValue)
-                .padding(8)
-                .font(.system(size: 50))
-                .lineLimit(1)
-                .minimumScaleFactor(0.2)
-        }
+            VStack {
+                Text(store.valueDescription)
+                    .padding(4)
+                    .font(.headline)
+                    .minimumScaleFactor(0.5)
+                
+                Text(store.formattedValue)
+                    .padding(8)
+                    .font(.system(size: 50))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.2)
+                }
+            }
     }
 }
 
