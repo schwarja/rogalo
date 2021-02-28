@@ -33,6 +33,9 @@ extension PairingCoordinator: PairingNavigationViewEventHandling {
             if UIApplication.shared.canOpenURL(Constants.settingsUrl) {
                 UIApplication.shared.open(Constants.settingsUrl)
             }
+        case .didSelect(let peripheral):
+            let storage: Storage = container[.storage]
+            storage.pairedDevice.value = peripheral
         }
     }
 }
@@ -44,6 +47,6 @@ private extension PairingCoordinator {
     }
     
     func makePairingStore() -> PairingStore {
-        PairingStore(bluetoothManager: container[.bluetoothManager], storage: container[.storage])
+        PairingStore(bluetoothManager: container[.bluetoothManager])
     }
 }

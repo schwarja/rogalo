@@ -8,7 +8,5 @@
 import Combine
 
 protocol PairingStoring {
-    var state: CurrentValueSubject<PairingStoreState, Never> { get }
-    
-    func didSelect(peripheral: Peripheral)
+    var model: AnyPublisher<PeripheralListViewModel, Never> { get }
 }

@@ -8,9 +8,8 @@
 import Combine
 
 class MockPairingStore: PairingStoring {
-    let state = CurrentValueSubject<PairingStoreState, Never>(.initial)
-    
-    func didSelect(peripheral: Peripheral) {
-        
+    var model: AnyPublisher<PeripheralListViewModel, Never> {
+        Just(PeripheralListViewModel.empty)
+            .eraseToAnyPublisher()
     }
 }

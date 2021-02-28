@@ -11,7 +11,7 @@ struct PairingNavigationView: View {
     let store: PairingStoring
     weak var coordinator: PairingNavigationViewEventHandling?
     
-    @State var state: PairingStoreState = .initial
+    @State var model: PeripheralListViewModel = .empty
     
     init(store: PairingStoring, coordinator: PairingNavigationViewEventHandling) {
         self.store = store
@@ -20,13 +20,9 @@ struct PairingNavigationView: View {
 
     var body: some View {
         NavigationView {
-            PeripheralListView(state: state) { peripheral in
-                store.didSelect(peripheral: peripheral)
-            } openSettings: {
-                coordinator?.handle(event: .openSettings)
-            }
-            .navigationBarTitle(LocalizedString.pairingTitle())
+            PeripheralListView(model: model, actionHandler: coordinator)
+                .navigationBarTitle(LocalizedString.pairingTitle())
         }
-        .onReceive(store.state, perform: { self.state = $0 })
+        .onReceive(store.model, perform: { self.model = $0 })
     }
 }

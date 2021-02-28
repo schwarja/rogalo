@@ -26,7 +26,7 @@
 "device.values.voltage" = "Voltage";
 
 "pairing.title" = "Pairing";
-"pairing.searching.title" = "Searching";
+"pairing.select.device.from.list.title" = "Select a device from the list of available devices below";
 "pairing.bluetooth.turned.off" = "Bluetooth is turned off";
 "pairing.state.connecting" = "Connecting";
 "pairing.state.connected" = "Connected";

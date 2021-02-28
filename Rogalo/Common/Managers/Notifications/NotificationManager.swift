@@ -18,7 +18,9 @@ class NotificationManager: NotificationManaging {
     private var authorizationStatusSubject = CurrentValueSubject<NotificationAuthorizationStatus?, Never>(nil)
     
     var authorizationStatus: AnyPublisher<NotificationAuthorizationStatus?, Never> {
-        authorizationStatusSubject.eraseToAnyPublisher()
+        authorizationStatusSubject
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
     
     init() {

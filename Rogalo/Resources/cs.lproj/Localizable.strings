@@ -26,7 +26,7 @@
 "device.values.voltage" = "Napětí";
 
 "pairing.title" = "Párování";
-"pairing.searching.title" = "Vyhledávání";
+"pairing.select.device.from.list.title" = "Vyberte zařízení ze seznamu dostupných zařízení";
 "pairing.bluetooth.turned.off" = "Bluetooth je vypnuté";
 "pairing.state.connecting" = "Připojování";
 "pairing.state.connected" = "Připojeno";

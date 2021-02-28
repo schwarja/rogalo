@@ -53,6 +53,7 @@ extension BluetoothManager: BluetoothManaging {
                 receiveCompletion: { [weak self] _ in self?.numberOfListeners -= 1 },
                 receiveCancel: { [weak self] in self?.numberOfListeners -= 1 }
             )
+            .share()
             .eraseToAnyPublisher()
     }
     
@@ -103,10 +104,13 @@ extension BluetoothManager: CBCentralManagerDelegate {
             }
         case .poweredOff, .unknown:
             managerStatus = .notAvailable
+            list.removeAll()
         case .unauthorized, .unsupported:
             managerStatus = .unauthorized
+            list.removeAll()
         @unknown default:
             managerStatus = .notAvailable
+            list.removeAll()
         }
         
         if let state = deviceState(for: managerStatus) {

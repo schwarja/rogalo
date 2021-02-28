@@ -13,8 +13,8 @@ struct SettingsViewModel {
     let notificationsAutorization: NotificationAuthorizationStatus
     
     static let empty = SettingsViewModel(
-        deviceName: "-",
-        deviceState: .connecting,
+        deviceName: "Name",
+        deviceState: .connected,
         notificationsAutorization: .initial
     )
 }

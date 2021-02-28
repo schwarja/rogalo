@@ -27,13 +27,24 @@ struct SettingsView: View {
                     if model.notificationsAutorization == .denied {
                         NotificationStateView(notificationsState: model.notificationsAutorization, eventHandler: coordinator)
                     }
-                    AppText("\(LocalizedString.settingsPairedDeviceTitle()): \(model.deviceName)", style: .caption)
-                    Divider()
+                    
+                    Spacer()
+                    
+                    AppText(LocalizedString.settingsPairedDeviceTitle(), style: .headline)
+                        .padding(4)
+                        .frame(maxWidth: .infinity)
+                    AppText(model.deviceName, style: .body)
+                        .padding(4)
+                    
+                    Spacer()
+                    
                     AppButton(LocalizedString.settingsForgetDeviceAction(), style: .destructive) {
                         coordinator?.handle(event: .unpairTapped)
                     }
+                    
+                    Spacer()
                 }
-                .frame(minHeight: geometry.size.height, alignment: .topLeading)
+                .frame(minHeight: geometry.size.height, alignment: .top)
             }
         }
     }
