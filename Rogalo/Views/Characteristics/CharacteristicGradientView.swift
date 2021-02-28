@@ -23,7 +23,7 @@ struct CharacteristicGradientView: View {
     }
     
     var mask: LinearGradient {
-        LinearGradient(gradient: Gradient(colors: [.white, Color.white.opacity(0)]), startPoint: .top, endPoint: .bottom)
+        LinearGradient(gradient: Gradient(colors: [.appBackground, Color.appBackground.opacity(0)]), startPoint: .top, endPoint: .bottom)
     }
     
     var body: some View {
@@ -44,7 +44,7 @@ struct CharacteristicGradientView: View {
                     .fill(mask)
                 
                 Triangle()
-                    .fill(Color.black.opacity(0.5))
+                    .fill(Color.appText.opacity(0.5))
                     .frame(width: width, height: height)
                     .offset(
                         x: xOffset,

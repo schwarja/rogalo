@@ -17,14 +17,13 @@ struct ConnectionStateView: View {
         switch connectionState {
         case .connected:
             text = LocalizedString.pairingStateConnected()
-            color = .green
+            color = .appSuccess
         case .connecting, .failed:
             text = LocalizedString.pairingStateConnecting()
-            color = .red
+            color = .appFailure
         }
         
-        return Text(text)
-            .font(.caption)
+        return AppText(text, style: .bodyInverted)
             .minimumScaleFactor(0.5)
             .padding(8)
             .frame(maxWidth: .infinity)

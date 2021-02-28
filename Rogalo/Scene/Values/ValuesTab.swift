@@ -18,7 +18,7 @@ struct ValuesTab: View {
             ValuesView(
                     connectionState: connectionState,
                     characteristics: characteristics
-                )
+            )
             .navigationBarTitle(LocalizedString.valuesTitle())
         }
         .onReceive(store.connectionState, perform: { self.connectionState = $0 })

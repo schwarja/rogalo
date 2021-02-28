@@ -21,7 +21,7 @@ struct SettingsTab: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("\(LocalizedString.settingsPairedDeviceTitle()): \(device.name)")
+                AppText("\(LocalizedString.settingsPairedDeviceTitle()): \(device.name)", style: .caption)
                 Divider()
                 Button(LocalizedString.settingsForgetDeviceAction()) {
                     coordinator?.handle(event: .unpair)

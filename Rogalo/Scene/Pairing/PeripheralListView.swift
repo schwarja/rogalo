@@ -17,22 +17,22 @@ struct PeripheralListView: View {
         case .ready(let data):
             List {
                 ForEach(data) { peripheral in
-                    Button(peripheral.name) {
+                    AppButton(peripheral.name) {
                         selection(peripheral)
                     }
                 }
             }
         case .loading, .initial:
-            Text(LocalizedString.pairingSearchingTitle())
+            AppText(LocalizedString.pairingSearchingTitle(), style: .caption)
         case .unauthorized:
             VStack {
-                Text(LocalizedString.generalAlertPermissionDeniedTitle())
-                Button(LocalizedString.generalAlertGoToSettingsAction()) {
+                AppText(LocalizedString.generalAlertPermissionDeniedTitle(), style: .caption)
+                AppButton(LocalizedString.generalAlertGoToSettingsAction()) {
                     openSettings()
                 }
             }
         case .notAvailable:
-            Text(LocalizedString.pairingBluetoothTurnedOff())
+            AppText(LocalizedString.pairingBluetoothTurnedOff(), style: .caption)
         }
     }
 }
