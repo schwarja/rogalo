@@ -5,7 +5,7 @@
 //  Created by Jan on 13.12.2020.
 //
 
-import Foundation
+import UIKit
 
 class SettingsCoordinator: Coordinator {
     let container: DependencyContainer
@@ -30,9 +30,13 @@ extension SettingsCoordinator: ViewCoordinator {
 extension SettingsCoordinator: SettingsTabEventHandling {
     func handle(event: SettingsTabEvent) {
         switch event {
-        case .unpair:
+        case .unpairTapped:
             let deviceManager: DeviceManaging = container[.deviceManager]
             deviceManager.forgetDevice()
+        case .openSettingsTapped:
+            if UIApplication.shared.canOpenURL(Constants.settingsUrl) {
+                UIApplication.shared.open(Constants.settingsUrl)
+            }
         }
     }
 }
@@ -44,6 +48,9 @@ private extension SettingsCoordinator {
     }
     
     func makeSettingsStore() -> SettingsStore {
-        SettingsStore(deviceManager: container[.deviceManager])
+        SettingsStore(
+            deviceManager: container[.deviceManager],
+            notificationsManager: container[.notifications]
+        )
     }
 }

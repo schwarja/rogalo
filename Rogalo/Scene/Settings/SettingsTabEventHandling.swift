@@ -8,9 +8,26 @@
 import Foundation
 
 enum SettingsTabEvent {
-    case unpair
+    case unpairTapped
+    case openSettingsTapped
 }
 
-protocol SettingsTabEventHandling: AnyObject {
+protocol SettingsTabEventHandling: AnyObject, ConnectionStateViewEventHandling, NotificationStateViewEventHandling {
     func handle(event: SettingsTabEvent)
+}
+
+extension SettingsTabEventHandling {
+    func handle(event: ConnectionStateViewEvent) {
+        switch event {
+        case .openSettingsTapped:
+            handle(event: SettingsTabEvent.openSettingsTapped)
+        }
+    }
+    
+    func handle(event: NotificationStateViewEvent) {
+        switch event {
+        case .openSettingsTapped:
+            handle(event: SettingsTabEvent.openSettingsTapped)
+        }
+    }
 }

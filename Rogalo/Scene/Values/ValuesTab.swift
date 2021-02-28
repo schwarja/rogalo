@@ -10,7 +10,7 @@ import SwiftUI
 struct ValuesTab: View {
     let store: ValuesStoring
     
-    @State var connectionState = Device.State.connecting
+    @State var connectionState = DeviceState.connecting
     @State var characteristics: [CharacteristicStoring] = []
 
     var body: some View {
@@ -18,8 +18,8 @@ struct ValuesTab: View {
             ValuesView(
                     connectionState: connectionState,
                     characteristics: characteristics
-                )
-                .navigationBarTitle("Values")
+            )
+            .navigationBarTitle(LocalizedString.valuesTitle())
         }
         .onReceive(store.connectionState, perform: { self.connectionState = $0 })
         .onReceive(store.characteristics, perform: { self.characteristics = $0 })

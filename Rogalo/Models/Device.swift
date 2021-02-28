@@ -8,16 +8,10 @@
 import Foundation
 
 struct Device {
-    enum State: Equatable {
-        case connecting
-        case connected
-        case failed(String)
-    }
-    
     static let terminationSequence = "\r\n"
     static let separator = "|"
     
-    static let mock = Device(peripheral: .mock)
+    static let mock = Device(peripheral: .mock, state: .connecting)
     
     private var characteristics: [String] = []
     private var incompleteValue = ""
@@ -30,7 +24,7 @@ struct Device {
     var name: String {
         peripheral.name
     }
-    var state: State = .connecting {
+    var state: DeviceState = .connecting {
         didSet {
             stateUpdated()
         }
@@ -102,8 +96,9 @@ struct Device {
         return Double(value)
     }
     
-    init(peripheral: Peripheral) {
+    init(peripheral: Peripheral, state: DeviceState) {
         self.peripheral = peripheral
+        self.state = state
     }
 
     mutating func append(_ value: String) {

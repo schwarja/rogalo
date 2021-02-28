@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct RecordsView: View {
-    let connectionState: Device.State
+    let connectionState: DeviceState
     let characteristics: [CharacteristicStoring]
 
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 VStack {
-                    ConnectionStateView(connectionState: connectionState)
-                    
+                    ConnectionStateView(connectionState: connectionState, eventHandler: nil)
+                        .layoutPriority(1)
+
                     ForEach(characteristics, id: \.value) { characteristic in
                         CharacteristicView(store: characteristic)
                             .frame(maxHeight: .infinity)

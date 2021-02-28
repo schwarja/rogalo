@@ -11,7 +11,7 @@ struct SettingsTab: View {
     let store: SettingsStoring
     weak var coordinator: SettingsTabEventHandling?
     
-    @State var device: Device = .mock
+    @State var model: SettingsViewModel = .empty
     
     init(store: SettingsStoring, coordinator: SettingsTabEventHandling?) {
         self.store = store
@@ -20,15 +20,9 @@ struct SettingsTab: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Paired device: \(device.name)")
-                Divider()
-                Button("Forget device") {
-                    coordinator?.handle(event: .unpair)
-                }
-            }
-            .navigationBarTitle("Settings")
+            SettingsView(model: model, actionHandler: coordinator)
+                .navigationBarTitle(LocalizedString.settingsTitle())
         }
-        .onReceive(store.device, perform: { self.device = $0 })
+        .onReceive(store.model, perform: { self.model = $0 })
     }
 }

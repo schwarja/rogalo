@@ -15,24 +15,16 @@ class NotificationManager: NotificationManaging {
     private let generator = UINotificationFeedbackGenerator()
     
     private var isSceneActive = true
-    private var authorizationStatusSubject = PassthroughSubject<NotificationAuthorizationStatus, Never>()
+    private var authorizationStatusSubject = CurrentValueSubject<NotificationAuthorizationStatus?, Never>(nil)
     
-    var authorizationStatus: AnyPublisher<NotificationAuthorizationStatus, Never> {
-        authorizationStatusSubject.eraseToAnyPublisher()
+    var authorizationStatus: AnyPublisher<NotificationAuthorizationStatus?, Never> {
+        authorizationStatusSubject
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
     
     init() {
-        UNUserNotificationCenter.current().getNotificationSettings { [weak self] settings in
-            switch settings.authorizationStatus {
-            case .authorized:
-                self?.authorizationStatusSubject.send(.authorized)
-            case .notDetermined:
-                self?.authorizationStatusSubject.send(.initial)
-            default:
-                self?.authorizationStatusSubject.send(.denied)
-            }
-        }
-        
+        getAuthorizationStatus()
         requestAuthorization()
         registerForLifecycleEvents()
     }
@@ -49,17 +41,35 @@ class NotificationManager: NotificationManaging {
 // MARK: - Life Cycle
 private extension NotificationManager {
     func registerForLifecycleEvents() {
-        NotificationCenter.default.addObserver(forName: UIScene.didActivateNotification, object: nil, queue: .main) { [weak self] _ in
-            self?.isSceneActive = true
-        }
-        NotificationCenter.default.addObserver(forName: UIScene.willDeactivateNotification, object: nil, queue: .main) { [weak self] _ in
-            self?.isSceneActive = false
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(sceneDidBecomeActive), name: UIScene.didActivateNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(sceneWillDeactivate), name: UIScene.willDeactivateNotification, object: nil)
+    }
+    
+    @objc func sceneDidBecomeActive() {
+        isSceneActive = true
+        getAuthorizationStatus()
+    }
+    
+    @objc func sceneWillDeactivate() {
+        isSceneActive = false
     }
 }
 
 // MARK: - Push notifications
 private extension NotificationManager {
+    func getAuthorizationStatus() {
+        UNUserNotificationCenter.current().getNotificationSettings { [weak self] settings in
+            switch settings.authorizationStatus {
+            case .authorized:
+                self?.authorizationStatusSubject.send(.authorized)
+            case .notDetermined:
+                self?.authorizationStatusSubject.send(.initial)
+            default:
+                self?.authorizationStatusSubject.send(.denied)
+            }
+        }
+    }
+    
     func requestAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { [weak self] (success, _) in
             let value = success ? NotificationAuthorizationStatus.authorized : NotificationAuthorizationStatus.denied
@@ -84,7 +94,7 @@ private extension NotificationManager {
         let formTemperature = Formatters.formattedTemperature(for: temperatureRaw)
         
         let content = UNMutableNotificationContent()
-        content.title = "Tempareture alert: Temperature at \(formTemperature)"
+        content.title = "\(LocalizedString.generalNotificationTemperatureTitle()): \(LocalizedString.generalNotificationTemperatureSubtitle()) \(formTemperature)"
         content.sound = UNNotificationSound
             .criticalSoundNamed(UNNotificationSoundName(temperature.notificationSoundFileName))
         

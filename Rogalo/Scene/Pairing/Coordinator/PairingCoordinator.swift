@@ -15,8 +15,6 @@ class PairingCoordinator {
     lazy var rootView: PairingNavigationView = makePairingScene()
     lazy var store: PairingStore = makePairingStore()
     
-    private let settingsUrl = URL(string: UIApplication.openSettingsURLString)!
-    
     init(container: DependencyContainer, parent: PairingCoordinatorEventHandling) {
         self.container = container
         self.parent = parent
@@ -32,9 +30,12 @@ extension PairingCoordinator: PairingNavigationViewEventHandling {
     func handle(event: PairingNavigationViewEvent) {
         switch event {
         case .openSettings:
-            if UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl)
+            if UIApplication.shared.canOpenURL(Constants.settingsUrl) {
+                UIApplication.shared.open(Constants.settingsUrl)
             }
+        case .didSelect(let peripheral):
+            let storage: Storage = container[.storage]
+            storage.pairedDevice.value = peripheral
         }
     }
 }
@@ -46,6 +47,6 @@ private extension PairingCoordinator {
     }
     
     func makePairingStore() -> PairingStore {
-        PairingStore(bluetoothManager: container[.bluetoothManager], storage: container[.storage])
+        PairingStore(bluetoothManager: container[.bluetoothManager])
     }
 }

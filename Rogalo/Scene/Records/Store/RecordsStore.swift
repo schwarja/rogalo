@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 class RecordsStore: RecordsStoring {
-    var connectionState: AnyPublisher<Device.State, Never> {
+    var connectionState: AnyPublisher<DeviceState, Never> {
         deviceManager
             .device
             .map(\.state)

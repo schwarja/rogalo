@@ -17,14 +17,12 @@ struct CharacteristicView: View {
             }
             
             VStack {
-                Text(store.valueDescription)
+                AppText(store.valueDescription, style: .headline)
                     .padding(4)
-                    .font(.headline)
                     .minimumScaleFactor(0.5)
                 
-                Text(store.formattedValue)
+                AppText(store.formattedValue, style: .value)
                     .padding(8)
-                    .font(.system(size: 50))
                     .lineLimit(1)
                     .minimumScaleFactor(0.2)
                 }

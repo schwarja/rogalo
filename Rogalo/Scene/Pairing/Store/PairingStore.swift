@@ -8,63 +8,33 @@
 import Combine
 
 class PairingStore: PairingStoring {
-    let state = CurrentValueSubject<PairingStoreState, Never>(.initial)
+    lazy var model: AnyPublisher<PeripheralListViewModel, Never> = modelPublisher
     
     let bluetoothManager: BluetoothManaging
-    let storage: Storage
     
-    private var cancellables = Set<AnyCancellable>()
-    
-    init(bluetoothManager: BluetoothManaging, storage: Storage) {
+    init(bluetoothManager: BluetoothManaging) {
         self.bluetoothManager = bluetoothManager
-        self.storage = storage
-        
-        state.value = .loading
-        
-        listenToPeripherals()
-    }
-    
-    func didSelect(peripheral: Peripheral) {
-        storage.pairedDevice.value = peripheral
     }
 }
 
 private extension PairingStore {
-    func listenToPeripherals() {
-        bluetoothManager
-            .status
-            .filter { $0 == .scanning }
-            .flatMap { [weak self] _ -> AnyPublisher<[Peripheral], Never> in
-                guard let self = self else {
-                    return Empty<[Peripheral], Never>().eraseToAnyPublisher()
+    var modelPublisher: AnyPublisher<PeripheralListViewModel, Never> {
+        Publishers
+            .CombineLatest(bluetoothManager.status, bluetoothManager.peripherals)
+            .map { status, peripherals -> PeripheralListViewModel in
+                let state: DeviceState
+                switch status {
+                case .initial, .scanning:
+                    state = .connecting
+                case .notAvailable:
+                    state = .failed(error: .bleTurnedOff)
+                case .unauthorized:
+                    state = .failed(error: .bleUnauthorized)
                 }
                 
-                return self.bluetoothManager.peripherals
+                return PeripheralListViewModel(connectionState: state, peripherals: peripherals)
             }
-            .sink { [weak self] peripherals in
-                if peripherals.isEmpty {
-                    self?.state.value = .loading
-                } else {
-                    self?.state.value = .ready(data: peripherals)
-                }
-            }
-            .store(in: &cancellables)
-
-        bluetoothManager
-            .status
-            .filter { $0 != .scanning }
-            .sink { [weak self] status in
-                switch status {
-                case .initial:
-                    self?.state.value = .loading
-                case .notAvailable:
-                    self?.state.value = .notAvailable
-                case .unauthorized:
-                    self?.state.value = .unauthorized
-                case .scanning:
-                    break
-                }
-            }
-            .store(in: &cancellables)
+            .share()
+            .eraseToAnyPublisher()
     }
 }

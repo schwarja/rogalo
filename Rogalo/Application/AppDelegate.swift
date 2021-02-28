@@ -9,11 +9,13 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, AppCoordinatorContaining {
+    // swiftlint:disable:next implicitly_unwrapped_optional
     private(set) var coordinator: AppCoordinating!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         setup()
+        applyAppearance()
         
         return true
     }
@@ -23,6 +25,19 @@ private extension AppDelegate {
     func setup() {
         coordinator = AppCoordinator()
         coordinator.start()
+    }
+    
+    func applyAppearance() {
+        // swiftlint:disable force_unwrapping
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .font: AppTextStyle.navigationTitleLarge.uiFont!,
+            .foregroundColor: R.color.textColor()!
+        ]
+        UINavigationBar.appearance().titleTextAttributes = [
+            .font: AppTextStyle.navigationTitle.uiFont!,
+            .foregroundColor: R.color.textColor()!
+        ]
+        // swiftlint:enable force_unwrapping
     }
 }
 
@@ -40,4 +55,3 @@ extension AppDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
-

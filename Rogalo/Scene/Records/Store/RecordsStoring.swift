@@ -9,6 +9,6 @@ import Combine
 import Foundation
 
 protocol RecordsStoring {
-    var connectionState: AnyPublisher<Device.State, Never> { get }
+    var connectionState: AnyPublisher<DeviceState, Never> { get }
     var characteristics: AnyPublisher<[CharacteristicStoring], Never> { get }
 }

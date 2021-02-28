@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29775D21CA51DBB63BC25491 /* Pods_Rogalo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144E9CDB07CAEC5B095BE877 /* Pods_Rogalo.framework */; };
+		C1036CDD25EBDEC0003A358B /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CDC25EBDEC0003A358B /* DeviceState.swift */; };
+		C1036CE025EBE575003A358B /* ViewWithBackgroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CDF25EBE575003A358B /* ViewWithBackgroundStyle.swift */; };
+		C1036CE325EBE682003A358B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE225EBE682003A358B /* SettingsView.swift */; };
+		C1036CE625EBE8C8003A358B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE525EBE8C8003A358B /* SettingsViewModel.swift */; };
+		C1036CEA25EBEF59003A358B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE925EBEF59003A358B /* Constants.swift */; };
+		C1036CED25EBF47D003A358B /* NotificationStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CEC25EBF47D003A358B /* NotificationStateView.swift */; };
+		C1036CF125EBFAFE003A358B /* PeripheralListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CF025EBFAFE003A358B /* PeripheralListViewModel.swift */; };
 		C112C726257D774B00B1F8A9 /* EngineCharacteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */; };
 		C112C72A257D7B0100B1F8A9 /* ValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C729257D7B0100B1F8A9 /* ValuesView.swift */; };
 		C112C72F257D7B2000B1F8A9 /* ValuesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C72E257D7B2000B1F8A9 /* ValuesStore.swift */; };
@@ -16,9 +24,9 @@
 		C149F1C525EA455700F55965 /* NotificationManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1C425EA455700F55965 /* NotificationManaging.swift */; };
 		C149F1C925EA456E00F55965 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1C825EA456E00F55965 /* NotificationManager.swift */; };
 		C149F1CC25EA472800F55965 /* TemperatureSignificantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */; };
-		C149F1D225EA4EF200F55965 /* 190.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1CF25EA4EF200F55965 /* 190.m4a */; };
-		C149F1D325EA4EF200F55965 /* 185.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D025EA4EF200F55965 /* 185.m4a */; };
-		C149F1D425EA4EF200F55965 /* 180.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D125EA4EF200F55965 /* 180.m4a */; };
+		C149F1D225EA4EF200F55965 /* TemperatureCritical-190.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1CF25EA4EF200F55965 /* TemperatureCritical-190.m4a */; };
+		C149F1D325EA4EF200F55965 /* TemperatureHighRist-185.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D025EA4EF200F55965 /* TemperatureHighRist-185.m4a */; };
+		C149F1D425EA4EF200F55965 /* TemperatureRisk-180.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D125EA4EF200F55965 /* TemperatureRisk-180.m4a */; };
 		C149F1D825EA51F900F55965 /* NotificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1D725EA51F900F55965 /* NotificationEvent.swift */; };
 		C149F1DB25EA531E00F55965 /* NotificationAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1DA25EA531E00F55965 /* NotificationAuthorizationStatus.swift */; };
 		C149F1E325EA627A00F55965 /* RecordsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1E225EA627A00F55965 /* RecordsTab.swift */; };
@@ -40,6 +48,19 @@
 		C16D9E4625EABEA3009F3ADE /* CharacteristicGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4525EABEA3009F3ADE /* CharacteristicGradientView.swift */; };
 		C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4925EAC016009F3ADE /* Triangle.swift */; };
 		C16D9E4E25EAC373009F3ADE /* CharacteristicScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */; };
+		C16D9E5C25EBA9B7009F3ADE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E5B25EBA9B7009F3ADE /* R.generated.swift */; };
+		C16D9E6325EBABBF009F3ADE /* DeviceValueRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E6225EBABBF009F3ADE /* DeviceValueRange.swift */; };
+		C16D9E6A25EBB1E2009F3ADE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C16D9E6C25EBB1E2009F3ADE /* Localizable.strings */; };
+		C16D9E7125EBB2E2009F3ADE /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E7025EBB2E2009F3ADE /* LocalizedString.swift */; };
+		C16D9E7525EBC8DA009F3ADE /* Color+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E7425EBC8DA009F3ADE /* Color+AppColors.swift */; };
+		C16D9E7825EBC963009F3ADE /* Rswift+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E7725EBC963009F3ADE /* Rswift+Resources.swift */; };
+		C1A4AC2325EBCAAF00290AE2 /* AppText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A4AC2225EBCAAF00290AE2 /* AppText.swift */; };
+		C1A4AC2625EBCBB200290AE2 /* AppTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A4AC2525EBCBB200290AE2 /* AppTextStyle.swift */; };
+		C1A4AC2925EBCC7700290AE2 /* Text+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A4AC2825EBCC7700290AE2 /* Text+AppStyles.swift */; };
+		C1A4AC2D25EBCD8400290AE2 /* TextualStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A4AC2C25EBCD8400290AE2 /* TextualStyle.swift */; };
+		C1A4AC3225EBCE0200290AE2 /* AppButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A4AC3125EBCE0100290AE2 /* AppButtonStyle.swift */; };
+		C1A4AC3625EBCE6300290AE2 /* Button+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A4AC3525EBCE6300290AE2 /* Button+AppStyles.swift */; };
+		C1A4AC3925EBCECA00290AE2 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A4AC3825EBCECA00290AE2 /* AppButton.swift */; };
 		C1B25D83257D4087006E808C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D82257D4087006E808C /* AppDelegate.swift */; };
 		C1B25D85257D4087006E808C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D84257D4087006E808C /* SceneDelegate.swift */; };
 		C1B25D87257D4087006E808C /* PeripheralListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D86257D4087006E808C /* PeripheralListView.swift */; };
@@ -89,6 +110,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		144E9CDB07CAEC5B095BE877 /* Pods_Rogalo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rogalo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		314A82F4509C07DF597258A0 /* Pods-Rogalo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rogalo.debug.xcconfig"; path = "Target Support Files/Pods-Rogalo/Pods-Rogalo.debug.xcconfig"; sourceTree = "<group>"; };
+		BEE09EE8BCF9541E40B534B2 /* Pods-Rogalo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rogalo.release.xcconfig"; path = "Target Support Files/Pods-Rogalo/Pods-Rogalo.release.xcconfig"; sourceTree = "<group>"; };
+		C1036CDC25EBDEC0003A358B /* DeviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceState.swift; sourceTree = "<group>"; };
+		C1036CDF25EBE575003A358B /* ViewWithBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithBackgroundStyle.swift; sourceTree = "<group>"; };
+		C1036CE225EBE682003A358B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C1036CE525EBE8C8003A358B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		C1036CE925EBEF59003A358B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C1036CEC25EBF47D003A358B /* NotificationStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStateView.swift; sourceTree = "<group>"; };
+		C1036CF025EBFAFE003A358B /* PeripheralListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralListViewModel.swift; sourceTree = "<group>"; };
 		C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineCharacteristics.swift; sourceTree = "<group>"; };
 		C112C729257D7B0100B1F8A9 /* ValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesView.swift; sourceTree = "<group>"; };
 		C112C72E257D7B2000B1F8A9 /* ValuesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesStore.swift; sourceTree = "<group>"; };
@@ -98,9 +129,9 @@
 		C149F1C425EA455700F55965 /* NotificationManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManaging.swift; sourceTree = "<group>"; };
 		C149F1C825EA456E00F55965 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSignificantValues.swift; sourceTree = "<group>"; };
-		C149F1CF25EA4EF200F55965 /* 190.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 190.m4a; sourceTree = "<group>"; };
-		C149F1D025EA4EF200F55965 /* 185.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 185.m4a; sourceTree = "<group>"; };
-		C149F1D125EA4EF200F55965 /* 180.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 180.m4a; sourceTree = "<group>"; };
+		C149F1CF25EA4EF200F55965 /* TemperatureCritical-190.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TemperatureCritical-190.m4a"; sourceTree = "<group>"; };
+		C149F1D025EA4EF200F55965 /* TemperatureHighRist-185.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TemperatureHighRist-185.m4a"; sourceTree = "<group>"; };
+		C149F1D125EA4EF200F55965 /* TemperatureRisk-180.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TemperatureRisk-180.m4a"; sourceTree = "<group>"; };
 		C149F1D725EA51F900F55965 /* NotificationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEvent.swift; sourceTree = "<group>"; };
 		C149F1DA25EA531E00F55965 /* NotificationAuthorizationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAuthorizationStatus.swift; sourceTree = "<group>"; };
 		C149F1E225EA627A00F55965 /* RecordsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTab.swift; sourceTree = "<group>"; };
@@ -122,6 +153,20 @@
 		C16D9E4525EABEA3009F3ADE /* CharacteristicGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicGradientView.swift; sourceTree = "<group>"; };
 		C16D9E4925EAC016009F3ADE /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicScale.swift; sourceTree = "<group>"; };
+		C16D9E5B25EBA9B7009F3ADE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		C16D9E6225EBABBF009F3ADE /* DeviceValueRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceValueRange.swift; sourceTree = "<group>"; };
+		C16D9E6B25EBB1E2009F3ADE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C16D9E6E25EBB20B009F3ADE /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C16D9E7025EBB2E2009F3ADE /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		C16D9E7425EBC8DA009F3ADE /* Color+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColors.swift"; sourceTree = "<group>"; };
+		C16D9E7725EBC963009F3ADE /* Rswift+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rswift+Resources.swift"; sourceTree = "<group>"; };
+		C1A4AC2225EBCAAF00290AE2 /* AppText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppText.swift; sourceTree = "<group>"; };
+		C1A4AC2525EBCBB200290AE2 /* AppTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextStyle.swift; sourceTree = "<group>"; };
+		C1A4AC2825EBCC7700290AE2 /* Text+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+AppStyles.swift"; sourceTree = "<group>"; };
+		C1A4AC2C25EBCD8400290AE2 /* TextualStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextualStyle.swift; sourceTree = "<group>"; };
+		C1A4AC3125EBCE0100290AE2 /* AppButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonStyle.swift; sourceTree = "<group>"; };
+		C1A4AC3525EBCE6300290AE2 /* Button+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+AppStyles.swift"; sourceTree = "<group>"; };
+		C1A4AC3825EBCECA00290AE2 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		C1B25D7F257D4087006E808C /* Rogalo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rogalo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B25D82257D4087006E808C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B25D84257D4087006E808C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,12 +222,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29775D21CA51DBB63BC25491 /* Pods_Rogalo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BBCF7C325E0C816D488988AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				144E9CDB07CAEC5B095BE877 /* Pods_Rogalo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C112C728257D7AE200B1F8A9 /* Values */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,8 +261,9 @@
 		C133B2F425EA918A00F070C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C1A4AC2125EBCA9200290AE2 /* Components */,
 				C16D9E4825EAC00B009F3ADE /* Shapes */,
-				C16D9E3625EA9C9A009F3ADE /* Connection */,
+				C16D9E3625EA9C9A009F3ADE /* StateViews */,
 				C133B2F825EA91AD00F070C1 /* Characteristics */,
 			);
 			path = Views;
@@ -241,9 +296,9 @@
 		C149F1CE25EA4E8600F55965 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				C149F1D125EA4EF200F55965 /* 180.m4a */,
-				C149F1D025EA4EF200F55965 /* 185.m4a */,
-				C149F1CF25EA4EF200F55965 /* 190.m4a */,
+				C149F1D125EA4EF200F55965 /* TemperatureRisk-180.m4a */,
+				C149F1D025EA4EF200F55965 /* TemperatureHighRist-185.m4a */,
+				C149F1CF25EA4EF200F55965 /* TemperatureCritical-190.m4a */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -282,7 +337,9 @@
 			isa = PBXGroup;
 			children = (
 				C155E19C257D730200A845B9 /* Device.swift */,
+				C1036CDC25EBDEC0003A358B /* DeviceState.swift */,
 				C16D9E3E25EAA1B6009F3ADE /* DeviceValue.swift */,
+				C16D9E6225EBABBF009F3ADE /* DeviceValueRange.swift */,
 				C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */,
 				C155E190257D4C3E00A845B9 /* Peripheral.swift */,
 			);
@@ -301,16 +358,21 @@
 			isa = PBXGroup;
 			children = (
 				C155E1A0257D733E00A845B9 /* Array+Safe.swift */,
+				C16D9E7425EBC8DA009F3ADE /* Color+AppColors.swift */,
+				C16D9E7725EBC963009F3ADE /* Rswift+Resources.swift */,
+				C1A4AC2825EBCC7700290AE2 /* Text+AppStyles.swift */,
+				C1A4AC3525EBCE6300290AE2 /* Button+AppStyles.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		C16D9E3625EA9C9A009F3ADE /* Connection */ = {
+		C16D9E3625EA9C9A009F3ADE /* StateViews */ = {
 			isa = PBXGroup;
 			children = (
 				C16D9E3B25EA9CC9009F3ADE /* ConnectionStateView.swift */,
+				C1036CEC25EBF47D003A358B /* NotificationStateView.swift */,
 			);
-			path = Connection;
+			path = StateViews;
 			sourceTree = "<group>";
 		};
 		C16D9E4825EAC00B009F3ADE /* Shapes */ = {
@@ -321,11 +383,40 @@
 			path = Shapes;
 			sourceTree = "<group>";
 		};
+		C1A4AC2125EBCA9200290AE2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C1A4AC2225EBCAAF00290AE2 /* AppText.swift */,
+				C1A4AC3825EBCECA00290AE2 /* AppButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C1A4AC2B25EBCD6900290AE2 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				C1A4AC2C25EBCD8400290AE2 /* TextualStyle.swift */,
+				C1036CDF25EBE575003A358B /* ViewWithBackgroundStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		C1A4AC3025EBCDE900290AE2 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				C1A4AC2525EBCBB200290AE2 /* AppTextStyle.swift */,
+				C1A4AC3125EBCE0100290AE2 /* AppButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		C1B25D76257D4087006E808C = {
 			isa = PBXGroup;
 			children = (
 				C1B25D81257D4087006E808C /* Rogalo */,
 				C1B25D80257D4087006E808C /* Products */,
+				D5443120209E95A15E7A7C03 /* Pods */,
+				BBCF7C325E0C816D488988AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -386,6 +477,8 @@
 				C149F1CE25EA4E8600F55965 /* Audio */,
 				C1B25D88257D4095006E808C /* Assets.xcassets */,
 				C1B25D90257D4095006E808C /* Info.plist */,
+				C16D9E5B25EBA9B7009F3ADE /* R.generated.swift */,
+				C16D9E6C25EBB1E2009F3ADE /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -397,6 +490,7 @@
 				C1CAE7492586423600CB60E7 /* Coordinator */,
 				C1B25D9F257D424C006E808C /* Store */,
 				C1B25D86257D4087006E808C /* PeripheralListView.swift */,
+				C1036CF025EBFAFE003A358B /* PeripheralListViewModel.swift */,
 			);
 			path = Pairing;
 			sourceTree = "<group>";
@@ -429,6 +523,7 @@
 				C1CAE77A2586561F00CB60E7 /* Store */,
 				C1B25DAE257D43F9006E808C /* SettingsTab.swift */,
 				C1F36C6C258696F6002930B2 /* SettingsTabEventHandling.swift */,
+				C1036CE225EBE682003A358B /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -480,6 +575,7 @@
 			children = (
 				C1CAE73C25863CCF00CB60E7 /* DependencyInjection */,
 				C1CAE73825863BB200CB60E7 /* Coordinators */,
+				C1A4AC2B25EBCD6900290AE2 /* Styles */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -508,9 +604,12 @@
 		C1CAE74025863EC000CB60E7 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				C1A4AC3025EBCDE900290AE2 /* Styles */,
 				C1CAE74125863ED000CB60E7 /* ActiveSceneSession.swift */,
 				C1F36C6925867BA2002930B2 /* AppError.swift */,
 				C16D9E4225EAA488009F3ADE /* Formatters.swift */,
+				C16D9E7025EBB2E2009F3ADE /* LocalizedString.swift */,
+				C1036CE925EBEF59003A358B /* Constants.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -558,6 +657,7 @@
 				C1CAE77B2586562B00CB60E7 /* SettingsStoring.swift */,
 				C1CAE77E2586564A00CB60E7 /* SettingsStore.swift */,
 				C1CAE7812586565E00CB60E7 /* MockSettingsStore.swift */,
+				C1036CE525EBE8C8003A358B /* SettingsViewModel.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -598,6 +698,15 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		D5443120209E95A15E7A7C03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				314A82F4509C07DF597258A0 /* Pods-Rogalo.debug.xcconfig */,
+				BEE09EE8BCF9541E40B534B2 /* Pods-Rogalo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -605,9 +714,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1B25D93257D4095006E808C /* Build configuration list for PBXNativeTarget "Rogalo" */;
 			buildPhases = (
+				44288CCB4A9AD9475E144FAA /* [CP] Check Pods Manifest.lock */,
+				C16D9E5725EBA84B009F3ADE /* R.swift */,
 				C1B25D7B257D4087006E808C /* Sources */,
 				C1B25D7C257D4087006E808C /* Frameworks */,
 				C1B25D7D257D4087006E808C /* Resources */,
+				C16D9E5E25EBA9FD009F3ADE /* Swiftlint */,
+				8FFD5706E3B1BBA6ABC19A67 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -639,6 +752,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = C1B25D76257D4087006E808C;
 			productRefGroup = C1B25D80257D4087006E808C /* Products */;
@@ -655,23 +769,108 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C149F1D425EA4EF200F55965 /* 180.m4a in Resources */,
-				C149F1D225EA4EF200F55965 /* 190.m4a in Resources */,
+				C149F1D425EA4EF200F55965 /* TemperatureRisk-180.m4a in Resources */,
+				C16D9E6A25EBB1E2009F3ADE /* Localizable.strings in Resources */,
+				C149F1D225EA4EF200F55965 /* TemperatureCritical-190.m4a in Resources */,
 				C1B25D8F257D4095006E808C /* LaunchScreen.storyboard in Resources */,
 				C1B25D89257D4095006E808C /* Assets.xcassets in Resources */,
-				C149F1D325EA4EF200F55965 /* 185.m4a in Resources */,
+				C149F1D325EA4EF200F55965 /* TemperatureHighRist-185.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44288CCB4A9AD9475E144FAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rogalo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FFD5706E3B1BBA6ABC19A67 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rogalo/Pods-Rogalo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rogalo/Pods-Rogalo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rogalo/Pods-Rogalo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C16D9E5725EBA84B009F3ADE /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/Rogalo/Resources/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Rogalo/Resources/R.generated.swift\"\n";
+		};
+		C16D9E5E25EBA9FD009F3ADE /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "podSwiftlint=\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\nif [ -f \"$podSwiftlint\" ]; then\n    $podSwiftlint\nelse\n    echo \"'warning: Cannot find SwiftLint in the expected Cocoapods location.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C1B25D7B257D4087006E808C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C16D9E7825EBC963009F3ADE /* Rswift+Resources.swift in Sources */,
 				C1CAE7522586440700CB60E7 /* ParentCoordinatorContaining.swift in Sources */,
 				C155E199257D515300A845B9 /* AppDependency.swift in Sources */,
+				C1A4AC3925EBCECA00290AE2 /* AppButton.swift in Sources */,
+				C16D9E5C25EBA9B7009F3ADE /* R.generated.swift in Sources */,
+				C1036CDD25EBDEC0003A358B /* DeviceState.swift in Sources */,
 				C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */,
 				C1CAE76B2586534C00CB60E7 /* ContentCoordinatorEventHandling.swift in Sources */,
 				C1F36C6D258696F6002930B2 /* SettingsTabEventHandling.swift in Sources */,
@@ -681,19 +880,26 @@
 				C1CAE74225863ED000CB60E7 /* ActiveSceneSession.swift in Sources */,
 				C1CAE761258647B300CB60E7 /* PairingStoring.swift in Sources */,
 				C16D9E3F25EAA1B6009F3ADE /* DeviceValue.swift in Sources */,
+				C1A4AC2D25EBCD8400290AE2 /* TextualStyle.swift in Sources */,
 				C1CAE73525863B1D00CB60E7 /* AppCoordinatorContaining.swift in Sources */,
+				C1036CE325EBE682003A358B /* SettingsView.swift in Sources */,
 				C149F1ED25EA62D400F55965 /* RecordsCoordinatorEventHandling.swift in Sources */,
 				C1CAE7922586636300CB60E7 /* DeviceManager.swift in Sources */,
 				C149F1F425EA637D00F55965 /* RecordsStore.swift in Sources */,
 				C1F36C7D2586A2BF002930B2 /* ValuesCoordinatorEventHandling.swift in Sources */,
 				C112C72A257D7B0100B1F8A9 /* ValuesView.swift in Sources */,
 				C1B25DAA257D437C006E808C /* ContentView.swift in Sources */,
+				C16D9E7525EBC8DA009F3ADE /* Color+AppColors.swift in Sources */,
 				C1CAE77C2586562B00CB60E7 /* SettingsStoring.swift in Sources */,
 				C1CAE77F2586564A00CB60E7 /* SettingsStore.swift in Sources */,
 				C155E191257D4C3E00A845B9 /* Peripheral.swift in Sources */,
 				C1B25D83257D4087006E808C /* AppDelegate.swift in Sources */,
 				C1CAE73125863AD800CB60E7 /* AppCoordinator.swift in Sources */,
+				C16D9E7125EBB2E2009F3ADE /* LocalizedString.swift in Sources */,
+				C1A4AC2625EBCBB200290AE2 /* AppTextStyle.swift in Sources */,
+				C1036CF125EBFAFE003A358B /* PeripheralListViewModel.swift in Sources */,
 				C16D9E4325EAA488009F3ADE /* Formatters.swift in Sources */,
+				C1036CED25EBF47D003A358B /* NotificationStateView.swift in Sources */,
 				C16D9E3425EA979C009F3ADE /* CharacteristicStoring.swift in Sources */,
 				C1CAE7822586565E00CB60E7 /* MockSettingsStore.swift in Sources */,
 				C1CAE72C25863AAC00CB60E7 /* AppCoordinating.swift in Sources */,
@@ -707,6 +913,7 @@
 				C1CAE76525864B4600CB60E7 /* Storage.swift in Sources */,
 				C149F1CC25EA472800F55965 /* TemperatureSignificantValues.swift in Sources */,
 				C1F36C7125869986002930B2 /* SettingsCoordinator.swift in Sources */,
+				C1036CEA25EBEF59003A358B /* Constants.swift in Sources */,
 				C149F1D825EA51F900F55965 /* NotificationEvent.swift in Sources */,
 				C1CAE76F258653B200CB60E7 /* ContentStore.swift in Sources */,
 				C149F1E325EA627A00F55965 /* RecordsTab.swift in Sources */,
@@ -721,6 +928,7 @@
 				C1CAE7852586567D00CB60E7 /* MockValuesStore.swift in Sources */,
 				C149F1F025EA637200F55965 /* RecordsStoring.swift in Sources */,
 				C133B2F625EA91A200F070C1 /* CharacteristicView.swift in Sources */,
+				C1A4AC3225EBCE0200290AE2 /* AppButtonStyle.swift in Sources */,
 				C149F1C925EA456E00F55965 /* NotificationManager.swift in Sources */,
 				C1CAE73A25863BCB00CB60E7 /* Coordinator.swift in Sources */,
 				C16D9E4E25EAC373009F3ADE /* CharacteristicScale.swift in Sources */,
@@ -728,15 +936,21 @@
 				C1CAE78E2586634700CB60E7 /* DeviceManaging.swift in Sources */,
 				C1CAE76825864B5A00CB60E7 /* AppStorage.swift in Sources */,
 				C1CAE74B2586424800CB60E7 /* PairingCoordinator.swift in Sources */,
+				C1A4AC2325EBCAAF00290AE2 /* AppText.swift in Sources */,
+				C1A4AC2925EBCC7700290AE2 /* Text+AppStyles.swift in Sources */,
 				C1CAE7292586397100CB60E7 /* SceneCoordinating.swift in Sources */,
 				C1B25D85257D4087006E808C /* SceneDelegate.swift in Sources */,
 				C1CAE75A2586461300CB60E7 /* PairingNavigationView.swift in Sources */,
 				C112C726257D774B00B1F8A9 /* EngineCharacteristics.swift in Sources */,
+				C1036CE625EBE8C8003A358B /* SettingsViewModel.swift in Sources */,
+				C1A4AC3625EBCE6300290AE2 /* Button+AppStyles.swift in Sources */,
+				C16D9E6325EBABBF009F3ADE /* DeviceValueRange.swift in Sources */,
 				C1CAE772258653C800CB60E7 /* ContentStoring.swift in Sources */,
 				C1CAE778258654F300CB60E7 /* ValuesStoring.swift in Sources */,
 				C1F36C782586A1FA002930B2 /* ValuesCoordinator.swift in Sources */,
 				C149F1F725EA66F700F55965 /* MockRecordsStore.swift in Sources */,
 				C1CAE7472586422E00CB60E7 /* ContentCoordinator.swift in Sources */,
+				C1036CE025EBE575003A358B /* ViewWithBackgroundStyle.swift in Sources */,
 				C1B25D87257D4087006E808C /* PeripheralListView.swift in Sources */,
 				C1F36C742586999C002930B2 /* SettingsCoordinatorEventHandling.swift in Sources */,
 				C1CAE755258644FD00CB60E7 /* PairingCoordinatorEventHandling.swift in Sources */,
@@ -750,6 +964,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C16D9E6C25EBB1E2009F3ADE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C16D9E6B25EBB1E2009F3ADE /* en */,
+				C16D9E6E25EBB20B009F3ADE /* cs */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C1B25D8D257D4095006E808C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -765,6 +988,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -826,6 +1050,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -879,9 +1104,10 @@
 		};
 		C1B25D94257D4095006E808C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 314A82F4509C07DF597258A0 /* Pods-Rogalo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = BackgroundColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6532TRNCE;
 				ENABLE_PREVIEWS = YES;
@@ -899,9 +1125,10 @@
 		};
 		C1B25D95257D4095006E808C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEE09EE8BCF9541E40B534B2 /* Pods-Rogalo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = BackgroundColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6532TRNCE;
 				ENABLE_PREVIEWS = YES;

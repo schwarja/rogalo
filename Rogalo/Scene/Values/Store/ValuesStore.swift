@@ -8,7 +8,7 @@
 import Combine
 
 class ValuesStore: ValuesStoring {
-    var connectionState: AnyPublisher<Device.State, Never> {
+    var connectionState: AnyPublisher<DeviceState, Never> {
         deviceManager
             .device
             .map(\.state)
