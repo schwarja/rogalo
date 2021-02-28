@@ -49,12 +49,16 @@ class NotificationManager: NotificationManaging {
 // MARK: - Life Cycle
 private extension NotificationManager {
     func registerForLifecycleEvents() {
-        NotificationCenter.default.addObserver(forName: UIScene.didActivateNotification, object: nil, queue: .main) { [weak self] _ in
-            self?.isSceneActive = true
-        }
-        NotificationCenter.default.addObserver(forName: UIScene.willDeactivateNotification, object: nil, queue: .main) { [weak self] _ in
-            self?.isSceneActive = false
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(sceneDidBecomeActive), name: UIScene.didActivateNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(sceneWillDeactivate), name: UIScene.willDeactivateNotification, object: nil)
+    }
+    
+    @objc func sceneDidBecomeActive() {
+        isSceneActive = true
+    }
+    
+    @objc func sceneWillDeactivate() {
+        isSceneActive = false
     }
 }
 

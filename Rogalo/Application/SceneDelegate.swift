@@ -11,7 +11,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
-    private var coordinator: SceneCoordinator!
+    private weak var coordinator: SceneCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
@@ -51,6 +51,6 @@ private extension SceneDelegate {
 
         coordinator = appCoordinator.didLaunchScene(for: session, window: window)
 
-        coordinator.start()
+        coordinator?.start()
     }
 }

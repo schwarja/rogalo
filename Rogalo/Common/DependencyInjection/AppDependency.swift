@@ -17,6 +17,7 @@ class AppDependency: DependencyContainer {
     }
     
     func resolve<T>(type: DependencyType) -> T {
+        // swiftlint:disable:next force_cast
         dependencies[type] as! T
     }
     

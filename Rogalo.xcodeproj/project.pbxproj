@@ -42,6 +42,7 @@
 		C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4925EAC016009F3ADE /* Triangle.swift */; };
 		C16D9E4E25EAC373009F3ADE /* CharacteristicScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */; };
 		C16D9E5C25EBA9B7009F3ADE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E5B25EBA9B7009F3ADE /* R.generated.swift */; };
+		C16D9E6325EBABBF009F3ADE /* DeviceValueRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E6225EBABBF009F3ADE /* DeviceValueRange.swift */; };
 		C1B25D83257D4087006E808C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D82257D4087006E808C /* AppDelegate.swift */; };
 		C1B25D85257D4087006E808C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D84257D4087006E808C /* SceneDelegate.swift */; };
 		C1B25D87257D4087006E808C /* PeripheralListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D86257D4087006E808C /* PeripheralListView.swift */; };
@@ -128,6 +129,7 @@
 		C16D9E4925EAC016009F3ADE /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicScale.swift; sourceTree = "<group>"; };
 		C16D9E5B25EBA9B7009F3ADE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		C16D9E6225EBABBF009F3ADE /* DeviceValueRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceValueRange.swift; sourceTree = "<group>"; };
 		C1B25D7F257D4087006E808C /* Rogalo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rogalo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B25D82257D4087006E808C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B25D84257D4087006E808C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			children = (
 				C155E19C257D730200A845B9 /* Device.swift */,
 				C16D9E3E25EAA1B6009F3ADE /* DeviceValue.swift */,
+				C16D9E6225EBABBF009F3ADE /* DeviceValueRange.swift */,
 				C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */,
 				C155E190257D4C3E00A845B9 /* Peripheral.swift */,
 			);
@@ -844,6 +847,7 @@
 				C1B25D85257D4087006E808C /* SceneDelegate.swift in Sources */,
 				C1CAE75A2586461300CB60E7 /* PairingNavigationView.swift in Sources */,
 				C112C726257D774B00B1F8A9 /* EngineCharacteristics.swift in Sources */,
+				C16D9E6325EBABBF009F3ADE /* DeviceValueRange.swift in Sources */,
 				C1CAE772258653C800CB60E7 /* ContentStoring.swift in Sources */,
 				C1CAE778258654F300CB60E7 /* ValuesStoring.swift in Sources */,
 				C1F36C782586A1FA002930B2 /* ValuesCoordinator.swift in Sources */,

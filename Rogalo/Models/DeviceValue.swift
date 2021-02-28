@@ -16,12 +16,12 @@ enum DeviceValue: Hashable {
     case temperature(value: Double?)
     case temperatureMax(value: Double?)
     
-    var range: (min: Double, risk: Double, critical: Double)? {
+    var range: DeviceValueRange? {
         switch self {
         case .rpm:
-            return (0, 8500, 9500)
+            return DeviceValueRange(min: 0, risk: 8500, critical: 9500)
         case .temperature:
-            return (0, 185, 195)
+            return DeviceValueRange(min: 0, risk: 185, critical: 195)
         default:
             return nil
         }
