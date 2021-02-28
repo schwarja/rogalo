@@ -28,14 +28,17 @@ extension ContentCoordinator: ViewCoordinator {
 
 // MARK: - Settings event handling
 extension ContentCoordinator: SettingsCoordinatorEventHandling {
-    func handle(event: SettingsCoordinatorEvent) {
-    }
+    func handle(event: SettingsCoordinatorEvent) {}
 }
 
 // MARK: - Characteristics event handling
-extension ContentCoordinator: CharacteristicsCoordinatorEventHandling {
-    func handle(event: CharacteristicsCoordinatorEvent) {
-    }
+extension ContentCoordinator: ValuesCoordinatorEventHandling {
+    func handle(event: ValuesCoordinatorEvent) {}
+}
+
+// MARK: - Records event handling
+extension ContentCoordinator: RecordsCoordinatorEventHandling {
+    func handle(event: RecordsCoordinatorEvent) {}
 }
 
 // MARK: - Factories
@@ -47,13 +50,18 @@ private extension ContentCoordinator {
         let characteristics = makeCharacteristicsScene()
         characteristics.start()
         
+        let records = makeRecordsScene()
+        records.start()
+        
         childCoordinators.append(settings)
         childCoordinators.append(characteristics)
+        childCoordinators.append(records)
         
         return ContentView(
             store: store,
             tabs: [
                 .characteristics(view: characteristics.rootView),
+                .records(view: records.rootView),
                 .settings(view: settings.rootView)
             ]
         )
@@ -67,7 +75,11 @@ private extension ContentCoordinator {
         SettingsCoordinator(container: container, parent: self)
     }
     
-    func makeCharacteristicsScene() -> CharacteristicsCoordinator {
-        CharacteristicsCoordinator(container: container, parent: self)
+    func makeCharacteristicsScene() -> ValuesCoordinator {
+        ValuesCoordinator(container: container, parent: self)
+    }
+    
+    func makeRecordsScene() -> RecordsCoordinator {
+        RecordsCoordinator(container: container, parent: self)
     }
 }

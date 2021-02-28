@@ -16,8 +16,8 @@ class ContentStore: ContentStoring {
         setup()
     }
     
-    var engineStore: EngineStoring {
-        EngineStore(deviceManager: deviceManager)
+    var engineStore: ValuesStoring {
+        ValuesStore(deviceManager: deviceManager)
     }
     
     var settingsStore: SettingsStoring {
