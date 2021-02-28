@@ -54,7 +54,7 @@ excluded:
   - Scripts
   - vendor
   - fastlane
-  - R.generated.swift
+  - "**/**/R.generated.swift"
 
 #
 # Configure individual rules below.
