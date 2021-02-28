@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 protocol NotificationManaging {
-    var authorizationStatus: AnyPublisher<NotificationAuthorizationStatus, Never> { get }
+    var authorizationStatus: AnyPublisher<NotificationAuthorizationStatus?, Never> { get }
     
     func sendNotification(for event: NotificationEvent)
 }

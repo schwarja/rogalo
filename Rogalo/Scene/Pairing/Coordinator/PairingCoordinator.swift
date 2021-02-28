@@ -15,14 +15,6 @@ class PairingCoordinator {
     lazy var rootView: PairingNavigationView = makePairingScene()
     lazy var store: PairingStore = makePairingStore()
     
-    private lazy var settingsUrl: URL = {
-        guard let url = URL(string: UIApplication.openSettingsURLString) else {
-            fatalError("Settings URL couldn't be constructed")
-        }
-        
-        return url
-    }()
-    
     init(container: DependencyContainer, parent: PairingCoordinatorEventHandling) {
         self.container = container
         self.parent = parent
@@ -38,8 +30,8 @@ extension PairingCoordinator: PairingNavigationViewEventHandling {
     func handle(event: PairingNavigationViewEvent) {
         switch event {
         case .openSettings:
-            if UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl)
+            if UIApplication.shared.canOpenURL(Constants.settingsUrl) {
+                UIApplication.shared.open(Constants.settingsUrl)
             }
         }
     }

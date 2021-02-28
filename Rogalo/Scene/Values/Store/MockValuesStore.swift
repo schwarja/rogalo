@@ -8,8 +8,8 @@
 import Combine
 
 class MockValuesStore: ValuesStoring {
-    var connectionState: AnyPublisher<Device.State, Never> {
-        Just<Device.State>(.connecting)
+    var connectionState: AnyPublisher<DeviceState, Never> {
+        Just<DeviceState>(.connecting)
             .eraseToAnyPublisher()
     }
     

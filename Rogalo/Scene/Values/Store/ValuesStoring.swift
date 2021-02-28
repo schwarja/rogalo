@@ -8,6 +8,6 @@
 import Combine
 
 protocol ValuesStoring {
-    var connectionState: AnyPublisher<Device.State, Never> { get }
+    var connectionState: AnyPublisher<DeviceState, Never> { get }
     var characteristics: AnyPublisher<[CharacteristicStoring], Never> { get }
 }

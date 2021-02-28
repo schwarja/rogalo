@@ -15,14 +15,6 @@ class ContentStore: ContentStoring {
         
         setup()
     }
-    
-    var engineStore: ValuesStoring {
-        ValuesStore(deviceManager: deviceManager)
-    }
-    
-    var settingsStore: SettingsStoring {
-        SettingsStore(deviceManager: deviceManager)
-    }
 }
 
 // MARK: - Private

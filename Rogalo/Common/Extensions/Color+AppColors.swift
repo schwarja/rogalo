@@ -14,8 +14,9 @@ extension Color {
     static let appTextInverted = R.color.textInvertedColor.color
 
     static let appSuccess = R.color.successIndicationColor.color
-    
     static let appFailure = R.color.failureIndicationColor.color
     
     static let appTint = R.color.tintColor.color
+    
+    static let appDestructiveAction = R.color.failureIndicationColor.color
 }

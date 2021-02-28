@@ -12,5 +12,7 @@ extension Button {
         self
             .font(style.font)
             .foregroundColor(style.color)
+            .padding(style.padding)
+            .background(style.backgroundColor)
     }
 }

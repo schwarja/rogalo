@@ -26,7 +26,7 @@ struct PeripheralListView: View {
             AppText(LocalizedString.pairingSearchingTitle(), style: .caption)
         case .unauthorized:
             VStack {
-                AppText(LocalizedString.generalAlertPermissionDeniedTitle(), style: .caption)
+                AppText(LocalizedString.generalAlertBluetoothPermissionDeniedTitle(), style: .caption)
                 AppButton(LocalizedString.generalAlertGoToSettingsAction()) {
                     openSettings()
                 }

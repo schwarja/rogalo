@@ -8,7 +8,10 @@
 
 "general.notification.temperature.title" = "Temperature alert";
 "general.notification.temperature.subtitle" = "Temperature at";
-"general.alert.permission.denied.title" = "Permission denied";
+"general.alert.bluetooth.permission.denied.title" = "Permission for Bluetooth denied";
+"general.alert.bluetooth.permission.denied.subtitle" = "If you want to connect to a device, please, enable access to Bluetooth services in Settings";
+"general.alert.notification.permission.denied.title" = "Permission for notifications denied";
+"general.alert.notification.permission.denied.subtitle" = "If you want to receive alerts about critical engine values, please, enable notifications in Settings";
 "general.alert.go.to.settings.action" = "Go to Settings";
 
 "device.values.empty" = "-";

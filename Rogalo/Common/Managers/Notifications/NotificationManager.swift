@@ -15,9 +15,9 @@ class NotificationManager: NotificationManaging {
     private let generator = UINotificationFeedbackGenerator()
     
     private var isSceneActive = true
-    private var authorizationStatusSubject = PassthroughSubject<NotificationAuthorizationStatus, Never>()
+    private var authorizationStatusSubject = CurrentValueSubject<NotificationAuthorizationStatus?, Never>(nil)
     
-    var authorizationStatus: AnyPublisher<NotificationAuthorizationStatus, Never> {
+    var authorizationStatus: AnyPublisher<NotificationAuthorizationStatus?, Never> {
         authorizationStatusSubject.eraseToAnyPublisher()
     }
     

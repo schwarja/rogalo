@@ -80,7 +80,8 @@ extension BluetoothManager: BluetoothManaging {
             disconnectPeripheral(with: paired.id)
         }
         
-        device = Device(peripheral: peripheral)
+        let state = deviceState(for: managerStatus) ?? .connecting
+        device = Device(peripheral: peripheral, state: state)
         
         connectPeripheral(with: peripheral.id)
     }
@@ -102,13 +103,14 @@ extension BluetoothManager: CBCentralManagerDelegate {
             }
         case .poweredOff, .unknown:
             managerStatus = .notAvailable
-            device?.state = .connecting
         case .unauthorized, .unsupported:
             managerStatus = .unauthorized
-            device?.state = .connecting
         @unknown default:
             managerStatus = .notAvailable
-            device?.state = .connecting
+        }
+        
+        if let state = deviceState(for: managerStatus) {
+            device?.state = state
         }
     }
     
@@ -131,7 +133,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
         if let error = error {
-            device?.state = .failed(error.localizedDescription)
+            device?.state = .failed(error: .connectionIssues(error.localizedDescription))
         }
         
         connectPeripheral(peripheral)
@@ -239,6 +241,17 @@ private extension BluetoothManager {
                 self?.connectPeripheral(peripheral)
                 self?.pairingSubscription = nil
             }
+        }
+    }
+    
+    func deviceState(for status: BluetoothStatus) -> DeviceState? {
+        switch status {
+        case .initial, .scanning:
+            return nil
+        case .notAvailable:
+            return .failed(error: .bleTurnedOff)
+        case .unauthorized:
+            return .failed(error: .bleUnauthorized)
         }
     }
 }

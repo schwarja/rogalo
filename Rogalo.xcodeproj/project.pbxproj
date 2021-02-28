@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		29775D21CA51DBB63BC25491 /* Pods_Rogalo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144E9CDB07CAEC5B095BE877 /* Pods_Rogalo.framework */; };
+		C1036CDD25EBDEC0003A358B /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CDC25EBDEC0003A358B /* DeviceState.swift */; };
+		C1036CE025EBE575003A358B /* ViewWithBackgroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CDF25EBE575003A358B /* ViewWithBackgroundStyle.swift */; };
+		C1036CE325EBE682003A358B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE225EBE682003A358B /* SettingsView.swift */; };
+		C1036CE625EBE8C8003A358B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE525EBE8C8003A358B /* SettingsViewModel.swift */; };
+		C1036CEA25EBEF59003A358B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE925EBEF59003A358B /* Constants.swift */; };
 		C112C726257D774B00B1F8A9 /* EngineCharacteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */; };
 		C112C72A257D7B0100B1F8A9 /* ValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C729257D7B0100B1F8A9 /* ValuesView.swift */; };
 		C112C72F257D7B2000B1F8A9 /* ValuesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C72E257D7B2000B1F8A9 /* ValuesStore.swift */; };
@@ -106,6 +111,11 @@
 		144E9CDB07CAEC5B095BE877 /* Pods_Rogalo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rogalo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		314A82F4509C07DF597258A0 /* Pods-Rogalo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rogalo.debug.xcconfig"; path = "Target Support Files/Pods-Rogalo/Pods-Rogalo.debug.xcconfig"; sourceTree = "<group>"; };
 		BEE09EE8BCF9541E40B534B2 /* Pods-Rogalo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rogalo.release.xcconfig"; path = "Target Support Files/Pods-Rogalo/Pods-Rogalo.release.xcconfig"; sourceTree = "<group>"; };
+		C1036CDC25EBDEC0003A358B /* DeviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceState.swift; sourceTree = "<group>"; };
+		C1036CDF25EBE575003A358B /* ViewWithBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithBackgroundStyle.swift; sourceTree = "<group>"; };
+		C1036CE225EBE682003A358B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C1036CE525EBE8C8003A358B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		C1036CE925EBEF59003A358B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineCharacteristics.swift; sourceTree = "<group>"; };
 		C112C729257D7B0100B1F8A9 /* ValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesView.swift; sourceTree = "<group>"; };
 		C112C72E257D7B2000B1F8A9 /* ValuesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesStore.swift; sourceTree = "<group>"; };
@@ -323,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				C155E19C257D730200A845B9 /* Device.swift */,
+				C1036CDC25EBDEC0003A358B /* DeviceState.swift */,
 				C16D9E3E25EAA1B6009F3ADE /* DeviceValue.swift */,
 				C16D9E6225EBABBF009F3ADE /* DeviceValueRange.swift */,
 				C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */,
@@ -380,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				C1A4AC2C25EBCD8400290AE2 /* TextualStyle.swift */,
+				C1036CDF25EBE575003A358B /* ViewWithBackgroundStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -505,6 +517,7 @@
 				C1CAE77A2586561F00CB60E7 /* Store */,
 				C1B25DAE257D43F9006E808C /* SettingsTab.swift */,
 				C1F36C6C258696F6002930B2 /* SettingsTabEventHandling.swift */,
+				C1036CE225EBE682003A358B /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -590,6 +603,7 @@
 				C1F36C6925867BA2002930B2 /* AppError.swift */,
 				C16D9E4225EAA488009F3ADE /* Formatters.swift */,
 				C16D9E7025EBB2E2009F3ADE /* LocalizedString.swift */,
+				C1036CE925EBEF59003A358B /* Constants.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -637,6 +651,7 @@
 				C1CAE77B2586562B00CB60E7 /* SettingsStoring.swift */,
 				C1CAE77E2586564A00CB60E7 /* SettingsStore.swift */,
 				C1CAE7812586565E00CB60E7 /* MockSettingsStore.swift */,
+				C1036CE525EBE8C8003A358B /* SettingsViewModel.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -849,6 +864,7 @@
 				C155E199257D515300A845B9 /* AppDependency.swift in Sources */,
 				C1A4AC3925EBCECA00290AE2 /* AppButton.swift in Sources */,
 				C16D9E5C25EBA9B7009F3ADE /* R.generated.swift in Sources */,
+				C1036CDD25EBDEC0003A358B /* DeviceState.swift in Sources */,
 				C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */,
 				C1CAE76B2586534C00CB60E7 /* ContentCoordinatorEventHandling.swift in Sources */,
 				C1F36C6D258696F6002930B2 /* SettingsTabEventHandling.swift in Sources */,
@@ -860,6 +876,7 @@
 				C16D9E3F25EAA1B6009F3ADE /* DeviceValue.swift in Sources */,
 				C1A4AC2D25EBCD8400290AE2 /* TextualStyle.swift in Sources */,
 				C1CAE73525863B1D00CB60E7 /* AppCoordinatorContaining.swift in Sources */,
+				C1036CE325EBE682003A358B /* SettingsView.swift in Sources */,
 				C149F1ED25EA62D400F55965 /* RecordsCoordinatorEventHandling.swift in Sources */,
 				C1CAE7922586636300CB60E7 /* DeviceManager.swift in Sources */,
 				C149F1F425EA637D00F55965 /* RecordsStore.swift in Sources */,
@@ -888,6 +905,7 @@
 				C1CAE76525864B4600CB60E7 /* Storage.swift in Sources */,
 				C149F1CC25EA472800F55965 /* TemperatureSignificantValues.swift in Sources */,
 				C1F36C7125869986002930B2 /* SettingsCoordinator.swift in Sources */,
+				C1036CEA25EBEF59003A358B /* Constants.swift in Sources */,
 				C149F1D825EA51F900F55965 /* NotificationEvent.swift in Sources */,
 				C1CAE76F258653B200CB60E7 /* ContentStore.swift in Sources */,
 				C149F1E325EA627A00F55965 /* RecordsTab.swift in Sources */,
@@ -916,6 +934,7 @@
 				C1B25D85257D4087006E808C /* SceneDelegate.swift in Sources */,
 				C1CAE75A2586461300CB60E7 /* PairingNavigationView.swift in Sources */,
 				C112C726257D774B00B1F8A9 /* EngineCharacteristics.swift in Sources */,
+				C1036CE625EBE8C8003A358B /* SettingsViewModel.swift in Sources */,
 				C1A4AC3625EBCE6300290AE2 /* Button+AppStyles.swift in Sources */,
 				C16D9E6325EBABBF009F3ADE /* DeviceValueRange.swift in Sources */,
 				C1CAE772258653C800CB60E7 /* ContentStoring.swift in Sources */,
@@ -923,6 +942,7 @@
 				C1F36C782586A1FA002930B2 /* ValuesCoordinator.swift in Sources */,
 				C149F1F725EA66F700F55965 /* MockRecordsStore.swift in Sources */,
 				C1CAE7472586422E00CB60E7 /* ContentCoordinator.swift in Sources */,
+				C1036CE025EBE575003A358B /* ViewWithBackgroundStyle.swift in Sources */,
 				C1B25D87257D4087006E808C /* PeripheralListView.swift in Sources */,
 				C1F36C742586999C002930B2 /* SettingsCoordinatorEventHandling.swift in Sources */,
 				C1CAE755258644FD00CB60E7 /* PairingCoordinatorEventHandling.swift in Sources */,

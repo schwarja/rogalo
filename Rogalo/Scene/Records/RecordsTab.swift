@@ -12,7 +12,7 @@ import SwiftUI
 struct RecordsTab: View {
     let store: RecordsStoring
     
-    @State var connectionState = Device.State.connecting
+    @State var connectionState = DeviceState.connecting
     @State var characteristics: [CharacteristicStoring] = []
 
     var body: some View {

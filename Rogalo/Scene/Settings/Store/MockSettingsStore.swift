@@ -8,7 +8,7 @@
 import Combine
 
 class MockSettingsStore: SettingsStoring {
-    var device: AnyPublisher<Device, Never> {
-        Just(.mock).eraseToAnyPublisher()
+    var model: AnyPublisher<SettingsViewModel, Never> {
+        Just(SettingsViewModel.empty).eraseToAnyPublisher()
     }
 }

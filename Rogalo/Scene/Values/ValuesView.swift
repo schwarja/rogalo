@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ValuesView: View {
-    let connectionState: Device.State
+    let connectionState: DeviceState
     let characteristics: [CharacteristicStoring]
     
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 VStack {
-                    ConnectionStateView(connectionState: connectionState)
+                    ConnectionStateView(connectionState: connectionState, eventHandler: nil)
+                        .layoutPriority(1)
                     
                     ForEach(characteristics, id: \.value) { characteristic in
                         CharacteristicView(store: characteristic)
@@ -31,7 +32,7 @@ struct ValuesView: View {
 struct ValuesView_Previews: PreviewProvider {
     static var previews: some View {
         ValuesView(
-            connectionState: .connecting,
+            connectionState: .failed(error: .bleUnauthorized),
             characteristics: [
                 CharacteristicStore(value: .temperature(value: 150)),
                 CharacteristicStore(value: .rpm(value: 8000)),

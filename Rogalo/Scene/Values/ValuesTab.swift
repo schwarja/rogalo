@@ -10,7 +10,7 @@ import SwiftUI
 struct ValuesTab: View {
     let store: ValuesStoring
     
-    @State var connectionState = Device.State.connecting
+    @State var connectionState = DeviceState.connecting
     @State var characteristics: [CharacteristicStoring] = []
 
     var body: some View {

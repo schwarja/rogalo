@@ -8,8 +8,8 @@
 import Combine
 
 class MockRecordsStore: RecordsStoring {
-    var connectionState: AnyPublisher<Device.State, Never> {
-        Just<Device.State>(.connecting)
+    var connectionState: AnyPublisher<DeviceState, Never> {
+        Just<DeviceState>(.connecting)
             .eraseToAnyPublisher()
     }
     

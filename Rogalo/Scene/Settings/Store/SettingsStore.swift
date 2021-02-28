@@ -9,12 +9,27 @@ import Combine
 
 class SettingsStore: SettingsStoring {
     let deviceManager: DeviceManaging
+    let notificationsManager: NotificationManaging
     
-    var device: AnyPublisher<Device, Never> {
-        deviceManager.device
+    var model: AnyPublisher<SettingsViewModel, Never> {
+        let authorization = notificationsManager
+            .authorizationStatus
+            .compactMap { $0 }
+        
+        return Publishers
+            .CombineLatest(deviceManager.device, authorization)
+            .map { device, notificationAuthorizationStatus in
+                SettingsViewModel(
+                    deviceName: device.name,
+                    deviceState: device.state,
+                    notificationsAutorization: notificationAuthorizationStatus
+                )
+            }
+            .eraseToAnyPublisher()
     }
     
-    init(deviceManager: DeviceManaging) {
+    init(deviceManager: DeviceManaging, notificationsManager: NotificationManaging) {
         self.deviceManager = deviceManager
+        self.notificationsManager = notificationsManager
     }
 }
