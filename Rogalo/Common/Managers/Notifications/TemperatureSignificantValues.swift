@@ -19,11 +19,11 @@ enum TemperatureSignificantValues: Double, CaseIterable {
     var notificationSoundResourceName: String {
         switch self {
         case .risk:
-            return "180"
+            return "TemperatureRisk-180"
         case .highRisk:
-            return "185"
+            return "TemperatureHighRist-185"
         case .emergency:
-            return "190"
+            return "TemperatureCritical-190"
         }
     }
     

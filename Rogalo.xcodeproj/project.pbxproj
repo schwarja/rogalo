@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29775D21CA51DBB63BC25491 /* Pods_Rogalo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144E9CDB07CAEC5B095BE877 /* Pods_Rogalo.framework */; };
 		C112C726257D774B00B1F8A9 /* EngineCharacteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */; };
 		C112C72A257D7B0100B1F8A9 /* ValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C729257D7B0100B1F8A9 /* ValuesView.swift */; };
 		C112C72F257D7B2000B1F8A9 /* ValuesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C72E257D7B2000B1F8A9 /* ValuesStore.swift */; };
@@ -16,9 +17,9 @@
 		C149F1C525EA455700F55965 /* NotificationManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1C425EA455700F55965 /* NotificationManaging.swift */; };
 		C149F1C925EA456E00F55965 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1C825EA456E00F55965 /* NotificationManager.swift */; };
 		C149F1CC25EA472800F55965 /* TemperatureSignificantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */; };
-		C149F1D225EA4EF200F55965 /* 190.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1CF25EA4EF200F55965 /* 190.m4a */; };
-		C149F1D325EA4EF200F55965 /* 185.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D025EA4EF200F55965 /* 185.m4a */; };
-		C149F1D425EA4EF200F55965 /* 180.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D125EA4EF200F55965 /* 180.m4a */; };
+		C149F1D225EA4EF200F55965 /* TemperatureCritical-190.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1CF25EA4EF200F55965 /* TemperatureCritical-190.m4a */; };
+		C149F1D325EA4EF200F55965 /* TemperatureHighRist-185.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D025EA4EF200F55965 /* TemperatureHighRist-185.m4a */; };
+		C149F1D425EA4EF200F55965 /* TemperatureRisk-180.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D125EA4EF200F55965 /* TemperatureRisk-180.m4a */; };
 		C149F1D825EA51F900F55965 /* NotificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1D725EA51F900F55965 /* NotificationEvent.swift */; };
 		C149F1DB25EA531E00F55965 /* NotificationAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1DA25EA531E00F55965 /* NotificationAuthorizationStatus.swift */; };
 		C149F1E325EA627A00F55965 /* RecordsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1E225EA627A00F55965 /* RecordsTab.swift */; };
@@ -40,6 +41,7 @@
 		C16D9E4625EABEA3009F3ADE /* CharacteristicGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4525EABEA3009F3ADE /* CharacteristicGradientView.swift */; };
 		C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4925EAC016009F3ADE /* Triangle.swift */; };
 		C16D9E4E25EAC373009F3ADE /* CharacteristicScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */; };
+		C16D9E5C25EBA9B7009F3ADE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E5B25EBA9B7009F3ADE /* R.generated.swift */; };
 		C1B25D83257D4087006E808C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D82257D4087006E808C /* AppDelegate.swift */; };
 		C1B25D85257D4087006E808C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D84257D4087006E808C /* SceneDelegate.swift */; };
 		C1B25D87257D4087006E808C /* PeripheralListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25D86257D4087006E808C /* PeripheralListView.swift */; };
@@ -89,6 +91,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		144E9CDB07CAEC5B095BE877 /* Pods_Rogalo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rogalo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		314A82F4509C07DF597258A0 /* Pods-Rogalo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rogalo.debug.xcconfig"; path = "Target Support Files/Pods-Rogalo/Pods-Rogalo.debug.xcconfig"; sourceTree = "<group>"; };
+		BEE09EE8BCF9541E40B534B2 /* Pods-Rogalo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rogalo.release.xcconfig"; path = "Target Support Files/Pods-Rogalo/Pods-Rogalo.release.xcconfig"; sourceTree = "<group>"; };
 		C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineCharacteristics.swift; sourceTree = "<group>"; };
 		C112C729257D7B0100B1F8A9 /* ValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesView.swift; sourceTree = "<group>"; };
 		C112C72E257D7B2000B1F8A9 /* ValuesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesStore.swift; sourceTree = "<group>"; };
@@ -98,9 +103,9 @@
 		C149F1C425EA455700F55965 /* NotificationManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManaging.swift; sourceTree = "<group>"; };
 		C149F1C825EA456E00F55965 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSignificantValues.swift; sourceTree = "<group>"; };
-		C149F1CF25EA4EF200F55965 /* 190.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 190.m4a; sourceTree = "<group>"; };
-		C149F1D025EA4EF200F55965 /* 185.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 185.m4a; sourceTree = "<group>"; };
-		C149F1D125EA4EF200F55965 /* 180.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 180.m4a; sourceTree = "<group>"; };
+		C149F1CF25EA4EF200F55965 /* TemperatureCritical-190.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TemperatureCritical-190.m4a"; sourceTree = "<group>"; };
+		C149F1D025EA4EF200F55965 /* TemperatureHighRist-185.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TemperatureHighRist-185.m4a"; sourceTree = "<group>"; };
+		C149F1D125EA4EF200F55965 /* TemperatureRisk-180.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TemperatureRisk-180.m4a"; sourceTree = "<group>"; };
 		C149F1D725EA51F900F55965 /* NotificationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEvent.swift; sourceTree = "<group>"; };
 		C149F1DA25EA531E00F55965 /* NotificationAuthorizationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAuthorizationStatus.swift; sourceTree = "<group>"; };
 		C149F1E225EA627A00F55965 /* RecordsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTab.swift; sourceTree = "<group>"; };
@@ -122,6 +127,7 @@
 		C16D9E4525EABEA3009F3ADE /* CharacteristicGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicGradientView.swift; sourceTree = "<group>"; };
 		C16D9E4925EAC016009F3ADE /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicScale.swift; sourceTree = "<group>"; };
+		C16D9E5B25EBA9B7009F3ADE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		C1B25D7F257D4087006E808C /* Rogalo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rogalo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B25D82257D4087006E808C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B25D84257D4087006E808C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,12 +183,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29775D21CA51DBB63BC25491 /* Pods_Rogalo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BBCF7C325E0C816D488988AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				144E9CDB07CAEC5B095BE877 /* Pods_Rogalo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C112C728257D7AE200B1F8A9 /* Values */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,9 +256,9 @@
 		C149F1CE25EA4E8600F55965 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				C149F1D125EA4EF200F55965 /* 180.m4a */,
-				C149F1D025EA4EF200F55965 /* 185.m4a */,
-				C149F1CF25EA4EF200F55965 /* 190.m4a */,
+				C149F1D125EA4EF200F55965 /* TemperatureRisk-180.m4a */,
+				C149F1D025EA4EF200F55965 /* TemperatureHighRist-185.m4a */,
+				C149F1CF25EA4EF200F55965 /* TemperatureCritical-190.m4a */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -326,6 +341,8 @@
 			children = (
 				C1B25D81257D4087006E808C /* Rogalo */,
 				C1B25D80257D4087006E808C /* Products */,
+				D5443120209E95A15E7A7C03 /* Pods */,
+				BBCF7C325E0C816D488988AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -386,6 +403,7 @@
 				C149F1CE25EA4E8600F55965 /* Audio */,
 				C1B25D88257D4095006E808C /* Assets.xcassets */,
 				C1B25D90257D4095006E808C /* Info.plist */,
+				C16D9E5B25EBA9B7009F3ADE /* R.generated.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -598,6 +616,15 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		D5443120209E95A15E7A7C03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				314A82F4509C07DF597258A0 /* Pods-Rogalo.debug.xcconfig */,
+				BEE09EE8BCF9541E40B534B2 /* Pods-Rogalo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -605,9 +632,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1B25D93257D4095006E808C /* Build configuration list for PBXNativeTarget "Rogalo" */;
 			buildPhases = (
+				44288CCB4A9AD9475E144FAA /* [CP] Check Pods Manifest.lock */,
+				C16D9E5725EBA84B009F3ADE /* R.swift */,
 				C1B25D7B257D4087006E808C /* Sources */,
 				C1B25D7C257D4087006E808C /* Frameworks */,
 				C1B25D7D257D4087006E808C /* Resources */,
+				C16D9E5E25EBA9FD009F3ADE /* Swiftlint */,
+				8FFD5706E3B1BBA6ABC19A67 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -655,15 +686,95 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C149F1D425EA4EF200F55965 /* 180.m4a in Resources */,
-				C149F1D225EA4EF200F55965 /* 190.m4a in Resources */,
+				C149F1D425EA4EF200F55965 /* TemperatureRisk-180.m4a in Resources */,
+				C149F1D225EA4EF200F55965 /* TemperatureCritical-190.m4a in Resources */,
 				C1B25D8F257D4095006E808C /* LaunchScreen.storyboard in Resources */,
 				C1B25D89257D4095006E808C /* Assets.xcassets in Resources */,
-				C149F1D325EA4EF200F55965 /* 185.m4a in Resources */,
+				C149F1D325EA4EF200F55965 /* TemperatureHighRist-185.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44288CCB4A9AD9475E144FAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rogalo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FFD5706E3B1BBA6ABC19A67 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rogalo/Pods-Rogalo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rogalo/Pods-Rogalo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rogalo/Pods-Rogalo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C16D9E5725EBA84B009F3ADE /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/Rogalo/Resources/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Rogalo/Resources/R.generated.swift\"\n";
+		};
+		C16D9E5E25EBA9FD009F3ADE /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "podSwiftlint=\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\nif [ -f \"$podSwiftlint\" ]; then\n    $podSwiftlint\nelse\n    echo \"'warning: Cannot find SwiftLint in the expected Cocoapods location.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C1B25D7B257D4087006E808C /* Sources */ = {
@@ -672,6 +783,7 @@
 			files = (
 				C1CAE7522586440700CB60E7 /* ParentCoordinatorContaining.swift in Sources */,
 				C155E199257D515300A845B9 /* AppDependency.swift in Sources */,
+				C16D9E5C25EBA9B7009F3ADE /* R.generated.swift in Sources */,
 				C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */,
 				C1CAE76B2586534C00CB60E7 /* ContentCoordinatorEventHandling.swift in Sources */,
 				C1F36C6D258696F6002930B2 /* SettingsTabEventHandling.swift in Sources */,
@@ -879,6 +991,7 @@
 		};
 		C1B25D94257D4095006E808C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 314A82F4509C07DF597258A0 /* Pods-Rogalo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -899,6 +1012,7 @@
 		};
 		C1B25D95257D4095006E808C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEE09EE8BCF9541E40B534B2 /* Pods-Rogalo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
