@@ -88,7 +88,7 @@ private extension NotificationManager {
         let formTemperature = Formatters.formattedTemperature(for: temperatureRaw)
         
         let content = UNMutableNotificationContent()
-        content.title = "Tempareture alert: Temperature at \(formTemperature)"
+        content.title = "\(LocalizedString.generalNotificationTemperatureTitle()): \(LocalizedString.generalNotificationTemperatureSubtitle()) \(formTemperature)"
         content.sound = UNNotificationSound
             .criticalSoundNamed(UNNotificationSoundName(temperature.notificationSoundFileName))
         

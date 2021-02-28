@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Rogalo
+
+  Created by Jan on 28.02.2021.
+  
+*/
+
+"general.notification.temperature.title" = "Temperature alert";
+"general.notification.temperature.subtitle" = "Temperature at";
+"general.alert.permission.denied.title" = "Permission denied";
+"general.alert.go.to.settings.action" = "Go to Settings";
+
+"device.values.empty" = "-";
+"device.name.unknown" = "Unnamed device";
+"device.values.flight.time" = "Flight time";
+"device.values.moto.time" = "Moto time";
+"device.values.engine.speed" = "Engine speed";
+"device.values.engine.speed.max" = "Maximum engine speed";
+"device.values.engine.speed.rpm" = "RPM";
+"device.values.temperature" = "Temperature";
+"device.values.temperature.max" = "Maximum temperature";
+"device.values.voltage" = "Voltage";
+
+"pairing.title" = "Pairing";
+"pairing.searching.title" = "Searching";
+"pairing.bluetooth.turned.off" = "Bluetooth is turned off";
+"pairing.state.connecting" = "Connecting";
+"pairing.state.connected" = "Connected";
+
+"values.title" = "Values";
+
+"records.title" = "Records";
+
+"settings.title" = "Settings";
+"settings.paired.device.title" = "Paired device";
+"settings.forget.device.action" = "Forget device";

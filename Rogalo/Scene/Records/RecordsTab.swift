@@ -21,7 +21,7 @@ struct RecordsTab: View {
                     connectionState: connectionState,
                     characteristics: characteristics
                 )
-                .navigationBarTitle("Records")
+            .navigationBarTitle(LocalizedString.recordsTitle())
         }
         .onReceive(store.connectionState, perform: { self.connectionState = $0 })
         .onReceive(store.characteristics, perform: { self.characteristics = $0 })

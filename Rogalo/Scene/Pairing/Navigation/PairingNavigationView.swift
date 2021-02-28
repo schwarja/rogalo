@@ -25,7 +25,7 @@ struct PairingNavigationView: View {
             } openSettings: {
                 coordinator?.handle(event: .openSettings)
             }
-            .navigationBarTitle("Pairing")
+            .navigationBarTitle(LocalizedString.pairingTitle())
         }
         .onReceive(store.state, perform: { self.state = $0 })
     }

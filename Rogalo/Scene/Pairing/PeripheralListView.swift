@@ -23,16 +23,16 @@ struct PeripheralListView: View {
                 }
             }
         case .loading, .initial:
-            Text("Searching")
+            Text(LocalizedString.pairingSearchingTitle())
         case .unauthorized:
             VStack {
-                Text("Permission denied")
-                Button("Go to Settings") {
+                Text(LocalizedString.generalAlertPermissionDeniedTitle())
+                Button(LocalizedString.generalAlertGoToSettingsAction()) {
                     openSettings()
                 }
             }
         case .notAvailable:
-            Text("Bluetooth is turned off")
+            Text(LocalizedString.pairingBluetoothTurnedOff())
         }
     }
 }

@@ -16,10 +16,10 @@ struct ConnectionStateView: View {
         
         switch connectionState {
         case .connected:
-            text = "Connected"
+            text = LocalizedString.pairingStateConnected()
             color = .green
         case .connecting, .failed:
-            text = "Connecting"
+            text = LocalizedString.pairingStateConnecting()
             color = .red
         }
         

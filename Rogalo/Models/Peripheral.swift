@@ -21,7 +21,7 @@ struct Peripheral: Codable {
     
     init(with peripheral: CBPeripheral) {
         self.id = peripheral.identifier.uuidString
-        self.name = peripheral.name ?? "<unknown>"
+        self.name = peripheral.name ?? LocalizedString.deviceNameUnknown()
         self.cbPeripheral = peripheral
     }
     

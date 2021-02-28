@@ -36,19 +36,19 @@ struct ContentView: View {
                     view
                         .tabItem {
                             Image(systemName: "chart.bar")
-                            Text("Values")
+                            Text(LocalizedString.valuesTitle())
                         }
                 case .records(let view):
                     view
                         .tabItem {
                             Image(systemName: "clock")
-                            Text("Records")
+                            Text(LocalizedString.recordsTitle())
                         }
                 case .settings(let view):
                     view
                         .tabItem {
                             Image(systemName: "iphone.radiowaves.left.and.right")
-                            Text("Settings")
+                            Text(LocalizedString.settingsTitle())
                         }
                 }
             }

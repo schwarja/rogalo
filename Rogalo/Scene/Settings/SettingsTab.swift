@@ -21,13 +21,13 @@ struct SettingsTab: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Paired device: \(device.name)")
+                Text("\(LocalizedString.settingsPairedDeviceTitle()): \(device.name)")
                 Divider()
-                Button("Forget device") {
+                Button(LocalizedString.settingsForgetDeviceAction()) {
                     coordinator?.handle(event: .unpair)
                 }
             }
-            .navigationBarTitle("Settings")
+            .navigationBarTitle(LocalizedString.settingsTitle())
         }
         .onReceive(store.device, perform: { self.device = $0 })
     }

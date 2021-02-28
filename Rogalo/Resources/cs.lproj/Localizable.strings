@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Rogalo
+
+  Created by Jan on 28.02.2021.
+  
+*/
+
+"general.notification.temperature.title" = "Příliš vysoká teplota";
+"general.notification.temperature.subtitle" = "Teplota na hodnotě";
+"general.alert.permission.denied.title" = "Aplikace nemá přístup";
+"general.alert.go.to.settings.action" = "Otevřít Nastavení";
+
+"device.values.empty" = "-";
+"device.name.unknown" = "Nepojmenované zařízení";
+"device.values.flight.time" = "Čas letu";
+"device.values.moto.time" = "Motohodiny";
+"device.values.engine.speed" = "Otáčky";
+"device.values.engine.speed.max" = "Maximální otáčky";
+"device.values.engine.speed.rpm" = "ot/min";
+"device.values.temperature" = "Teplota";
+"device.values.temperature.max" = "Maximální teplota";
+"device.values.voltage" = "Napětí";
+
+"pairing.title" = "Párování";
+"pairing.searching.title" = "Vyhledávání";
+"pairing.bluetooth.turned.off" = "Bluetooth je vypnuté";
+"pairing.state.connecting" = "Připojování";
+"pairing.state.connected" = "Připojeno";
+
+"values.title" = "Hodnoty";
+
+"records.title" = "Maximální hodnoty";
+
+"settings.title" = "Nastavení";
+"settings.paired.device.title" = "Spárované zařízení";
+"settings.forget.device.action" = "Zapomenout zařízení";
