@@ -66,7 +66,7 @@ struct CharacteristicGradientView_Previews: PreviewProvider {
             CharacteristicGradientView(
                 scale: CharacteristicScale(
                     midLocation: 0.5,
-                    progress: 1
+                    progress: 1.5
                 )
             )
         }
