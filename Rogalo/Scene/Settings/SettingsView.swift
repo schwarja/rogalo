@@ -24,6 +24,9 @@ struct SettingsView: View {
                         ConnectionStateView(connectionState: model.deviceState, eventHandler: coordinator)
                             .layoutPriority(1)
                     }
+                    if model.notificationsAutorization == .denied {
+                        NotificationStateView(notificationsState: model.notificationsAutorization, eventHandler: coordinator)
+                    }
                     AppText("\(LocalizedString.settingsPairedDeviceTitle()): \(model.deviceName)", style: .caption)
                     Divider()
                     AppButton(LocalizedString.settingsForgetDeviceAction(), style: .destructive) {

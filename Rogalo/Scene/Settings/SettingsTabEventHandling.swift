@@ -12,12 +12,19 @@ enum SettingsTabEvent {
     case openSettingsTapped
 }
 
-protocol SettingsTabEventHandling: AnyObject, ConnectionStateViewEventHandling {
+protocol SettingsTabEventHandling: AnyObject, ConnectionStateViewEventHandling, NotificationStateViewEventHandling {
     func handle(event: SettingsTabEvent)
 }
 
 extension SettingsTabEventHandling {
     func handle(event: ConnectionStateViewEvent) {
+        switch event {
+        case .openSettingsTapped:
+            handle(event: SettingsTabEvent.openSettingsTapped)
+        }
+    }
+    
+    func handle(event: NotificationStateViewEvent) {
         switch event {
         case .openSettingsTapped:
             handle(event: SettingsTabEvent.openSettingsTapped)

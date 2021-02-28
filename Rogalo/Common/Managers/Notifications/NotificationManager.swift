@@ -22,17 +22,7 @@ class NotificationManager: NotificationManaging {
     }
     
     init() {
-        UNUserNotificationCenter.current().getNotificationSettings { [weak self] settings in
-            switch settings.authorizationStatus {
-            case .authorized:
-                self?.authorizationStatusSubject.send(.authorized)
-            case .notDetermined:
-                self?.authorizationStatusSubject.send(.initial)
-            default:
-                self?.authorizationStatusSubject.send(.denied)
-            }
-        }
-        
+        getAuthorizationStatus()
         requestAuthorization()
         registerForLifecycleEvents()
     }
@@ -55,6 +45,7 @@ private extension NotificationManager {
     
     @objc func sceneDidBecomeActive() {
         isSceneActive = true
+        getAuthorizationStatus()
     }
     
     @objc func sceneWillDeactivate() {
@@ -64,6 +55,19 @@ private extension NotificationManager {
 
 // MARK: - Push notifications
 private extension NotificationManager {
+    func getAuthorizationStatus() {
+        UNUserNotificationCenter.current().getNotificationSettings { [weak self] settings in
+            switch settings.authorizationStatus {
+            case .authorized:
+                self?.authorizationStatusSubject.send(.authorized)
+            case .notDetermined:
+                self?.authorizationStatusSubject.send(.initial)
+            default:
+                self?.authorizationStatusSubject.send(.denied)
+            }
+        }
+    }
+    
     func requestAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { [weak self] (success, _) in
             let value = success ? NotificationAuthorizationStatus.authorized : NotificationAuthorizationStatus.denied
