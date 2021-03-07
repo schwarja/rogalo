@@ -37,5 +37,6 @@
 
 "settings.title" = "Nastavení";
 "settings.revolutions.multiplier.title" = "Přepočet otáček";
+"settings.battery.type.title" = "Typ baterie";
 "settings.paired.device.title" = "Spárované zařízení";
 "settings.forget.device.action" = "Zapomenout zařízení";

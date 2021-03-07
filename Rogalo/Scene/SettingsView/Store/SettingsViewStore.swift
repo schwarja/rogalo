@@ -29,6 +29,20 @@ class SettingsViewStore: SettingsViewStoring {
                 return "1 : \(stringValue)"
             }
     }()
+    
+    var batteryType: String {
+        let value = settingsService.batteryType.value
+
+        guard let index = settingsService.batteryTypes.firstIndex(of: value) else {
+            return ""
+        }
+        return batteryTypes[index]
+    }
+    lazy var batteryTypes: [String] = {
+        settingsService
+            .batteryTypes
+            .map { $0.rawValue.uppercased() }
+    }()
 
     var model: AnyPublisher<SettingsViewModel, Never> {
         let authorization = notificationsManager
@@ -43,7 +57,9 @@ class SettingsViewStore: SettingsViewStoring {
                     deviceState: device.state,
                     notificationsAutorization: notificationAuthorizationStatus,
                     rpmMultiplier: self.rpmMultiplier,
-                    rpmMultipliers: self.rpmMultipliers
+                    rpmMultipliers: self.rpmMultipliers,
+                    batteryType: self.batteryType,
+                    batteryTypes: self.batteryTypes
                 )
             }
             .eraseToAnyPublisher()
@@ -61,5 +77,13 @@ class SettingsViewStore: SettingsViewStoring {
         }
 
         settingsService.rpmMultiplier.send(settingsService.rpmMultipliers[index])
+    }
+    
+    func didUpdate(batteryType: String) {
+        guard let index = batteryTypes.firstIndex(of: batteryType) else {
+            return
+        }
+
+        settingsService.batteryType.send(settingsService.batteryTypes[index])
     }
 }

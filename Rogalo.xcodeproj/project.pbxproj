@@ -78,6 +78,8 @@
 		C1B25DAF257D43F9006E808C /* SettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25DAE257D43F9006E808C /* SettingsTab.swift */; };
 		C1B25DB3257D48A2006E808C /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25DB2257D48A2006E808C /* BluetoothManager.swift */; };
 		C1B25DB8257D48BF006E808C /* BluetoothManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25DB7257D48BF006E808C /* BluetoothManaging.swift */; };
+		C1CA846D25F56FF400D16A23 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CA846C25F56FF400D16A23 /* Battery.swift */; };
+		C1CA847125F57C5E00D16A23 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CA847025F57C5E00D16A23 /* Order.swift */; };
 		C1CAE7252586394700CB60E7 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CAE7242586394700CB60E7 /* SceneCoordinator.swift */; };
 		C1CAE7292586397100CB60E7 /* SceneCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CAE7282586397100CB60E7 /* SceneCoordinating.swift */; };
 		C1CAE72C25863AAC00CB60E7 /* AppCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CAE72B25863AAC00CB60E7 /* AppCoordinating.swift */; };
@@ -193,6 +195,8 @@
 		C1B25DAE257D43F9006E808C /* SettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTab.swift; sourceTree = "<group>"; };
 		C1B25DB2257D48A2006E808C /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		C1B25DB7257D48BF006E808C /* BluetoothManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManaging.swift; sourceTree = "<group>"; };
+		C1CA846C25F56FF400D16A23 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
+		C1CA847025F57C5E00D16A23 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		C1CAE7242586394700CB60E7 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		C1CAE7282586397100CB60E7 /* SceneCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinating.swift; sourceTree = "<group>"; };
 		C1CAE72B25863AAC00CB60E7 /* AppCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinating.swift; sourceTree = "<group>"; };
@@ -350,11 +354,13 @@
 		C155E18F257D4C2D00A845B9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C1CA846C25F56FF400D16A23 /* Battery.swift */,
 				C155E19C257D730200A845B9 /* Device.swift */,
 				C1036CDC25EBDEC0003A358B /* DeviceState.swift */,
 				C16D9E3E25EAA1B6009F3ADE /* DeviceValue.swift */,
 				C16D9E6225EBABBF009F3ADE /* DeviceValueRange.swift */,
 				C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */,
+				C1CA847025F57C5E00D16A23 /* Order.swift */,
 				C155E190257D4C3E00A845B9 /* Peripheral.swift */,
 			);
 			path = Models;
@@ -916,8 +922,10 @@
 				C1A4AC3925EBCECA00290AE2 /* AppButton.swift in Sources */,
 				C16D9E5C25EBA9B7009F3ADE /* R.generated.swift in Sources */,
 				C1036CDD25EBDEC0003A358B /* DeviceState.swift in Sources */,
+				C1CA847125F57C5E00D16A23 /* Order.swift in Sources */,
 				C182EAED25F53FC1009B2321 /* SettingsAlertHeader.swift in Sources */,
 				C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */,
+				C1CA846D25F56FF400D16A23 /* Battery.swift in Sources */,
 				C1CAE76B2586534C00CB60E7 /* ContentCoordinatorEventHandling.swift in Sources */,
 				C182EAFE25F5495D009B2321 /* SettingsServicing.swift in Sources */,
 				C1F36C6D258696F6002930B2 /* SettingsTabEventHandling.swift in Sources */,

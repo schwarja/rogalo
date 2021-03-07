@@ -21,12 +21,21 @@ struct CharacteristicView: View {
                     .padding(4)
                     .minimumScaleFactor(0.5)
                 
-                AppText(store.formattedValue, style: .value)
+                let valueText = Text(store.formattedValue)
+                    .font(AppTextStyle.value.font)
                     .padding(8)
                     .lineLimit(1)
                     .minimumScaleFactor(0.2)
+                
+                if store.scale?.isCritical ?? false {
+                    valueText
+                        .foregroundColor(.appFailure)
+                } else {
+                    valueText
+                        .foregroundColor(AppTextStyle.value.color)
                 }
             }
+        }
     }
 }
 

@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct DeviceValueRange {
+struct DeviceValueRange: Codable, Equatable {
     let min: Double
     let risk: Double
     let critical: Double
+    
+    var order: Order {
+        min < critical ? .asceding : .descending
+    }
 }

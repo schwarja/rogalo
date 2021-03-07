@@ -35,6 +35,17 @@ struct SettingsView: View {
                 .onReceive([self.model].publisher.first(), perform: { value in
                     self.store.didUpdate(rpmMultiplier: value.rpmMultiplier)
                 })
+                
+                Picker(LocalizedString.settingsBatteryTypeTitle(), selection: $model.batteryType) {
+                    ForEach(model.batteryTypes, id: \.self) { value in
+                        Text(value)
+                    }
+                }
+                .font(AppTextStyle.body.font)
+                .foregroundColor(AppTextStyle.body.color)
+                .onReceive([self.model].publisher.first(), perform: { value in
+                    self.store.didUpdate(batteryType: value.batteryType)
+                })
             }
             
         }
