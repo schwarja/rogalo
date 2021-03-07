@@ -8,6 +8,7 @@
 import Combine
 
 protocol Storage {
-    var rpmMultiplier: CurrentValueSubject<Float, Never> { get }
+    var battery: CurrentValueSubject<Battery, Never> { get }
     var pairedDevice: CurrentValueSubject<Peripheral?, Never> { get }
+    var rpmMultiplier: CurrentValueSubject<Float, Never> { get }
 }

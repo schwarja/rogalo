@@ -10,6 +10,7 @@ import Foundation
 
 class AppStorage: Storage {
     enum UserDefaultsKey: String, CaseIterable {
+        case battery
         case peripheral
         case rpmMultiplier
     }
@@ -19,6 +20,7 @@ class AppStorage: Storage {
     private let encoder = JSONEncoder()
     private var cancellables = Set<AnyCancellable>()
     
+    let battery = CurrentValueSubject<Battery, Never>(Battery(type: .lipo))
     let pairedDevice = CurrentValueSubject<Peripheral?, Never>(nil)
     let rpmMultiplier = CurrentValueSubject<Float, Never>(1)
     
@@ -34,15 +36,17 @@ private extension AppStorage {
     func setup() {
         for key in UserDefaultsKey.allCases {
             switch key {
+            case .battery:
+                setupEncodableObject(for: .battery, type: Battery.self, subject: battery)
             case .peripheral:
-                setupEncodableObject(for: .peripheral, type: Peripheral.self, subject: pairedDevice)
+                setupEncodableObject(for: .peripheral, type: Peripheral?.self, subject: pairedDevice)
             case .rpmMultiplier:
                 setupFloat(for: .rpmMultiplier, subject: rpmMultiplier)
             }
         }
     }
     
-    func setupEncodableObject<T: Codable>(for key: UserDefaultsKey, type: T.Type, subject: CurrentValueSubject<T?, Never>) {
+    func setupEncodableObject<T: Codable>(for key: UserDefaultsKey, type: T.Type, subject: CurrentValueSubject<T, Never>) {
         if
             let rawData = data(for: key),
             let object = try? decoder.decode(type, from: rawData)
