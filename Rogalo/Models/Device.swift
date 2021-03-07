@@ -29,21 +29,30 @@ struct Device {
             stateUpdated()
         }
     }
+    var rpmMultiplier: Float = 1
     
     var rpm: Int? {
-        guard let value = characteristics[safe: EngineCharacteristic.speed.rawValue] else {
+        guard let stringValue = characteristics[safe: EngineCharacteristic.speed.rawValue] else {
             return nil
         }
         
-        return Int(value)
+        guard let value = Float(stringValue) else {
+            return nil
+        }
+        
+        return Int(value/rpmMultiplier)
     }
     
     var rpmMax: Int? {
-        guard let value = characteristics[safe: EngineCharacteristic.speedMax.rawValue] else {
+        guard let stringValue = characteristics[safe: EngineCharacteristic.speedMax.rawValue] else {
             return nil
         }
         
-        return Int(value)
+        guard let value = Float(stringValue) else {
+            return nil
+        }
+        
+        return Int(value/rpmMultiplier)
     }
     
     var voltage: Double? {

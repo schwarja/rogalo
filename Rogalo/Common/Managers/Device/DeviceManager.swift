@@ -19,7 +19,12 @@ class DeviceManager: DeviceManaging {
     var device: AnyPublisher<Device, Never> {
         bluetoothManager
             .connectedDevice
-            .compactMap { $0 }
+            .combineLatest(storage.rpmMultiplier)
+            .compactMap { device, multiplier in
+                var copy = device
+                copy?.rpmMultiplier = multiplier
+                return copy
+            }
             .eraseToAnyPublisher()
     }
     

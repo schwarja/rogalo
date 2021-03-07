@@ -30,22 +30,30 @@ struct PeripheralListView: View {
     let actionHandler: PeriperalListViewEventHandling?
     
     var body: some View {
-        VStack {
+        List {
             if case .failed = model.connectionState {
-                ConnectionStateView(connectionState: model.connectionState, eventHandler: actionHandler)
+                Section(footer: ConnectionStateView(connectionState: model.connectionState, eventHandler: actionHandler)) {}
+                    .listRowInsets(EdgeInsets())
             }
             
-            AppText(LocalizedString.pairingSelectDeviceFromListTitle(), style: .body)
-                .padding(8)
-                .frame(maxWidth: .infinity)
-
-            List(model.peripherals, id: \.id) { peripheral in
-                AppButton(peripheral.name) {
+            let devicesSection = Section(
+                header: AppText(LocalizedString.pairingSelectDeviceFromListTitle(), style: .body).padding([.vertical], 8)) {
+                ForEach(model.peripherals, id: \.id) { peripheral in
+                    Button(action: {
                         actionHandler?.handle(event: .didSelect(peripheral: peripheral))
+                    }, label: {
+                        AppText(peripheral.name, style: .body)
+                    })
                 }
             }
-            .listStyle(GroupedListStyle())
+
+            if #available(iOS 14.0, *) {
+                devicesSection
+                    .textCase(nil)
+            } else {
+                devicesSection
+            }
         }
-        .frame(alignment: .top)
+        .listStyle(GroupedListStyle())
     }
 }

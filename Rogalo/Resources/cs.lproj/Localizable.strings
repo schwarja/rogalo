@@ -36,5 +36,6 @@
 "records.title" = "Maximální hodnoty";
 
 "settings.title" = "Nastavení";
+"settings.revolutions.multiplier.title" = "Přepočet otáček";
 "settings.paired.device.title" = "Spárované zařízení";
 "settings.forget.device.action" = "Zapomenout zařízení";

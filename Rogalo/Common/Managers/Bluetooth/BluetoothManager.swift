@@ -98,6 +98,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
         case .poweredOn, .resetting:
             managerStatus = .scanning
             if let id = device?.id {
+                device?.state = .connecting
                 connectPeripheral(with: id)
             } else if numberOfListeners > 0 {
                 startScanningIfNeeded()

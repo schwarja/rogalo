@@ -36,5 +36,6 @@
 "records.title" = "Records";
 
 "settings.title" = "Settings";
+"settings.revolutions.multiplier.title" = "Revolutions multiplier";
 "settings.paired.device.title" = "Paired device";
 "settings.forget.device.action" = "Forget device";
