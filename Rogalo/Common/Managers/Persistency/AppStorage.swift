@@ -104,7 +104,7 @@ private extension AppStorage {
     }
     
     func float(for key: UserDefaultsKey) -> Float? {
-        container.float(forKey: key.rawValue)
+        container.object(forKey: key.rawValue) as? Float
     }
     
     func store(_ value: Any?, for key: UserDefaultsKey) {

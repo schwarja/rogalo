@@ -47,7 +47,7 @@ struct ContentView: View {
                 case .settings(let view):
                     view
                         .tabItem {
-                            Image(systemName: "iphone.radiowaves.left.and.right")
+                            Image(systemName: "gearshape")
                             AppText(LocalizedString.settingsTitle(), style: .tab)
                         }
                 }

@@ -15,6 +15,7 @@ enum DependencyType {
     case deviceManagerRegistration
     case storage
     case notifications
+    case settingsService
 }
 
 protocol DependencyContainer {

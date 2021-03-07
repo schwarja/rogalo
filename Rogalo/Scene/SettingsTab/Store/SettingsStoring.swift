@@ -8,5 +8,5 @@
 import Combine
 
 protocol SettingsStoring {
-    var model: AnyPublisher<SettingsViewModel, Never> { get }
+    var settingsViewStore: SettingsViewStoring { get }
 }

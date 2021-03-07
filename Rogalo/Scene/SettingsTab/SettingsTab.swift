@@ -11,8 +11,6 @@ struct SettingsTab: View {
     let store: SettingsStoring
     weak var coordinator: SettingsTabEventHandling?
     
-    @State var model: SettingsViewModel = .empty
-    
     init(store: SettingsStoring, coordinator: SettingsTabEventHandling?) {
         self.store = store
         self.coordinator = coordinator
@@ -20,9 +18,8 @@ struct SettingsTab: View {
 
     var body: some View {
         NavigationView {
-            SettingsView(model: model, actionHandler: coordinator)
+            SettingsView(store: store.settingsViewStore, actionHandler: coordinator)
                 .navigationBarTitle(LocalizedString.settingsTitle())
         }
-        .onReceive(store.model, perform: { self.model = $0 })
     }
 }

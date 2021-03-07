@@ -8,7 +8,7 @@
 import Combine
 
 class MockSettingsStore: SettingsStoring {
-    var model: AnyPublisher<SettingsViewModel, Never> {
-        Just(SettingsViewModel.empty).eraseToAnyPublisher()
+    var settingsViewStore: SettingsViewStoring {
+        MockSettingsViewStore()
     }
 }

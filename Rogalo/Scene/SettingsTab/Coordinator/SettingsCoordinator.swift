@@ -50,7 +50,8 @@ private extension SettingsCoordinator {
     func makeSettingsStore() -> SettingsStore {
         SettingsStore(
             deviceManager: container[.deviceManager],
-            notificationsManager: container[.notifications]
+            notificationsManager: container[.notifications],
+            settingsService: container[.settingsService]
         )
     }
 }
