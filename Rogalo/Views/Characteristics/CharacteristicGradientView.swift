@@ -10,16 +10,27 @@ import SwiftUI
 struct CharacteristicGradientView: View {
     let scale: CharacteristicScale
     
-    var colors: Gradient {
-        let stop1 = Gradient.Stop(color: .green, location: 0)
-        let stop2 = Gradient.Stop(color: .yellow, location: scale.midLocation)
-        let stop3 = Gradient.Stop(color: .red, location: 1)
-
-        return Gradient(stops: [stop1, stop2, stop3])
+    let colors: [Color]
+    
+    init(scale: CharacteristicScale) {
+        self.scale = scale
+        
+        switch scale.order {
+        case .asceding:
+            colors = [.green, .yellow, .red]
+        case .descending:
+            colors = [.red, .yellow, .green]
+        }
     }
     
     var gradient: LinearGradient {
-        LinearGradient(gradient: colors, startPoint: .leading, endPoint: .trailing)
+        let stop1 = Gradient.Stop(color: colors[0], location: 0)
+        let stop2 = Gradient.Stop(color: colors[1], location: scale.midLocation)
+        let stop3 = Gradient.Stop(color: colors[2], location: 1)
+
+        let grad = Gradient(stops: [stop1, stop2, stop3])
+        
+        return LinearGradient(gradient: grad, startPoint: .leading, endPoint: .trailing)
     }
     
     var mask: LinearGradient {
@@ -60,13 +71,15 @@ struct CharacteristicGradientView_Previews: PreviewProvider {
             CharacteristicGradientView(
                 scale: CharacteristicScale(
                     midLocation: 0.5,
-                    progress: 0.7
+                    progress: 0.7,
+                    order: .asceding
                 )
             )
             CharacteristicGradientView(
                 scale: CharacteristicScale(
                     midLocation: 0.5,
-                    progress: 1.5
+                    progress: 1.5,
+                    order: .descending
                 )
             )
         }

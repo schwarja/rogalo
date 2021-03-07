@@ -31,6 +31,28 @@ struct Device {
     }
     var rpmMultiplier: Float = 1
     
+    let rpmRange = DeviceValueRange(min: 0, risk: 8500, critical: 9500)
+    let temperatureRange = DeviceValueRange(min: 0, risk: 185, critical: 195)
+    var batteryRange: DeviceValueRange?
+
+    init(peripheral: Peripheral, state: DeviceState) {
+        self.peripheral = peripheral
+        self.state = state
+    }
+
+    mutating func append(_ value: String) {
+        guard let components = process(value: incompleteValue + value) else {
+            incompleteValue += value
+            return
+        }
+        
+        incompleteValue = ""
+        characteristics = components
+    }
+}
+
+// MARK: - Computed properties {
+extension Device {
     var rpm: Int? {
         guard let stringValue = characteristics[safe: EngineCharacteristic.speed.rawValue] else {
             return nil
@@ -104,23 +126,9 @@ struct Device {
         
         return Double(value)
     }
-    
-    init(peripheral: Peripheral, state: DeviceState) {
-        self.peripheral = peripheral
-        self.state = state
-    }
-
-    mutating func append(_ value: String) {
-        guard let components = process(value: incompleteValue + value) else {
-            incompleteValue += value
-            return
-        }
-        
-        incompleteValue = ""
-        characteristics = components
-    }
 }
 
+// MARK: - Processing
 private extension Device {
     func process(value: String) -> [String]? {
         guard let range = value.range(of: Self.terminationSequence) else {

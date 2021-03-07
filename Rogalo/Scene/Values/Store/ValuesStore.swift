@@ -19,9 +19,9 @@ class ValuesStore: ValuesStoring {
             .device
             .map { device -> [CharacteristicStoring] in
                 [
-                    CharacteristicStore(value: .temperature(value: device.temperature)),
-                    CharacteristicStore(value: .rpm(value: device.rpm)),
-                    CharacteristicStore(value: .voltage(value: device.voltage)),
+                    CharacteristicStore(value: .temperature(value: device.temperature), range: device.temperatureRange),
+                    CharacteristicStore(value: .rpm(value: device.rpm), range: device.rpmRange),
+                    CharacteristicStore(value: .voltage(value: device.voltage), range: device.batteryRange),
                     CharacteristicStore(value: .flightTime(value: device.flightTime))
                 ]
             }

@@ -20,9 +20,15 @@ class DeviceManager: DeviceManaging {
         bluetoothManager
             .connectedDevice
             .combineLatest(storage.rpmMultiplier)
-            .compactMap { device, multiplier in
+            .compactMap { device, multiplier -> Device? in
                 var copy = device
                 copy?.rpmMultiplier = multiplier
+                return copy
+            }
+            .combineLatest(storage.battery)
+            .map { device, battery -> Device in
+                var copy = device
+                copy.batteryRange = battery.range
                 return copy
             }
             .eraseToAnyPublisher()

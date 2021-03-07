@@ -8,23 +8,17 @@
 import Foundation
 
 struct Battery: Codable {
-    struct Range: Codable {
-        let minimum: Double
-        let optimum: Double
-        let maximum: Double
-    }
-    
     enum BatteryType: String, Codable {
         case lipo
         case nicd
         case custom
         
-        var range: Range? {
+        var range: DeviceValueRange? {
             switch self {
             case .lipo:
-                return Range(minimum: 12, optimum: 14.8, maximum: 16.8)
+                return DeviceValueRange(min: 16.8, risk: 14.8, critical: 12)
             case .nicd:
-                return Range(minimum: 13.6, optimum: 19.2, maximum: 21.6)
+                return DeviceValueRange(min: 21.6, risk: 19.2, critical: 13.6)
             case .custom:
                 return nil
             }
@@ -32,9 +26,9 @@ struct Battery: Codable {
     }
     
     let type: BatteryType
-    let range: Range
+    let range: DeviceValueRange
     
-    init(type: BatteryType, range: Range? = nil) {
+    init(type: BatteryType, range: DeviceValueRange? = nil) {
         self.type = type
         
         if let range = range {
