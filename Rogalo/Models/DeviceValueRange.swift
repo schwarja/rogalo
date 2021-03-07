@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DeviceValueRange: Codable {
+struct DeviceValueRange: Codable, Equatable {
     let min: Double
     let risk: Double
     let critical: Double

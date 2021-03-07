@@ -37,5 +37,6 @@
 
 "settings.title" = "Settings";
 "settings.revolutions.multiplier.title" = "Revolutions multiplier";
+"settings.battery.type.title" = "Battery type";
 "settings.paired.device.title" = "Paired device";
 "settings.forget.device.action" = "Forget device";

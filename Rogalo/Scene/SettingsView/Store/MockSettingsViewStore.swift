@@ -16,4 +16,8 @@ class MockSettingsViewStore: SettingsViewStoring {
     func didUpdate(rpmMultiplier: String) {
         
     }
+    
+    func didUpdate(batteryType: String) {
+        
+    }
 }

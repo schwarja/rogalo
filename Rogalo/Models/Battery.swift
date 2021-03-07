@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Battery: Codable {
-    enum BatteryType: String, Codable {
+struct Battery: Codable, Equatable {
+    enum BatteryType: String, Codable, Equatable {
         case lipo
         case nicd
         case custom
@@ -18,7 +18,7 @@ struct Battery: Codable {
             case .lipo:
                 return DeviceValueRange(min: 16.8, risk: 14.8, critical: 12)
             case .nicd:
-                return DeviceValueRange(min: 21.6, risk: 19.2, critical: 13.6)
+                return DeviceValueRange(min: 12, risk: 9, critical: 2)
             case .custom:
                 return nil
             }
