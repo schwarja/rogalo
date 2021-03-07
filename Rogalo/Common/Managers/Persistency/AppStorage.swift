@@ -11,7 +11,7 @@ import Foundation
 class AppStorage: Storage {
     enum UserDefaultsKey: String, CaseIterable {
         case peripheral
-        case revolutionsMultiplier
+        case rpmMultiplier
     }
     
     private let container: UserDefaults
@@ -20,7 +20,7 @@ class AppStorage: Storage {
     private var cancellables = Set<AnyCancellable>()
     
     let pairedDevice = CurrentValueSubject<Peripheral?, Never>(nil)
-    let revolutionsMultiplier = CurrentValueSubject<Float, Never>(1)
+    let rpmMultiplier = CurrentValueSubject<Float, Never>(1)
     
     init(container: UserDefaults) {
         self.container = container
@@ -36,8 +36,8 @@ private extension AppStorage {
             switch key {
             case .peripheral:
                 setupEncodableObject(for: .peripheral, type: Peripheral.self, subject: pairedDevice)
-            case .revolutionsMultiplier:
-                setupFloat(for: .revolutionsMultiplier, subject: revolutionsMultiplier)
+            case .rpmMultiplier:
+                setupFloat(for: .rpmMultiplier, subject: rpmMultiplier)
             }
         }
     }

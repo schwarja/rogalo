@@ -11,5 +11,5 @@ import SwiftUI
 protocol SettingsViewStoring {
     var model: AnyPublisher<SettingsViewModel, Never> { get }
     
-    func didUpdate(revolutionsMultiplier: String)
+    func didUpdate(rpmMultiplier: String)
 }

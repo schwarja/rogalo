@@ -13,7 +13,7 @@ class MockSettingsViewStore: SettingsViewStoring {
         Just<SettingsViewModel>(.empty).eraseToAnyPublisher()
     }
     
-    func didUpdate(revolutionsMultiplier: String) {
+    func didUpdate(rpmMultiplier: String) {
         
     }
 }

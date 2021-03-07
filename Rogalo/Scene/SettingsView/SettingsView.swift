@@ -25,15 +25,15 @@ struct SettingsView: View {
             
             Section(
                 footer: SettingsPairedDeviceFooterView(deviceName: model.deviceName, coordinator: coordinator) ) {
-                Picker(LocalizedString.settingsRevolutionsMultiplierTitle(), selection: $model.revolutionsMultiplier) {
-                    ForEach(model.revolutionsMultipliers, id: \.self) { value in
+                Picker(LocalizedString.settingsRevolutionsMultiplierTitle(), selection: $model.rpmMultiplier) {
+                    ForEach(model.rpmMultipliers, id: \.self) { value in
                         Text(value)
                     }
                 }
                 .font(AppTextStyle.body.font)
                 .foregroundColor(AppTextStyle.body.color)
                 .onReceive([self.model].publisher.first(), perform: { value in
-                    self.store.didUpdate(revolutionsMultiplier: value.revolutionsMultiplier)
+                    self.store.didUpdate(rpmMultiplier: value.rpmMultiplier)
                 })
             }
             

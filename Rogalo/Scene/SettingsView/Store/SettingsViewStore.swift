@@ -13,17 +13,17 @@ class SettingsViewStore: SettingsViewStoring {
     let notificationsManager: NotificationManaging
     let settingsService: SettingsServicing
     
-    var revolutionsMultiplier: String {
-        let value = settingsService.revolutionsMultiplier.value
+    var rpmMultiplier: String {
+        let value = settingsService.rpmMultiplier.value
 
-        guard let index = settingsService.revolutionsMultipliers.firstIndex(of: value) else {
+        guard let index = settingsService.rpmMultipliers.firstIndex(of: value) else {
             return ""
         }
-        return revolutionsMultipliers[index]
+        return rpmMultipliers[index]
     }
-    lazy var revolutionsMultipliers: [String] = {
+    lazy var rpmMultipliers: [String] = {
         settingsService
-            .revolutionsMultipliers
+            .rpmMultipliers
             .map { value -> String in
                 let stringValue = String(format: "%.f", value)
                 return "1 : \(stringValue)"
@@ -42,8 +42,8 @@ class SettingsViewStore: SettingsViewStoring {
                     deviceName: device.name,
                     deviceState: device.state,
                     notificationsAutorization: notificationAuthorizationStatus,
-                    revolutionsMultiplier: self.revolutionsMultiplier,
-                    revolutionsMultipliers: self.revolutionsMultipliers
+                    rpmMultiplier: self.rpmMultiplier,
+                    rpmMultipliers: self.rpmMultipliers
                 )
             }
             .eraseToAnyPublisher()
@@ -55,11 +55,11 @@ class SettingsViewStore: SettingsViewStoring {
         self.settingsService = settingsService
     }
     
-    func didUpdate(revolutionsMultiplier: String) {
-        guard let index = revolutionsMultipliers.firstIndex(of: revolutionsMultiplier) else {
+    func didUpdate(rpmMultiplier: String) {
+        guard let index = rpmMultipliers.firstIndex(of: rpmMultiplier) else {
             return
         }
 
-        settingsService.revolutionsMultiplier.send(settingsService.revolutionsMultipliers[index])
+        settingsService.rpmMultiplier.send(settingsService.rpmMultipliers[index])
     }
 }

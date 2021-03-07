@@ -11,14 +11,14 @@ struct SettingsViewModel {
     let deviceName: String
     let deviceState: DeviceState
     let notificationsAutorization: NotificationAuthorizationStatus
-    var revolutionsMultiplier: String
-    let revolutionsMultipliers: [String]
+    var rpmMultiplier: String
+    let rpmMultipliers: [String]
 
     static let empty = SettingsViewModel(
         deviceName: "Name",
         deviceState: .connected,
         notificationsAutorization: .initial,
-        revolutionsMultiplier: "1:1",
-        revolutionsMultipliers: ["1:1", "1:2"]
+        rpmMultiplier: "1:1",
+        rpmMultipliers: ["1:1", "1:2"]
     )
 }
