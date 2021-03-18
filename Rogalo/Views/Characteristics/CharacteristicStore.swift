@@ -42,24 +42,12 @@ struct CharacteristicStore: CharacteristicStoring {
         let number: Double
         switch value {
         case let .rpm(rpm):
-            guard let rpm = rpm else {
-                return nil
-            }
-            
             number = Double(rpm)
             
-        case let .temperature(temp):
-            guard let temp = temp else {
-                return nil
-            }
-            
+        case let .temperatureEngine(temp):
             number = temp
             
-        case let .voltage(value):
-            guard let voltage = value else {
-                return nil
-            }
-            
+        case let .voltage(voltage):
             number = voltage
             
         default:

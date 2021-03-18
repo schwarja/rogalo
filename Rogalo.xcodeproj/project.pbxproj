@@ -21,6 +21,9 @@
 		C112C733257D7D9200B1F8A9 /* ValuesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C732257D7D9200B1F8A9 /* ValuesTab.swift */; };
 		C133B2F625EA91A200F070C1 /* CharacteristicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133B2F525EA91A200F070C1 /* CharacteristicView.swift */; };
 		C133B2FA25EA91C500F070C1 /* CharacteristicStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133B2F925EA91C500F070C1 /* CharacteristicStore.swift */; };
+		C13FFE422603E6D000D91BF7 /* ExhaustCritical-600.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C13FFE412603E6D000D91BF7 /* ExhaustCritical-600.m4a */; };
+		C13FFE452603E72D00D91BF7 /* ExhaustSignificantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FFE442603E72D00D91BF7 /* ExhaustSignificantValues.swift */; };
+		C13FFE492603E8EF00D91BF7 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FFE482603E8EF00D91BF7 /* Resource.swift */; };
 		C149F1C525EA455700F55965 /* NotificationManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1C425EA455700F55965 /* NotificationManaging.swift */; };
 		C149F1C925EA456E00F55965 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1C825EA456E00F55965 /* NotificationManager.swift */; };
 		C149F1CC25EA472800F55965 /* TemperatureSignificantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */; };
@@ -135,6 +138,9 @@
 		C112C732257D7D9200B1F8A9 /* ValuesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesTab.swift; sourceTree = "<group>"; };
 		C133B2F525EA91A200F070C1 /* CharacteristicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicView.swift; sourceTree = "<group>"; };
 		C133B2F925EA91C500F070C1 /* CharacteristicStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicStore.swift; sourceTree = "<group>"; };
+		C13FFE412603E6D000D91BF7 /* ExhaustCritical-600.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ExhaustCritical-600.m4a"; sourceTree = "<group>"; };
+		C13FFE442603E72D00D91BF7 /* ExhaustSignificantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhaustSignificantValues.swift; sourceTree = "<group>"; };
+		C13FFE482603E8EF00D91BF7 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		C149F1C425EA455700F55965 /* NotificationManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManaging.swift; sourceTree = "<group>"; };
 		C149F1C825EA456E00F55965 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSignificantValues.swift; sourceTree = "<group>"; };
@@ -305,6 +311,7 @@
 				C149F1C425EA455700F55965 /* NotificationManaging.swift */,
 				C149F1C825EA456E00F55965 /* NotificationManager.swift */,
 				C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */,
+				C13FFE442603E72D00D91BF7 /* ExhaustSignificantValues.swift */,
 				C149F1D725EA51F900F55965 /* NotificationEvent.swift */,
 				C149F1DA25EA531E00F55965 /* NotificationAuthorizationStatus.swift */,
 			);
@@ -314,6 +321,7 @@
 		C149F1CE25EA4E8600F55965 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				C13FFE412603E6D000D91BF7 /* ExhaustCritical-600.m4a */,
 				C149F1D125EA4EF200F55965 /* TemperatureRisk-180.m4a */,
 				C149F1D025EA4EF200F55965 /* TemperatureHighRist-185.m4a */,
 				C149F1CF25EA4EF200F55965 /* TemperatureCritical-190.m4a */,
@@ -628,6 +636,7 @@
 				C1CAE73C25863CCF00CB60E7 /* DependencyInjection */,
 				C1CAE73825863BB200CB60E7 /* Coordinators */,
 				C1A4AC2B25EBCD6900290AE2 /* Styles */,
+				C13FFE482603E8EF00D91BF7 /* Resource.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -821,6 +830,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C149F1D425EA4EF200F55965 /* TemperatureRisk-180.m4a in Resources */,
+				C13FFE422603E6D000D91BF7 /* ExhaustCritical-600.m4a in Resources */,
 				C16D9E6A25EBB1E2009F3ADE /* Localizable.strings in Resources */,
 				C149F1D225EA4EF200F55965 /* TemperatureCritical-190.m4a in Resources */,
 				C1B25D8F257D4095006E808C /* LaunchScreen.storyboard in Resources */,
@@ -969,6 +979,7 @@
 				C1CAE775258653FD00CB60E7 /* MockContentStore.swift in Sources */,
 				C1CAE76525864B4600CB60E7 /* Storage.swift in Sources */,
 				C149F1CC25EA472800F55965 /* TemperatureSignificantValues.swift in Sources */,
+				C13FFE452603E72D00D91BF7 /* ExhaustSignificantValues.swift in Sources */,
 				C1F36C7125869986002930B2 /* SettingsCoordinator.swift in Sources */,
 				C182EAEA25F53E54009B2321 /* SettingsPairedDeviceFooterView.swift in Sources */,
 				C1036CEA25EBEF59003A358B /* Constants.swift in Sources */,
@@ -980,6 +991,7 @@
 				C155E19D257D730200A845B9 /* Device.swift in Sources */,
 				C155E195257D4FD600A845B9 /* PairingStoreState.swift in Sources */,
 				C149F1C525EA455700F55965 /* NotificationManaging.swift in Sources */,
+				C13FFE492603E8EF00D91BF7 /* Resource.swift in Sources */,
 				C1CAE75E2586478800CB60E7 /* MockPairingStore.swift in Sources */,
 				C1CAE74F258643AD00CB60E7 /* ViewCoordinator.swift in Sources */,
 				C1B25DAF257D43F9006E808C /* SettingsTab.swift in Sources */,

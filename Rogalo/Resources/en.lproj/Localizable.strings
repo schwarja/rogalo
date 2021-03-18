@@ -6,7 +6,8 @@
   
 */
 
-"general.notification.temperature.title" = "Temperature alert";
+"general.notification.temperature.engine.title" = "Engine temperature alert";
+"general.notification.temperature.exhaust.title" = "Exhaust temperature alert";
 "general.notification.temperature.subtitle" = "Temperature at";
 "general.alert.bluetooth.permission.denied.title" = "Permission for Bluetooth denied";
 "general.alert.bluetooth.permission.denied.subtitle" = "If you want to connect to a device, please, enable access to Bluetooth services in Settings";
@@ -15,14 +16,17 @@
 "general.alert.go.to.settings.action" = "Go to Settings";
 
 "device.values.empty" = "-";
+"device.values.no.data" = "No data";
 "device.name.unknown" = "Unnamed device";
 "device.values.flight.time" = "Flight time";
 "device.values.moto.time" = "Moto time";
 "device.values.engine.speed" = "Engine speed";
 "device.values.engine.speed.max" = "Maximum engine speed";
 "device.values.engine.speed.rpm" = "RPM";
-"device.values.temperature" = "Temperature";
-"device.values.temperature.max" = "Maximum temperature";
+"device.values.temperature.engine" = "Engine temperature";
+"device.values.temperature.engine.max" = "Maximum engine temperature";
+"device.values.temperature.exhaust" = "Exhaust temperature";
+"device.values.temperature.exhaust.max" = "Maximum exhaust temperature";
 "device.values.voltage" = "Voltage";
 
 "pairing.title" = "Pairing";

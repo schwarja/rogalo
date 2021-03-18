@@ -18,12 +18,45 @@ class ValuesStore: ValuesStoring {
         deviceManager
             .device
             .map { device -> [CharacteristicStoring] in
-                [
-                    CharacteristicStore(value: .temperature(value: device.temperature), range: device.temperatureRange),
-                    CharacteristicStore(value: .rpm(value: device.rpm), range: device.rpmRange),
-                    CharacteristicStore(value: .voltage(value: device.voltage), range: device.batteryRange),
-                    CharacteristicStore(value: .flightTime(value: device.flightTime))
-                ]
+                var result = [CharacteristicStoring]()
+                
+                if let temperature = device.temperatureEngine {
+                    result.append(
+                        CharacteristicStore(
+                            value: .temperatureEngine(value: temperature),
+                            range: device.engineTemperatureRange
+                        )
+                    )
+                }
+                if let temperature = device.temperatureExhaust {
+                    result.append(
+                        CharacteristicStore(
+                            value: .temperatureExhaust(value: temperature),
+                            range: device.exhaustTemperatureRange
+                        )
+                    )
+                }
+                if let rpm = device.rpm {
+                    result.append(
+                        CharacteristicStore(
+                            value: .rpm(value: rpm),
+                            range: device.rpmRange
+                        )
+                    )
+                }
+                if let voltage = device.voltage {
+                    result.append(
+                        CharacteristicStore(
+                            value: .voltage(value: voltage),
+                            range: device.batteryRange
+                        )
+                    )
+                }
+                if let time = device.flightTime {
+                    result.append(CharacteristicStore(value: .flightTime(value: time)))
+                }
+                
+                return result
             }
             .eraseToAnyPublisher()
     }

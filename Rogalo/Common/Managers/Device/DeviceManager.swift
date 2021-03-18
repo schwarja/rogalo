@@ -57,7 +57,7 @@ class DeviceManager: DeviceManaging {
 private extension DeviceManager {
     func setup() {
         device
-            .compactMap(\.temperature)
+            .compactMap(\.temperatureEngine)
             .filter { $0 >= TemperatureSignificantValues.risk.rawValue }
             .compactMap { temperature -> TemperatureSignificantValues? in
                 for value in TemperatureSignificantValues.sortedValues where temperature >= value.rawValue {

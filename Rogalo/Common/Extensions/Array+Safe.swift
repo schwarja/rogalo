@@ -9,7 +9,7 @@ import Foundation
 
 extension Array {
     subscript(safe index: Index) -> Element? {
-        guard index.distance(to: self.count) >= 0 else {
+        guard index.distance(to: 0) <= 0 && index.distance(to: self.count) > 0 else {
             return nil
         }
         

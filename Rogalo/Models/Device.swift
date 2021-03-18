@@ -32,7 +32,8 @@ struct Device {
     var rpmMultiplier: Float = 1
     
     let rpmRange = DeviceValueRange(min: 0, risk: 8500, critical: 9500)
-    let temperatureRange = DeviceValueRange(min: 0, risk: 185, critical: 195)
+    let engineTemperatureRange = DeviceValueRange(min: 0, risk: 185, critical: 195)
+    let exhaustTemperatureRange = DeviceValueRange(min: 0, risk: 500, critical: 600)
     var batteryRange: DeviceValueRange?
 
     init(peripheral: Peripheral, state: DeviceState) {
@@ -111,16 +112,32 @@ extension Device {
         return hours*3600 + minutes*60
     }
     
-    var temperature: Double? {
-        guard let value = characteristics[safe: EngineCharacteristic.temperature.rawValue] else {
+    var temperatureEngine: Double? {
+        guard let value = characteristics[safe: EngineCharacteristic.temperatureEngine.rawValue] else {
             return nil
         }
         
         return Double(value)
     }
     
-    var temperatureMax: Double? {
-        guard let value = characteristics[safe: EngineCharacteristic.temperatureMax.rawValue] else {
+    var temperatureEngineMax: Double? {
+        guard let value = characteristics[safe: EngineCharacteristic.temperatureEngineMax.rawValue] else {
+            return nil
+        }
+        
+        return Double(value)
+    }
+    
+    var temperatureExhaust: Double? {
+        guard let value = characteristics[safe: EngineCharacteristic.temperatureExhaust.rawValue] else {
+            return nil
+        }
+        
+        return Double(value)
+    }
+    
+    var temperatureExhaustMax: Double? {
+        guard let value = characteristics[safe: EngineCharacteristic.temperatureExhaustMax.rawValue] else {
             return nil
         }
         
