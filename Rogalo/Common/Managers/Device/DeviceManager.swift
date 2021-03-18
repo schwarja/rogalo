@@ -31,6 +31,7 @@ class DeviceManager: DeviceManaging {
                 copy.batteryRange = battery.range
                 return copy
             }
+            .share()
             .eraseToAnyPublisher()
     }
     
@@ -71,6 +72,24 @@ private extension DeviceManager {
             .removeDuplicates()
             .sink { [weak self] value in
                 self?.notificationManager.sendNotification(for: .temperatureAlert(type: value))
+            }
+            .store(in: &cancellables)
+        
+        device
+            .compactMap(\.temperatureExhaust)
+            .filter { $0 >= ExhaustSignificantValues.emergency.rawValue }
+            .compactMap { temperature -> ExhaustSignificantValues? in
+                for value in ExhaustSignificantValues.sortedValues where temperature >= value.rawValue {
+                    return value
+                }
+                
+                return nil
+            }
+            .removeDuplicates()
+            .debounce(for: .seconds(10), scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink { [weak self] value in
+                self?.notificationManager.sendNotification(for: .exhaustAlert(type: value))
             }
             .store(in: &cancellables)
     }

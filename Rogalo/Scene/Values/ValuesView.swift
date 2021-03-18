@@ -51,7 +51,8 @@ struct ValuesView_Previews: PreviewProvider {
                     CharacteristicStore(value: .voltage(value: 30)),
                     CharacteristicStore(value: .flightTime(value: 7480))
                 ]
-            ).previewDevice(PreviewDevice.init(rawValue: "iPhone SE (1st generation)"))
+            )
+            .previewDevice(PreviewDevice(rawValue: "iPhone SE (1st generation)"))
         }
     }
 }
