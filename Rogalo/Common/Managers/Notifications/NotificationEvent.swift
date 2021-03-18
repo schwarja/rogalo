@@ -9,4 +9,5 @@ import Foundation
 
 enum NotificationEvent {
     case temperatureAlert(type: TemperatureSignificantValues)
+    case exhaustAlert(type: ExhaustSignificantValues)
 }

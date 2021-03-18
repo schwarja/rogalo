@@ -16,7 +16,9 @@ enum EngineCharacteristic: Int {
     case flightHours
     case motoMinutes
     case motoHours
-    case temperatureMax
-    case temperature
-    case extra
+    case temperatureEngineMax
+    case temperatureEngine
+    case fuel
+    case temperatureExhaust
+    case temperatureExhaustMax
 }

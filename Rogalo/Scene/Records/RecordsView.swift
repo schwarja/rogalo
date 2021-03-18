@@ -17,10 +17,16 @@ struct RecordsView: View {
                 VStack {
                     ConnectionStateView(connectionState: connectionState, eventHandler: nil)
                         .layoutPriority(1)
-
-                    ForEach(characteristics, id: \.value) { characteristic in
-                        CharacteristicView(store: characteristic)
-                            .frame(maxHeight: .infinity)
+                    
+                    if characteristics.isEmpty {
+                        Spacer()
+                        AppText(LocalizedString.deviceValuesNoData(), style: .headline)
+                        Spacer()
+                    } else {
+                        ForEach(characteristics, id: \.value) { characteristic in
+                            CharacteristicView(store: characteristic)
+                                .frame(maxHeight: .infinity)
+                        }
                     }
                 }
                 .frame(minHeight: geometry.size.height)
@@ -31,11 +37,18 @@ struct RecordsView: View {
 
 struct RecordsView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordsView(
-            connectionState: .connecting,
-            characteristics: [
-                CharacteristicStore(value: .rpm(value: 8000))
-            ]
-        )
+        Group {
+            RecordsView(
+                connectionState: .connecting,
+                characteristics: []
+            )
+            RecordsView(
+                connectionState: .connected,
+                characteristics: [
+                    CharacteristicStore(value: .rpm(value: 8000))
+                ]
+            )
+
+        }
     }
 }

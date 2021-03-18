@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TemperatureSignificantValues: Double, CaseIterable {
+enum TemperatureSignificantValues: Double, CaseIterable, ResourceSpecifying {
     case risk = 180
     case highRisk = 185
     case emergency = 190
@@ -16,7 +16,7 @@ enum TemperatureSignificantValues: Double, CaseIterable {
         Self.allCases.sorted(by: { $0.rawValue >= $1.rawValue })
     }
     
-    var notificationSoundResourceName: String {
+    var resourceName: String {
         switch self {
         case .risk:
             return "TemperatureRisk-180"
@@ -27,11 +27,7 @@ enum TemperatureSignificantValues: Double, CaseIterable {
         }
     }
     
-    var notificationSoundExtensionName: String {
+    var extensionName: String {
         "m4a"
-    }
-    
-    var notificationSoundFileName: String {
-        "\(notificationSoundResourceName).\(notificationSoundExtensionName)"
     }
 }

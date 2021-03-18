@@ -82,6 +82,8 @@ private extension NotificationManager {
         switch event {
         case let .temperatureAlert(type):
             content = notificationContent(for: type)
+        case let .exhaustAlert(type):
+            content = notificationContent(for: type)
         }
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
@@ -94,9 +96,21 @@ private extension NotificationManager {
         let formTemperature = Formatters.formattedTemperature(for: temperatureRaw)
         
         let content = UNMutableNotificationContent()
-        content.title = "\(LocalizedString.generalNotificationTemperatureTitle()): \(LocalizedString.generalNotificationTemperatureSubtitle()) \(formTemperature)"
+        content.title = "\(LocalizedString.generalNotificationTemperatureEngineTitle()): \(LocalizedString.generalNotificationTemperatureSubtitle()) \(formTemperature)"
         content.sound = UNNotificationSound
-            .criticalSoundNamed(UNNotificationSoundName(temperature.notificationSoundFileName))
+            .criticalSoundNamed(UNNotificationSoundName(temperature.fileName))
+        
+        return content
+    }
+    
+    func notificationContent(for temperature: ExhaustSignificantValues) -> UNMutableNotificationContent {
+        let temperatureRaw = temperature.rawValue
+        let formTemperature = Formatters.formattedTemperature(for: temperatureRaw)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "\(LocalizedString.generalNotificationTemperatureExhaustTitle()): \(LocalizedString.generalNotificationTemperatureSubtitle()) \(formTemperature)"
+        content.sound = UNNotificationSound
+            .criticalSoundNamed(UNNotificationSoundName(temperature.fileName))
         
         return content
     }
@@ -109,6 +123,8 @@ private extension NotificationManager {
         switch event {
         case let .temperatureAlert(type):
             item = notificationPlayerItem(for: type)
+        case let .exhaustAlert(type):
+            item = notificationPlayerItem(for: type)
         }
 
         player.replaceCurrentItem(with: item)
@@ -117,10 +133,10 @@ private extension NotificationManager {
         generator.notificationOccurred(.warning)
     }
     
-    func notificationPlayerItem(for temperature: TemperatureSignificantValues) -> AVPlayerItem? {
+    func notificationPlayerItem(for resource: ResourceSpecifying) -> AVPlayerItem? {
         guard let url = Bundle.main.url(
-            forResource: temperature.notificationSoundResourceName,
-            withExtension: temperature.notificationSoundExtensionName
+            forResource: resource.resourceName,
+            withExtension: resource.extensionName
         ) else {
             return nil
         }

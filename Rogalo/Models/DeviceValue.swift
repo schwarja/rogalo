@@ -8,14 +8,16 @@
 import Foundation
 
 enum DeviceValue: Hashable {
-    case rpm(value: Int?)
-    case rpmMax(value: Int?)
-    case voltage(value: Double?)
-    case flightTime(value: TimeInterval?)
-    case motoTime(value: TimeInterval?)
-    case temperature(value: Double?)
-    case temperatureMax(value: Double?)
-    
+    case rpm(value: Int)
+    case rpmMax(value: Int)
+    case voltage(value: Double)
+    case flightTime(value: TimeInterval)
+    case motoTime(value: TimeInterval)
+    case temperatureEngine(value: Double)
+    case temperatureEngineMax(value: Double)
+    case temperatureExhaust(value: Double)
+    case temperatureExhaustMax(value: Double)
+
     var description: String {
         switch self {
         case .flightTime:
@@ -26,10 +28,14 @@ enum DeviceValue: Hashable {
             return LocalizedString.deviceValuesEngineSpeed()
         case .rpmMax:
             return LocalizedString.deviceValuesEngineSpeedMax()
-        case .temperature:
-            return LocalizedString.deviceValuesTemperature()
-        case .temperatureMax:
-            return LocalizedString.deviceValuesTemperatureMax()
+        case .temperatureEngine:
+            return LocalizedString.deviceValuesTemperatureEngine()
+        case .temperatureEngineMax:
+            return LocalizedString.deviceValuesTemperatureEngineMax()
+        case .temperatureExhaust:
+            return LocalizedString.deviceValuesTemperatureExhaust()
+        case .temperatureExhaustMax:
+            return LocalizedString.deviceValuesTemperatureExhaustMax()
         case .voltage:
             return LocalizedString.deviceValuesVoltage()
         }
@@ -37,32 +43,16 @@ enum DeviceValue: Hashable {
     
     var formattedString: String {
         switch self {
-        case let .rpm(value), let .rpmMax(value):
-            guard let rpm = value else {
-                return LocalizedString.deviceValuesEmpty()
-            }
-            
+        case let .rpm(rpm), let .rpmMax(rpm):
             return "\(rpm) \(LocalizedString.deviceValuesEngineSpeedRpm())"
             
-        case let .flightTime(value), let .motoTime(value):
-            guard let time = value else {
-                return LocalizedString.deviceValuesEmpty()
-            }
-            
+        case let .flightTime(time), let .motoTime(time):
             return Formatters.flightTimeFormatter.string(from: time) ?? LocalizedString.deviceValuesEmpty()
             
-        case .temperature(let value), .temperatureMax(let value):
-            guard let temperature = value else {
-                return LocalizedString.deviceValuesEmpty()
-            }
+        case .temperatureEngine(let temp), .temperatureEngineMax(let temp), .temperatureExhaust(let temp), .temperatureExhaustMax(let temp):
+            return Formatters.formattedTemperature(for: temp)
             
-            return Formatters.formattedTemperature(for: temperature)
-            
-        case let .voltage(value):
-            guard let voltage = value else {
-                return LocalizedString.deviceValuesEmpty()
-            }
-            
+        case let .voltage(voltage):
             return Formatters.formattedVoltage(for: voltage)
         }
     }
