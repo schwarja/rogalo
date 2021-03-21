@@ -133,6 +133,7 @@
 		C1E6175E2607EA850043934A /* NotificationAuthorizationStatus+StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E6175D2607EA840043934A /* NotificationAuthorizationStatus+StatusViewModel.swift */; };
 		C1E617622607EB290043934A /* LocationAuthorization+StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E617612607EB290043934A /* LocationAuthorization+StatusViewModel.swift */; };
 		C1E617652607EF9F0043934A /* MapTabEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E617642607EF9F0043934A /* MapTabEventHandling.swift */; };
+		C1E617682607F52D0043934A /* UIKitMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E617672607F52D0043934A /* UIKitMapView.swift */; };
 		C1F36C66258677BE002930B2 /* PairingNavigationViewEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F36C65258677BE002930B2 /* PairingNavigationViewEventHandling.swift */; };
 		C1F36C6A25867BA2002930B2 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F36C6925867BA2002930B2 /* AppError.swift */; };
 		C1F36C6D258696F6002930B2 /* SettingsTabEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F36C6C258696F6002930B2 /* SettingsTabEventHandling.swift */; };
@@ -274,6 +275,7 @@
 		C1E6175D2607EA840043934A /* NotificationAuthorizationStatus+StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationAuthorizationStatus+StatusViewModel.swift"; sourceTree = "<group>"; };
 		C1E617612607EB290043934A /* LocationAuthorization+StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationAuthorization+StatusViewModel.swift"; sourceTree = "<group>"; };
 		C1E617642607EF9F0043934A /* MapTabEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTabEventHandling.swift; sourceTree = "<group>"; };
+		C1E617672607F52D0043934A /* UIKitMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitMapView.swift; sourceTree = "<group>"; };
 		C1F36C65258677BE002930B2 /* PairingNavigationViewEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingNavigationViewEventHandling.swift; sourceTree = "<group>"; };
 		C1F36C6925867BA2002930B2 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		C1F36C6C258696F6002930B2 /* SettingsTabEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabEventHandling.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				C17F05C32607B853000E9917 /* MapRenderingView.swift */,
+				C1E617672607F52D0043934A /* UIKitMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1071,6 +1074,7 @@
 				C182EAF025F5455D009B2321 /* SettingsViewStoring.swift in Sources */,
 				C1CAE77F2586564A00CB60E7 /* SettingsStore.swift in Sources */,
 				C155E191257D4C3E00A845B9 /* Peripheral.swift in Sources */,
+				C1E617682607F52D0043934A /* UIKitMapView.swift in Sources */,
 				C17F05A02607A841000E9917 /* LocationManager.swift in Sources */,
 				C1B25D83257D4087006E808C /* AppDelegate.swift in Sources */,
 				C1CAE73125863AD800CB60E7 /* AppCoordinator.swift in Sources */,
