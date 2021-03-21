@@ -15,13 +15,16 @@ struct ContentView: View {
                 return 0
             case .records:
                 return 1
-            case .settings:
+            case .map:
                 return 2
+            case .settings:
+                return 3
             }
         }
         
         case characteristics(view: ValuesTab)
         case records(view: RecordsTab)
+        case map(view: MapTab)
         case settings(view: SettingsTab)
     }
     
@@ -43,6 +46,12 @@ struct ContentView: View {
                         .tabItem {
                             Image(systemName: "clock")
                             AppText(LocalizedString.recordsTitle(), style: .tab)
+                        }
+                case .map(let view):
+                    view
+                        .tabItem {
+                            Image(systemName: "map")
+                            AppText(LocalizedString.mapTitle(), style: .tab)
                         }
                 case .settings(let view):
                     view

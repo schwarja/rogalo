@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DeviceValue: Hashable {
+enum DeviceValue: Hashable, Value {
     case rpm(value: Int)
     case rpmMax(value: Int)
     case voltage(value: Double)

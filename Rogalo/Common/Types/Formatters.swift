@@ -45,4 +45,27 @@ enum Formatters {
 
         return measurementFormatter.string(from: measurement)
     }
+    
+    static func formattedSpeed(for speed: Double) -> String {
+        let measurement = Measurement(
+            value: speed,
+            unit: UnitSpeed.metersPerSecond
+        )
+
+        return measurementFormatter.string(from: measurement)
+    }
+    
+    static func formattedAltitude(for length: Double) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = 0
+        
+        let formatter = MeasurementFormatter()
+        formatter.numberFormatter = numberFormatter
+        formatter.unitStyle = .medium
+        formatter.unitOptions = .naturalScale
+        
+        let measurement = Measurement(value: length, unit: UnitLength.meters)
+
+        return formatter.string(from: measurement)
+    }
 }

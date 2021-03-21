@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-protocol PeriperalListViewEventHandling: ConnectionStateViewEventHandling {
+protocol PeriperalListViewEventHandling: StatusViewEventHandling {
     func handle(event: PeriperalListViewEvent)
 }
 
 extension PeriperalListViewEventHandling {
-    func handle(event: ConnectionStateViewEvent) {
+    func handle(event: StatusViewEvent) {
         switch event {
         case .openSettingsTapped:
             handle(event: PeriperalListViewEvent.openSettingsTapped)
@@ -32,7 +32,11 @@ struct PeripheralListView: View {
     var body: some View {
         List {
             if case .failed = model.connectionState {
-                Section(footer: ConnectionStateView(connectionState: model.connectionState, eventHandler: actionHandler)) {}
+                Section(
+                    footer: StatusView(
+                        model: model.connectionState.statusViewModel,
+                        eventHandler: actionHandler
+                    )) {}
                     .listRowInsets(EdgeInsets())
             }
             

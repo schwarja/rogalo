@@ -15,22 +15,22 @@ class RecordsStore: RecordsStoring {
             .map(\.state)
             .eraseToAnyPublisher()
     }
-    var characteristics: AnyPublisher<[CharacteristicStoring], Never> {
+    var characteristics: AnyPublisher<[DeviceValueStoring], Never> {
         deviceManager
-            .device.map { device -> [CharacteristicStoring] in
-                var result = [CharacteristicStoring]()
+            .device.map { device -> [DeviceValueStoring] in
+                var result = [DeviceValueStoring]()
                 
                 if let temperature = device.temperatureEngineMax {
-                    result.append(CharacteristicStore(value: .temperatureEngineMax(value: temperature)))
+                    result.append(DeviceValueStore(value: .temperatureEngineMax(value: temperature)))
                 }
                 if let temperature = device.temperatureExhaustMax {
-                    result.append(CharacteristicStore(value: .temperatureExhaustMax(value: temperature)))
+                    result.append(DeviceValueStore(value: .temperatureExhaustMax(value: temperature)))
                 }
                 if let rpm = device.rpmMax {
-                    result.append(CharacteristicStore(value: .rpmMax(value: rpm)))
+                    result.append(DeviceValueStore(value: .rpmMax(value: rpm)))
                 }
                 if let time = device.motoTime {
-                    result.append(CharacteristicStore(value: .motoTime(value: time)))
+                    result.append(DeviceValueStore(value: .motoTime(value: time)))
                 }
                 
                 return result

@@ -13,6 +13,7 @@ enum DependencyType {
     case bluetoothManager
     case deviceManager
     case deviceManagerRegistration
+    case locationManager
     case storage
     case notifications
     case settingsService

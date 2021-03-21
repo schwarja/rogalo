@@ -25,11 +25,11 @@ struct SettingsAlertHeader: View {
     private func content() -> some View {
         VStack {
             if deviceState != .connected {
-                ConnectionStateView(connectionState: deviceState, eventHandler: coordinator)
+                StatusView(model: deviceState.statusViewModel, eventHandler: coordinator)
                     .layoutPriority(1)
             }
             if notificationsAutorization == .denied {
-                NotificationStateView(notificationsState: notificationsAutorization, eventHandler: coordinator)
+                StatusView(model: notificationsAutorization.statusViewModel, eventHandler: coordinator)
             }
         }
     }

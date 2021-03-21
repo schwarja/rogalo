@@ -24,6 +24,10 @@
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>App needs to pair with BLE device</string>
+	<key>NSLocationUsageDescription</key>
+	<string>App is able to track your flight</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>App needs to track your location in order to show your speed, altitude and flight path</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

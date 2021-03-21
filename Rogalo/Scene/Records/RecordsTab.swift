@@ -13,7 +13,7 @@ struct RecordsTab: View {
     let store: RecordsStoring
     
     @State var connectionState = DeviceState.connecting
-    @State var characteristics: [CharacteristicStoring] = []
+    @State var characteristics: [DeviceValueStoring] = []
 
     var body: some View {
         NavigationView {
