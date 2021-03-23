@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ValuesView: View {
     let connectionState: DeviceState
-    let characteristics: [CharacteristicStoring]
+    let characteristics: [DeviceValueStoring]
     
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 VStack {
-                    ConnectionStateView(connectionState: connectionState, eventHandler: nil)
+                    StatusView(model: connectionState.statusViewModel, eventHandler: nil)
                         .layoutPriority(1)
                     
                     if characteristics.isEmpty {
@@ -23,8 +23,8 @@ struct ValuesView: View {
                         AppText(LocalizedString.deviceValuesNoData(), style: .headline)
                         Spacer()
                     } else {
-                        ForEach(characteristics, id: \.value) { characteristic in
-                            CharacteristicView(store: characteristic)
+                        ForEach(characteristics, id: \.deviceValue) { characteristic in
+                            ValueView(store: characteristic)
                                 .frame(maxHeight: .infinity)
                         }
                     }
@@ -45,11 +45,11 @@ struct ValuesView_Previews: PreviewProvider {
             ValuesView(
                 connectionState: .connected,
                 characteristics: [
-                    CharacteristicStore(value: .temperatureEngine(value: 150)),
-                    CharacteristicStore(value: .temperatureExhaust(value: 150)),
-                    CharacteristicStore(value: .rpm(value: 8000)),
-                    CharacteristicStore(value: .voltage(value: 30)),
-                    CharacteristicStore(value: .flightTime(value: 7480))
+                    DeviceValueStore(value: .temperatureEngine(value: 150)),
+                    DeviceValueStore(value: .temperatureExhaust(value: 150)),
+                    DeviceValueStore(value: .rpm(value: 8000)),
+                    DeviceValueStore(value: .voltage(value: 30)),
+                    DeviceValueStore(value: .flightTime(value: 7480))
                 ]
             )
             .previewDevice(PreviewDevice(rawValue: "iPhone SE (1st generation)"))

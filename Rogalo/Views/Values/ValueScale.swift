@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CharacteristicScale {
+struct ValueScale {
     let midLocation: CGFloat
     let progress: CGFloat
     let order: Order

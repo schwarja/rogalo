@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct CharacteristicGradientView: View {
-    let scale: CharacteristicScale
+struct ValueGradientView: View {
+    let scale: ValueScale
     
     let colors: [Color]
     
-    init(scale: CharacteristicScale) {
+    init(scale: ValueScale) {
         self.scale = scale
         
         switch scale.order {
@@ -65,18 +65,18 @@ struct CharacteristicGradientView: View {
     }
 }
 
-struct CharacteristicGradientView_Previews: PreviewProvider {
+struct ValueGradientView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CharacteristicGradientView(
-                scale: CharacteristicScale(
+            ValueGradientView(
+                scale: ValueScale(
                     midLocation: 0.5,
                     progress: 0.7,
                     order: .asceding
                 )
             )
-            CharacteristicGradientView(
-                scale: CharacteristicScale(
+            ValueGradientView(
+                scale: ValueScale(
                     midLocation: 0.5,
                     progress: 1.5,
                     order: .descending

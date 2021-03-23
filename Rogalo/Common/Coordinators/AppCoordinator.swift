@@ -32,11 +32,13 @@ extension AppCoordinator {
         let notifications = NotificationManager()
         let storage = AppStorage(container: UserDefaults.standard)
         let settings = SettingsService(storage: storage)
+        let location = LocationManager()
         
         container.register(bluetooth, for: .bluetoothManager)
         container.register(storage, for: .storage)
         container.register(notifications, for: .notifications)
         container.register(settings, for: .settingsService)
+        container.register(location, for: .locationManager)
         
         let deviceRetrieve: DeviceManagerRetriever = { peripheral -> DeviceManaging in
             DeviceManager(peripheral: peripheral, bluetoothManager: bluetooth, storage: storage, notificationManager: notifications)

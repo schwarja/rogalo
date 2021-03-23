@@ -13,10 +13,10 @@ class MockValuesStore: ValuesStoring {
             .eraseToAnyPublisher()
     }
     
-    var characteristics: AnyPublisher<[CharacteristicStoring], Never> {
-        Just<[CharacteristicStoring]>([
-                CharacteristicStore(value: .rpm(value: 8000))
-            ])
-            .eraseToAnyPublisher()
+    var characteristics: AnyPublisher<[DeviceValueStoring], Never> {
+        Just<[DeviceValueStoring]>([
+            DeviceValueStore(value: .rpm(value: 8000))
+        ])
+        .eraseToAnyPublisher()
     }
 }

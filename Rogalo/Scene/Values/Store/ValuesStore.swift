@@ -14,15 +14,15 @@ class ValuesStore: ValuesStoring {
             .map(\.state)
             .eraseToAnyPublisher()
     }
-    var characteristics: AnyPublisher<[CharacteristicStoring], Never> {
+    var characteristics: AnyPublisher<[DeviceValueStoring], Never> {
         deviceManager
             .device
-            .map { device -> [CharacteristicStoring] in
-                var result = [CharacteristicStoring]()
+            .map { device -> [DeviceValueStoring] in
+                var result = [DeviceValueStoring]()
                 
                 if let temperature = device.temperatureEngine {
                     result.append(
-                        CharacteristicStore(
+                        DeviceValueStore(
                             value: .temperatureEngine(value: temperature),
                             range: device.engineTemperatureRange
                         )
@@ -30,7 +30,7 @@ class ValuesStore: ValuesStoring {
                 }
                 if let temperature = device.temperatureExhaust {
                     result.append(
-                        CharacteristicStore(
+                        DeviceValueStore(
                             value: .temperatureExhaust(value: temperature),
                             range: device.exhaustTemperatureRange
                         )
@@ -38,7 +38,7 @@ class ValuesStore: ValuesStoring {
                 }
                 if let rpm = device.rpm {
                     result.append(
-                        CharacteristicStore(
+                        DeviceValueStore(
                             value: .rpm(value: rpm),
                             range: device.rpmRange
                         )
@@ -46,14 +46,14 @@ class ValuesStore: ValuesStoring {
                 }
                 if let voltage = device.voltage {
                     result.append(
-                        CharacteristicStore(
+                        DeviceValueStore(
                             value: .voltage(value: voltage),
                             range: device.batteryRange
                         )
                     )
                 }
                 if let time = device.flightTime {
-                    result.append(CharacteristicStore(value: .flightTime(value: time)))
+                    result.append(DeviceValueStore(value: .flightTime(value: time)))
                 }
                 
                 return result

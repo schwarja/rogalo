@@ -13,14 +13,13 @@
 		C1036CE325EBE682003A358B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE225EBE682003A358B /* SettingsView.swift */; };
 		C1036CE625EBE8C8003A358B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE525EBE8C8003A358B /* SettingsViewModel.swift */; };
 		C1036CEA25EBEF59003A358B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE925EBEF59003A358B /* Constants.swift */; };
-		C1036CED25EBF47D003A358B /* NotificationStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CEC25EBF47D003A358B /* NotificationStateView.swift */; };
 		C1036CF125EBFAFE003A358B /* PeripheralListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CF025EBFAFE003A358B /* PeripheralListViewModel.swift */; };
 		C112C726257D774B00B1F8A9 /* EngineCharacteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */; };
 		C112C72A257D7B0100B1F8A9 /* ValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C729257D7B0100B1F8A9 /* ValuesView.swift */; };
 		C112C72F257D7B2000B1F8A9 /* ValuesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C72E257D7B2000B1F8A9 /* ValuesStore.swift */; };
 		C112C733257D7D9200B1F8A9 /* ValuesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C732257D7D9200B1F8A9 /* ValuesTab.swift */; };
-		C133B2F625EA91A200F070C1 /* CharacteristicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133B2F525EA91A200F070C1 /* CharacteristicView.swift */; };
-		C133B2FA25EA91C500F070C1 /* CharacteristicStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133B2F925EA91C500F070C1 /* CharacteristicStore.swift */; };
+		C133B2F625EA91A200F070C1 /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133B2F525EA91A200F070C1 /* ValueView.swift */; };
+		C133B2FA25EA91C500F070C1 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133B2F925EA91C500F070C1 /* ValueStore.swift */; };
 		C13FFE422603E6D000D91BF7 /* ExhaustCritical-600.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C13FFE412603E6D000D91BF7 /* ExhaustCritical-600.m4a */; };
 		C13FFE452603E72D00D91BF7 /* ExhaustSignificantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FFE442603E72D00D91BF7 /* ExhaustSignificantValues.swift */; };
 		C13FFE492603E8EF00D91BF7 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FFE482603E8EF00D91BF7 /* Resource.swift */; };
@@ -44,19 +43,35 @@
 		C155E199257D515300A845B9 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155E198257D515300A845B9 /* AppDependency.swift */; };
 		C155E19D257D730200A845B9 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155E19C257D730200A845B9 /* Device.swift */; };
 		C155E1A1257D733E00A845B9 /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155E1A0257D733E00A845B9 /* Array+Safe.swift */; };
-		C16D9E3425EA979C009F3ADE /* CharacteristicStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E3325EA979C009F3ADE /* CharacteristicStoring.swift */; };
-		C16D9E3C25EA9CC9009F3ADE /* ConnectionStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E3B25EA9CC9009F3ADE /* ConnectionStateView.swift */; };
+		C16D9E3425EA979C009F3ADE /* ValueStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E3325EA979C009F3ADE /* ValueStoring.swift */; };
+		C16D9E3C25EA9CC9009F3ADE /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E3B25EA9CC9009F3ADE /* StatusView.swift */; };
 		C16D9E3F25EAA1B6009F3ADE /* DeviceValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E3E25EAA1B6009F3ADE /* DeviceValue.swift */; };
 		C16D9E4325EAA488009F3ADE /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4225EAA488009F3ADE /* Formatters.swift */; };
-		C16D9E4625EABEA3009F3ADE /* CharacteristicGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4525EABEA3009F3ADE /* CharacteristicGradientView.swift */; };
+		C16D9E4625EABEA3009F3ADE /* ValueGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4525EABEA3009F3ADE /* ValueGradientView.swift */; };
 		C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4925EAC016009F3ADE /* Triangle.swift */; };
-		C16D9E4E25EAC373009F3ADE /* CharacteristicScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */; };
+		C16D9E4E25EAC373009F3ADE /* ValueScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E4D25EAC373009F3ADE /* ValueScale.swift */; };
 		C16D9E5C25EBA9B7009F3ADE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E5B25EBA9B7009F3ADE /* R.generated.swift */; };
 		C16D9E6325EBABBF009F3ADE /* DeviceValueRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E6225EBABBF009F3ADE /* DeviceValueRange.swift */; };
 		C16D9E6A25EBB1E2009F3ADE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C16D9E6C25EBB1E2009F3ADE /* Localizable.strings */; };
 		C16D9E7125EBB2E2009F3ADE /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E7025EBB2E2009F3ADE /* LocalizedString.swift */; };
 		C16D9E7525EBC8DA009F3ADE /* Color+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E7425EBC8DA009F3ADE /* Color+AppColors.swift */; };
 		C16D9E7825EBC963009F3ADE /* Rswift+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D9E7725EBC963009F3ADE /* Rswift+Resources.swift */; };
+		C17F059D2607A835000E9917 /* LocationManging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F059C2607A835000E9917 /* LocationManging.swift */; };
+		C17F05A02607A841000E9917 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F059F2607A841000E9917 /* LocationManager.swift */; };
+		C17F05A32607A885000E9917 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05A22607A885000E9917 /* Location.swift */; };
+		C17F05A92607ABAD000E9917 /* MapStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05A82607ABAD000E9917 /* MapStoring.swift */; };
+		C17F05AD2607ABB6000E9917 /* MapStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05AC2607ABB6000E9917 /* MapStore.swift */; };
+		C17F05B12607ABD2000E9917 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05B02607ABD2000E9917 /* MapCoordinator.swift */; };
+		C17F05B42607ABDC000E9917 /* MapCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05B32607ABDC000E9917 /* MapCoordinatorEvent.swift */; };
+		C17F05B72607AC61000E9917 /* MapTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05B62607AC61000E9917 /* MapTab.swift */; };
+		C17F05BA2607ACD0000E9917 /* MockMapStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05B92607ACD0000E9917 /* MockMapStore.swift */; };
+		C17F05BD2607AD79000E9917 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05BC2607AD79000E9917 /* MapView.swift */; };
+		C17F05C02607B26C000E9917 /* LocationAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05BF2607B26C000E9917 /* LocationAuthorization.swift */; };
+		C17F05C42607B853000E9917 /* MapRenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05C32607B853000E9917 /* MapRenderingView.swift */; };
+		C17F05C82607B9F1000E9917 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05C72607B9F1000E9917 /* Value.swift */; };
+		C17F05D02607BBCF000E9917 /* DeviceValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05CF2607BBCF000E9917 /* DeviceValueStore.swift */; };
+		C17F05D42607BE2E000E9917 /* DeviceValueStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05D32607BE2E000E9917 /* DeviceValueStoring.swift */; };
+		C17F05D82607C045000E9917 /* MapValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05D72607C045000E9917 /* MapValue.swift */; };
 		C182EAEA25F53E54009B2321 /* SettingsPairedDeviceFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182EAE925F53E54009B2321 /* SettingsPairedDeviceFooterView.swift */; };
 		C182EAED25F53FC1009B2321 /* SettingsAlertHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182EAEC25F53FC1009B2321 /* SettingsAlertHeader.swift */; };
 		C182EAF025F5455D009B2321 /* SettingsViewStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182EAEF25F5455D009B2321 /* SettingsViewStoring.swift */; };
@@ -112,6 +127,14 @@
 		C1CAE7852586567D00CB60E7 /* MockValuesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CAE7842586567D00CB60E7 /* MockValuesStore.swift */; };
 		C1CAE78E2586634700CB60E7 /* DeviceManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CAE78D2586634700CB60E7 /* DeviceManaging.swift */; };
 		C1CAE7922586636300CB60E7 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CAE7912586636300CB60E7 /* DeviceManager.swift */; };
+		C1E617532607E6B20043934A /* StatusViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E617522607E6B20043934A /* StatusViewEvent.swift */; };
+		C1E617582607E8B50043934A /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E617572607E8B50043934A /* StatusViewModel.swift */; };
+		C1E6175B2607E9C10043934A /* DeviceState+StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E6175A2607E9C10043934A /* DeviceState+StatusViewModel.swift */; };
+		C1E6175E2607EA850043934A /* NotificationAuthorizationStatus+StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E6175D2607EA840043934A /* NotificationAuthorizationStatus+StatusViewModel.swift */; };
+		C1E617622607EB290043934A /* LocationAuthorization+StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E617612607EB290043934A /* LocationAuthorization+StatusViewModel.swift */; };
+		C1E617652607EF9F0043934A /* MapTabEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E617642607EF9F0043934A /* MapTabEventHandling.swift */; };
+		C1E617682607F52D0043934A /* UIKitMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E617672607F52D0043934A /* UIKitMapView.swift */; };
+		C1E61783260A42EA0043934A /* MapRenderingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E61782260A42EA0043934A /* MapRenderingCoordinator.swift */; };
 		C1F36C66258677BE002930B2 /* PairingNavigationViewEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F36C65258677BE002930B2 /* PairingNavigationViewEventHandling.swift */; };
 		C1F36C6A25867BA2002930B2 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F36C6925867BA2002930B2 /* AppError.swift */; };
 		C1F36C6D258696F6002930B2 /* SettingsTabEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F36C6C258696F6002930B2 /* SettingsTabEventHandling.swift */; };
@@ -130,14 +153,13 @@
 		C1036CE225EBE682003A358B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C1036CE525EBE8C8003A358B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C1036CE925EBEF59003A358B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C1036CEC25EBF47D003A358B /* NotificationStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStateView.swift; sourceTree = "<group>"; };
 		C1036CF025EBFAFE003A358B /* PeripheralListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralListViewModel.swift; sourceTree = "<group>"; };
 		C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineCharacteristics.swift; sourceTree = "<group>"; };
 		C112C729257D7B0100B1F8A9 /* ValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesView.swift; sourceTree = "<group>"; };
 		C112C72E257D7B2000B1F8A9 /* ValuesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesStore.swift; sourceTree = "<group>"; };
 		C112C732257D7D9200B1F8A9 /* ValuesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesTab.swift; sourceTree = "<group>"; };
-		C133B2F525EA91A200F070C1 /* CharacteristicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicView.swift; sourceTree = "<group>"; };
-		C133B2F925EA91C500F070C1 /* CharacteristicStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicStore.swift; sourceTree = "<group>"; };
+		C133B2F525EA91A200F070C1 /* ValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
+		C133B2F925EA91C500F070C1 /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
 		C13FFE412603E6D000D91BF7 /* ExhaustCritical-600.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ExhaustCritical-600.m4a"; sourceTree = "<group>"; };
 		C13FFE442603E72D00D91BF7 /* ExhaustSignificantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhaustSignificantValues.swift; sourceTree = "<group>"; };
 		C13FFE482603E8EF00D91BF7 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -161,13 +183,13 @@
 		C155E198257D515300A845B9 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		C155E19C257D730200A845B9 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C155E1A0257D733E00A845B9 /* Array+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
-		C16D9E3325EA979C009F3ADE /* CharacteristicStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicStoring.swift; sourceTree = "<group>"; };
-		C16D9E3B25EA9CC9009F3ADE /* ConnectionStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStateView.swift; sourceTree = "<group>"; };
+		C16D9E3325EA979C009F3ADE /* ValueStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStoring.swift; sourceTree = "<group>"; };
+		C16D9E3B25EA9CC9009F3ADE /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		C16D9E3E25EAA1B6009F3ADE /* DeviceValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceValue.swift; sourceTree = "<group>"; };
 		C16D9E4225EAA488009F3ADE /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
-		C16D9E4525EABEA3009F3ADE /* CharacteristicGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicGradientView.swift; sourceTree = "<group>"; };
+		C16D9E4525EABEA3009F3ADE /* ValueGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueGradientView.swift; sourceTree = "<group>"; };
 		C16D9E4925EAC016009F3ADE /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
-		C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicScale.swift; sourceTree = "<group>"; };
+		C16D9E4D25EAC373009F3ADE /* ValueScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueScale.swift; sourceTree = "<group>"; };
 		C16D9E5B25EBA9B7009F3ADE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		C16D9E6225EBABBF009F3ADE /* DeviceValueRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceValueRange.swift; sourceTree = "<group>"; };
 		C16D9E6B25EBB1E2009F3ADE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -175,6 +197,22 @@
 		C16D9E7025EBB2E2009F3ADE /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		C16D9E7425EBC8DA009F3ADE /* Color+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColors.swift"; sourceTree = "<group>"; };
 		C16D9E7725EBC963009F3ADE /* Rswift+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rswift+Resources.swift"; sourceTree = "<group>"; };
+		C17F059C2607A835000E9917 /* LocationManging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManging.swift; sourceTree = "<group>"; };
+		C17F059F2607A841000E9917 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C17F05A22607A885000E9917 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C17F05A82607ABAD000E9917 /* MapStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStoring.swift; sourceTree = "<group>"; };
+		C17F05AC2607ABB6000E9917 /* MapStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStore.swift; sourceTree = "<group>"; };
+		C17F05B02607ABD2000E9917 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		C17F05B32607ABDC000E9917 /* MapCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinatorEvent.swift; sourceTree = "<group>"; };
+		C17F05B62607AC61000E9917 /* MapTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTab.swift; sourceTree = "<group>"; };
+		C17F05B92607ACD0000E9917 /* MockMapStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMapStore.swift; sourceTree = "<group>"; };
+		C17F05BC2607AD79000E9917 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		C17F05BF2607B26C000E9917 /* LocationAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorization.swift; sourceTree = "<group>"; };
+		C17F05C32607B853000E9917 /* MapRenderingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRenderingView.swift; sourceTree = "<group>"; };
+		C17F05C72607B9F1000E9917 /* Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		C17F05CF2607BBCF000E9917 /* DeviceValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceValueStore.swift; sourceTree = "<group>"; };
+		C17F05D32607BE2E000E9917 /* DeviceValueStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceValueStoring.swift; sourceTree = "<group>"; };
+		C17F05D72607C045000E9917 /* MapValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapValue.swift; sourceTree = "<group>"; };
 		C182EAE925F53E54009B2321 /* SettingsPairedDeviceFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPairedDeviceFooterView.swift; sourceTree = "<group>"; };
 		C182EAEC25F53FC1009B2321 /* SettingsAlertHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAlertHeader.swift; sourceTree = "<group>"; };
 		C182EAEF25F5455D009B2321 /* SettingsViewStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewStoring.swift; sourceTree = "<group>"; };
@@ -232,6 +270,14 @@
 		C1CAE7842586567D00CB60E7 /* MockValuesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockValuesStore.swift; sourceTree = "<group>"; };
 		C1CAE78D2586634700CB60E7 /* DeviceManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManaging.swift; sourceTree = "<group>"; };
 		C1CAE7912586636300CB60E7 /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
+		C1E617522607E6B20043934A /* StatusViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewEvent.swift; sourceTree = "<group>"; };
+		C1E617572607E8B50043934A /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		C1E6175A2607E9C10043934A /* DeviceState+StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceState+StatusViewModel.swift"; sourceTree = "<group>"; };
+		C1E6175D2607EA840043934A /* NotificationAuthorizationStatus+StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationAuthorizationStatus+StatusViewModel.swift"; sourceTree = "<group>"; };
+		C1E617612607EB290043934A /* LocationAuthorization+StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationAuthorization+StatusViewModel.swift"; sourceTree = "<group>"; };
+		C1E617642607EF9F0043934A /* MapTabEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTabEventHandling.swift; sourceTree = "<group>"; };
+		C1E617672607F52D0043934A /* UIKitMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitMapView.swift; sourceTree = "<group>"; };
+		C1E61782260A42EA0043934A /* MapRenderingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRenderingCoordinator.swift; sourceTree = "<group>"; };
 		C1F36C65258677BE002930B2 /* PairingNavigationViewEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingNavigationViewEventHandling.swift; sourceTree = "<group>"; };
 		C1F36C6925867BA2002930B2 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		C1F36C6C258696F6002930B2 /* SettingsTabEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabEventHandling.swift; sourceTree = "<group>"; };
@@ -287,22 +333,10 @@
 			children = (
 				C1A4AC2125EBCA9200290AE2 /* Components */,
 				C16D9E4825EAC00B009F3ADE /* Shapes */,
-				C16D9E3625EA9C9A009F3ADE /* StateViews */,
-				C133B2F825EA91AD00F070C1 /* Characteristics */,
+				C16D9E3625EA9C9A009F3ADE /* StatusView */,
+				C17F05CA2607BABA000E9917 /* Values */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		C133B2F825EA91AD00F070C1 /* Characteristics */ = {
-			isa = PBXGroup;
-			children = (
-				C133B2F525EA91A200F070C1 /* CharacteristicView.swift */,
-				C133B2F925EA91C500F070C1 /* CharacteristicStore.swift */,
-				C16D9E3325EA979C009F3ADE /* CharacteristicStoring.swift */,
-				C16D9E4525EABEA3009F3ADE /* CharacteristicGradientView.swift */,
-				C16D9E4D25EAC373009F3ADE /* CharacteristicScale.swift */,
-			);
-			path = Characteristics;
 			sourceTree = "<group>";
 		};
 		C149F1C325EA454100F55965 /* Notifications */ = {
@@ -366,10 +400,12 @@
 				C155E19C257D730200A845B9 /* Device.swift */,
 				C1036CDC25EBDEC0003A358B /* DeviceState.swift */,
 				C16D9E3E25EAA1B6009F3ADE /* DeviceValue.swift */,
+				C17F05D72607C045000E9917 /* MapValue.swift */,
 				C16D9E6225EBABBF009F3ADE /* DeviceValueRange.swift */,
 				C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */,
 				C1CA847025F57C5E00D16A23 /* Order.swift */,
 				C155E190257D4C3E00A845B9 /* Peripheral.swift */,
+				C17F05A22607A885000E9917 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -394,13 +430,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		C16D9E3625EA9C9A009F3ADE /* StateViews */ = {
+		C16D9E3625EA9C9A009F3ADE /* StatusView */ = {
 			isa = PBXGroup;
 			children = (
-				C16D9E3B25EA9CC9009F3ADE /* ConnectionStateView.swift */,
-				C1036CEC25EBF47D003A358B /* NotificationStateView.swift */,
+				C16D9E3B25EA9CC9009F3ADE /* StatusView.swift */,
+				C1E617522607E6B20043934A /* StatusViewEvent.swift */,
+				C1E617572607E8B50043934A /* StatusViewModel.swift */,
+				C1E6175A2607E9C10043934A /* DeviceState+StatusViewModel.swift */,
+				C1E6175D2607EA840043934A /* NotificationAuthorizationStatus+StatusViewModel.swift */,
+				C1E617612607EB290043934A /* LocationAuthorization+StatusViewModel.swift */,
 			);
-			path = StateViews;
+			path = StatusView;
 			sourceTree = "<group>";
 		};
 		C16D9E4825EAC00B009F3ADE /* Shapes */ = {
@@ -409,6 +449,72 @@
 				C16D9E4925EAC016009F3ADE /* Triangle.swift */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		C17F059B2607A822000E9917 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				C17F059C2607A835000E9917 /* LocationManging.swift */,
+				C17F059F2607A841000E9917 /* LocationManager.swift */,
+				C17F05BF2607B26C000E9917 /* LocationAuthorization.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		C17F05A52607AB83000E9917 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C17F05A62607AB92000E9917 /* Coordinator */,
+				C17F05A72607AB99000E9917 /* Store */,
+				C17F05C22607B838000E9917 /* Views */,
+				C17F05B62607AC61000E9917 /* MapTab.swift */,
+				C17F05BC2607AD79000E9917 /* MapView.swift */,
+				C1E617642607EF9F0043934A /* MapTabEventHandling.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		C17F05A62607AB92000E9917 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C17F05B02607ABD2000E9917 /* MapCoordinator.swift */,
+				C17F05B32607ABDC000E9917 /* MapCoordinatorEvent.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		C17F05A72607AB99000E9917 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				C17F05A82607ABAD000E9917 /* MapStoring.swift */,
+				C17F05AC2607ABB6000E9917 /* MapStore.swift */,
+				C17F05B92607ACD0000E9917 /* MockMapStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		C17F05C22607B838000E9917 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1E61782260A42EA0043934A /* MapRenderingCoordinator.swift */,
+				C17F05C32607B853000E9917 /* MapRenderingView.swift */,
+				C1E617672607F52D0043934A /* UIKitMapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C17F05CA2607BABA000E9917 /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				C17F05D32607BE2E000E9917 /* DeviceValueStoring.swift */,
+				C17F05CF2607BBCF000E9917 /* DeviceValueStore.swift */,
+				C16D9E4525EABEA3009F3ADE /* ValueGradientView.swift */,
+				C16D9E4D25EAC373009F3ADE /* ValueScale.swift */,
+				C133B2F925EA91C500F070C1 /* ValueStore.swift */,
+				C16D9E3325EA979C009F3ADE /* ValueStoring.swift */,
+				C133B2F525EA91A200F070C1 /* ValueView.swift */,
+			);
+			path = Values;
 			sourceTree = "<group>";
 		};
 		C182EAE225F4DF37009B2321 /* SettingsView */ = {
@@ -504,6 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				C1B25D9B257D41F8006E808C /* LaunchScreen */,
+				C17F05A52607AB83000E9917 /* Map */,
 				C1B25D9D257D422A006E808C /* Pairing */,
 				C149F1DF25EA623300F55965 /* Records */,
 				C182EAE225F4DF37009B2321 /* SettingsView */,
@@ -603,6 +710,7 @@
 		C1B25DB5257D48A6006E808C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				C17F059B2607A822000E9917 /* Location */,
 				C182EAFC25F5494D009B2321 /* Settings */,
 				C149F1C325EA454100F55965 /* Notifications */,
 				C1CAE78C2586633200CB60E7 /* Device */,
@@ -637,6 +745,7 @@
 				C1CAE73825863BB200CB60E7 /* Coordinators */,
 				C1A4AC2B25EBCD6900290AE2 /* Styles */,
 				C13FFE482603E8EF00D91BF7 /* Resource.swift */,
+				C17F05C72607B9F1000E9917 /* Value.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -929,22 +1038,30 @@
 				C16D9E7825EBC963009F3ADE /* Rswift+Resources.swift in Sources */,
 				C1CAE7522586440700CB60E7 /* ParentCoordinatorContaining.swift in Sources */,
 				C155E199257D515300A845B9 /* AppDependency.swift in Sources */,
+				C1E617652607EF9F0043934A /* MapTabEventHandling.swift in Sources */,
 				C1A4AC3925EBCECA00290AE2 /* AppButton.swift in Sources */,
 				C16D9E5C25EBA9B7009F3ADE /* R.generated.swift in Sources */,
 				C1036CDD25EBDEC0003A358B /* DeviceState.swift in Sources */,
 				C1CA847125F57C5E00D16A23 /* Order.swift in Sources */,
 				C182EAED25F53FC1009B2321 /* SettingsAlertHeader.swift in Sources */,
 				C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */,
+				C1E6175E2607EA850043934A /* NotificationAuthorizationStatus+StatusViewModel.swift in Sources */,
 				C1CA846D25F56FF400D16A23 /* Battery.swift in Sources */,
 				C1CAE76B2586534C00CB60E7 /* ContentCoordinatorEventHandling.swift in Sources */,
 				C182EAFE25F5495D009B2321 /* SettingsServicing.swift in Sources */,
+				C1E6175B2607E9C10043934A /* DeviceState+StatusViewModel.swift in Sources */,
 				C1F36C6D258696F6002930B2 /* SettingsTabEventHandling.swift in Sources */,
+				C1E617622607EB290043934A /* LocationAuthorization+StatusViewModel.swift in Sources */,
+				C17F05B12607ABD2000E9917 /* MapCoordinator.swift in Sources */,
 				C149F1DB25EA531E00F55965 /* NotificationAuthorizationStatus.swift in Sources */,
 				C149F1EA25EA62C100F55965 /* RecordsCoordinator.swift in Sources */,
 				C112C733257D7D9200B1F8A9 /* ValuesTab.swift in Sources */,
 				C1CAE74225863ED000CB60E7 /* ActiveSceneSession.swift in Sources */,
 				C1CAE761258647B300CB60E7 /* PairingStoring.swift in Sources */,
 				C16D9E3F25EAA1B6009F3ADE /* DeviceValue.swift in Sources */,
+				C17F05D82607C045000E9917 /* MapValue.swift in Sources */,
+				C1E617532607E6B20043934A /* StatusViewEvent.swift in Sources */,
+				C17F05C02607B26C000E9917 /* LocationAuthorization.swift in Sources */,
 				C1A4AC2D25EBCD8400290AE2 /* TextualStyle.swift in Sources */,
 				C1CAE73525863B1D00CB60E7 /* AppCoordinatorContaining.swift in Sources */,
 				C1036CE325EBE682003A358B /* SettingsView.swift in Sources */,
@@ -960,17 +1077,20 @@
 				C182EAF025F5455D009B2321 /* SettingsViewStoring.swift in Sources */,
 				C1CAE77F2586564A00CB60E7 /* SettingsStore.swift in Sources */,
 				C155E191257D4C3E00A845B9 /* Peripheral.swift in Sources */,
+				C1E617682607F52D0043934A /* UIKitMapView.swift in Sources */,
+				C17F05A02607A841000E9917 /* LocationManager.swift in Sources */,
 				C1B25D83257D4087006E808C /* AppDelegate.swift in Sources */,
 				C1CAE73125863AD800CB60E7 /* AppCoordinator.swift in Sources */,
+				C17F05B42607ABDC000E9917 /* MapCoordinatorEvent.swift in Sources */,
+				C17F05AD2607ABB6000E9917 /* MapStore.swift in Sources */,
 				C16D9E7125EBB2E2009F3ADE /* LocalizedString.swift in Sources */,
 				C1A4AC2625EBCBB200290AE2 /* AppTextStyle.swift in Sources */,
 				C1036CF125EBFAFE003A358B /* PeripheralListViewModel.swift in Sources */,
 				C16D9E4325EAA488009F3ADE /* Formatters.swift in Sources */,
-				C1036CED25EBF47D003A358B /* NotificationStateView.swift in Sources */,
-				C16D9E3425EA979C009F3ADE /* CharacteristicStoring.swift in Sources */,
+				C16D9E3425EA979C009F3ADE /* ValueStoring.swift in Sources */,
 				C1CAE7822586565E00CB60E7 /* MockSettingsStore.swift in Sources */,
 				C1CAE72C25863AAC00CB60E7 /* AppCoordinating.swift in Sources */,
-				C16D9E4625EABEA3009F3ADE /* CharacteristicGradientView.swift in Sources */,
+				C16D9E4625EABEA3009F3ADE /* ValueGradientView.swift in Sources */,
 				C155E1A1257D733E00A845B9 /* Array+Safe.swift in Sources */,
 				C1B25DB8257D48BF006E808C /* BluetoothManaging.swift in Sources */,
 				C1F36C66258677BE002930B2 /* PairingNavigationViewEventHandling.swift in Sources */,
@@ -984,10 +1104,14 @@
 				C182EAEA25F53E54009B2321 /* SettingsPairedDeviceFooterView.swift in Sources */,
 				C1036CEA25EBEF59003A358B /* Constants.swift in Sources */,
 				C149F1D825EA51F900F55965 /* NotificationEvent.swift in Sources */,
+				C17F05BA2607ACD0000E9917 /* MockMapStore.swift in Sources */,
 				C1CAE76F258653B200CB60E7 /* ContentStore.swift in Sources */,
 				C149F1E325EA627A00F55965 /* RecordsTab.swift in Sources */,
+				C17F05D42607BE2E000E9917 /* DeviceValueStoring.swift in Sources */,
 				C1CAE7252586394700CB60E7 /* SceneCoordinator.swift in Sources */,
+				C17F05A32607A885000E9917 /* Location.swift in Sources */,
 				C1B25DB3257D48A2006E808C /* BluetoothManager.swift in Sources */,
+				C17F05D02607BBCF000E9917 /* DeviceValueStore.swift in Sources */,
 				C155E19D257D730200A845B9 /* Device.swift in Sources */,
 				C155E195257D4FD600A845B9 /* PairingStoreState.swift in Sources */,
 				C149F1C525EA455700F55965 /* NotificationManaging.swift in Sources */,
@@ -996,21 +1120,27 @@
 				C1CAE74F258643AD00CB60E7 /* ViewCoordinator.swift in Sources */,
 				C1B25DAF257D43F9006E808C /* SettingsTab.swift in Sources */,
 				C1CAE7852586567D00CB60E7 /* MockValuesStore.swift in Sources */,
+				C17F05C82607B9F1000E9917 /* Value.swift in Sources */,
 				C149F1F025EA637200F55965 /* RecordsStoring.swift in Sources */,
-				C133B2F625EA91A200F070C1 /* CharacteristicView.swift in Sources */,
+				C17F059D2607A835000E9917 /* LocationManging.swift in Sources */,
+				C133B2F625EA91A200F070C1 /* ValueView.swift in Sources */,
 				C1A4AC3225EBCE0200290AE2 /* AppButtonStyle.swift in Sources */,
 				C149F1C925EA456E00F55965 /* NotificationManager.swift in Sources */,
 				C1CAE73A25863BCB00CB60E7 /* Coordinator.swift in Sources */,
-				C16D9E4E25EAC373009F3ADE /* CharacteristicScale.swift in Sources */,
-				C16D9E3C25EA9CC9009F3ADE /* ConnectionStateView.swift in Sources */,
+				C17F05C42607B853000E9917 /* MapRenderingView.swift in Sources */,
+				C16D9E4E25EAC373009F3ADE /* ValueScale.swift in Sources */,
+				C17F05A92607ABAD000E9917 /* MapStoring.swift in Sources */,
+				C16D9E3C25EA9CC9009F3ADE /* StatusView.swift in Sources */,
 				C1CAE78E2586634700CB60E7 /* DeviceManaging.swift in Sources */,
 				C1CAE76825864B5A00CB60E7 /* AppStorage.swift in Sources */,
 				C1CAE74B2586424800CB60E7 /* PairingCoordinator.swift in Sources */,
 				C1A4AC2325EBCAAF00290AE2 /* AppText.swift in Sources */,
 				C1A4AC2925EBCC7700290AE2 /* Text+AppStyles.swift in Sources */,
 				C1CAE7292586397100CB60E7 /* SceneCoordinating.swift in Sources */,
+				C17F05BD2607AD79000E9917 /* MapView.swift in Sources */,
 				C1B25D85257D4087006E808C /* SceneDelegate.swift in Sources */,
 				C1CAE75A2586461300CB60E7 /* PairingNavigationView.swift in Sources */,
+				C17F05B72607AC61000E9917 /* MapTab.swift in Sources */,
 				C112C726257D774B00B1F8A9 /* EngineCharacteristics.swift in Sources */,
 				C1036CE625EBE8C8003A358B /* SettingsViewModel.swift in Sources */,
 				C1A4AC3625EBCE6300290AE2 /* Button+AppStyles.swift in Sources */,
@@ -1019,14 +1149,16 @@
 				C182EAF325F54587009B2321 /* SettingsViewStore.swift in Sources */,
 				C1CAE778258654F300CB60E7 /* ValuesStoring.swift in Sources */,
 				C1F36C782586A1FA002930B2 /* ValuesCoordinator.swift in Sources */,
+				C1E61783260A42EA0043934A /* MapRenderingCoordinator.swift in Sources */,
 				C149F1F725EA66F700F55965 /* MockRecordsStore.swift in Sources */,
+				C1E617582607E8B50043934A /* StatusViewModel.swift in Sources */,
 				C1CAE7472586422E00CB60E7 /* ContentCoordinator.swift in Sources */,
 				C1036CE025EBE575003A358B /* ViewWithBackgroundStyle.swift in Sources */,
 				C182EB0125F54967009B2321 /* SettingsService.swift in Sources */,
 				C1B25D87257D4087006E808C /* PeripheralListView.swift in Sources */,
 				C1F36C742586999C002930B2 /* SettingsCoordinatorEventHandling.swift in Sources */,
 				C1CAE755258644FD00CB60E7 /* PairingCoordinatorEventHandling.swift in Sources */,
-				C133B2FA25EA91C500F070C1 /* CharacteristicStore.swift in Sources */,
+				C133B2FA25EA91C500F070C1 /* ValueStore.swift in Sources */,
 				C149F1E725EA628900F55965 /* RecordsView.swift in Sources */,
 				C1CAE73E25863CFA00CB60E7 /* DependencyContainer.swift in Sources */,
 				C112C72F257D7B2000B1F8A9 /* ValuesStore.swift in Sources */,

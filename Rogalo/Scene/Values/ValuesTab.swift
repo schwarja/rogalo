@@ -11,7 +11,7 @@ struct ValuesTab: View {
     let store: ValuesStoring
     
     @State var connectionState = DeviceState.connecting
-    @State var characteristics: [CharacteristicStoring] = []
+    @State var characteristics: [DeviceValueStoring] = []
 
     var body: some View {
         NavigationView {

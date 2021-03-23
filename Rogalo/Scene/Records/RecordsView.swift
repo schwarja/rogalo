@@ -9,13 +9,13 @@ import SwiftUI
 
 struct RecordsView: View {
     let connectionState: DeviceState
-    let characteristics: [CharacteristicStoring]
+    let characteristics: [DeviceValueStoring]
 
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 VStack {
-                    ConnectionStateView(connectionState: connectionState, eventHandler: nil)
+                    StatusView(model: connectionState.statusViewModel, eventHandler: nil)
                         .layoutPriority(1)
                     
                     if characteristics.isEmpty {
@@ -23,8 +23,8 @@ struct RecordsView: View {
                         AppText(LocalizedString.deviceValuesNoData(), style: .headline)
                         Spacer()
                     } else {
-                        ForEach(characteristics, id: \.value) { characteristic in
-                            CharacteristicView(store: characteristic)
+                        ForEach(characteristics, id: \.deviceValue) { characteristic in
+                            ValueView(store: characteristic)
                                 .frame(maxHeight: .infinity)
                         }
                     }
@@ -45,7 +45,7 @@ struct RecordsView_Previews: PreviewProvider {
             RecordsView(
                 connectionState: .connected,
                 characteristics: [
-                    CharacteristicStore(value: .rpm(value: 8000))
+                    DeviceValueStore(value: .rpm(value: 8000))
                 ]
             )
 

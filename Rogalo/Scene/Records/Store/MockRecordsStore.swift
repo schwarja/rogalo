@@ -13,9 +13,9 @@ class MockRecordsStore: RecordsStoring {
             .eraseToAnyPublisher()
     }
     
-    var characteristics: AnyPublisher<[CharacteristicStoring], Never> {
-        Just<[CharacteristicStoring]>([
-                CharacteristicStore(value: .rpmMax(value: 8000))
+    var characteristics: AnyPublisher<[DeviceValueStoring], Never> {
+        Just<[DeviceValueStoring]>([
+                DeviceValueStore(value: .rpmMax(value: 8000))
             ])
             .eraseToAnyPublisher()
     }

@@ -41,6 +41,11 @@ extension ContentCoordinator: RecordsCoordinatorEventHandling {
     func handle(event: RecordsCoordinatorEvent) {}
 }
 
+// MARK: - Records event handling
+extension ContentCoordinator: MapCoordinatorEventHandling {
+    func handle(event: MapCoordinatorEvent) {}
+}
+
 // MARK: - Factories
 private extension ContentCoordinator {
     func makeContentScene() -> ContentView {
@@ -50,11 +55,15 @@ private extension ContentCoordinator {
         let characteristics = makeCharacteristicsScene()
         characteristics.start()
         
+        let map = makeMapScene()
+        map.start()
+        
         let records = makeRecordsScene()
         records.start()
         
         childCoordinators.append(settings)
         childCoordinators.append(characteristics)
+        childCoordinators.append(map)
         childCoordinators.append(records)
         
         return ContentView(
@@ -62,6 +71,7 @@ private extension ContentCoordinator {
             tabs: [
                 .characteristics(view: characteristics.rootView),
                 .records(view: records.rootView),
+                .map(view: map.rootView),
                 .settings(view: settings.rootView)
             ]
         )
@@ -81,5 +91,9 @@ private extension ContentCoordinator {
     
     func makeRecordsScene() -> RecordsCoordinator {
         RecordsCoordinator(container: container, parent: self)
+    }
+    
+    func makeMapScene() -> MapCoordinator {
+        MapCoordinator(container: container, parent: self)
     }
 }

@@ -9,7 +9,8 @@ import SwiftUI
 
 extension Color {
     static let appBackground = R.color.backgroundColor.color
-    
+    static let appBackgroundInverted = R.color.textColor.color
+
     static let appText = R.color.textColor.color
     static let appTextInverted = R.color.textInvertedColor.color
 

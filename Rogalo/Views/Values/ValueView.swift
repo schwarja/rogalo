@@ -7,23 +7,23 @@
 
 import SwiftUI
 
-struct CharacteristicView: View {
-    let store: CharacteristicStoring
+struct ValueView: View {
+    let store: ValueStoring
     
     var body: some View {
         return ZStack {
             if let scale = store.scale {
-                CharacteristicGradientView(scale: scale)
+                ValueGradientView(scale: scale)
             }
             
             VStack {
                 AppText(store.valueDescription, style: .headline)
-                    .padding(4)
+                    .padding([.top, .horizontal], 4)
                     .minimumScaleFactor(0.5)
                 
                 let valueText = Text(store.formattedValue)
                     .font(AppTextStyle.value.font)
-                    .padding(8)
+                    .padding([.bottom, .horizontal], 4)
                     .lineLimit(1)
                     .minimumScaleFactor(0.2)
                 
@@ -42,13 +42,13 @@ struct CharacteristicView: View {
 struct CharacteristicView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CharacteristicView(store: CharacteristicStore(value: .rpm(value: 8000))
+            ValueView(store: DeviceValueStore(value: .rpm(value: 8000))
             )
-            CharacteristicView(store: CharacteristicStore(value: .flightTime(value: 4))
+            ValueView(store: DeviceValueStore(value: .flightTime(value: 4))
             )
-            CharacteristicView(store: CharacteristicStore(value: .flightTime(value: 65))
+            ValueView(store: DeviceValueStore(value: .flightTime(value: 65))
             )
-            CharacteristicView(store: CharacteristicStore(value: .flightTime(value: 4836))
+            ValueView(store: DeviceValueStore(value: .flightTime(value: 4836))
             )
         }
     }

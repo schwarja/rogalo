@@ -1,16 +1,16 @@
 //
-//  CharacteristicStore.swift
+//  DeviceValueStore.swift
 //  Rogalo
 //
-//  Created by Jan on 27.02.2021.
+//  Created by Jan on 21.03.2021.
 //
 
 import SwiftUI
 
-struct CharacteristicStore: CharacteristicStoring {
+struct DeviceValueStore: DeviceValueStoring {
     typealias Range = (min: Double, mid: Double, max: Double)
     
-    let value: DeviceValue
+    let deviceValue: DeviceValue
     let range: DeviceValueRange?
     
     var normalizedRange: Range? {
@@ -40,7 +40,7 @@ struct CharacteristicStore: CharacteristicStoring {
         }
         
         let number: Double
-        switch value {
+        switch deviceValue {
         case let .rpm(rpm):
             number = Double(rpm)
             
@@ -65,16 +65,16 @@ struct CharacteristicStore: CharacteristicStoring {
         value.description
     }
     
-    var scale: CharacteristicScale? {
+    var scale: ValueScale? {
         guard let risk = riskProgress, let progress = progress, let order = range?.order else {
             return nil
         }
         
-        return CharacteristicScale(midLocation: CGFloat(risk), progress: CGFloat(progress), order: order)
+        return ValueScale(midLocation: CGFloat(risk), progress: CGFloat(progress), order: order)
     }
     
     init(value: DeviceValue, range: DeviceValueRange? = nil) {
-        self.value = value
+        self.deviceValue = value
         self.range = range
     }
 }
