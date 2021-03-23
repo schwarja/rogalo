@@ -9,46 +9,54 @@ import SwiftUI
 import MapKit
 
 struct MapRenderingView: UIViewRepresentable {
+    static let focusRange: CLLocationDistance = 400
+    
+    let strokeWidth: CGFloat = 5
+    let strokeColor: UIColor = .red
+    
     @Binding var stickToCurrentLocation: Bool
+    var locations: [Location]
     
     func makeUIView(context: Context) -> UIKitMapView {
         let mapView = UIKitMapView()
         mapView.interactionDelegate = context.coordinator
         mapView.showsUserLocation = true
+        
+        addPath(to: mapView)
+        
         return mapView
     }
 
     func updateUIView(_ view: UIKitMapView, context: Context) {
-        context.coordinator.recenter(view)
+        context.coordinator.update(parent: self)
+        
+        recenter(view: view)
+        addPath(to: view)
     }
 
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+    func makeCoordinator() -> MapRenderingCoordinator {
+        MapRenderingCoordinator(self)
     }
+}
 
-    class Coordinator: NSObject, UIKitMapViewDelegate {
-        var parent: MapRenderingView
-
-        init(_ parent: MapRenderingView) {
-            self.parent = parent
+extension MapRenderingView {
+    func recenter(view: MKMapView) {
+        guard stickToCurrentLocation else {
+            return
         }
         
-        func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-            recenter(mapView)
-        }
-        
-        func userDidInteractWithMapView(_ mapView: UIKitMapView) {
-            parent.stickToCurrentLocation = false
-        }
-        
-        func recenter(_ mapView: MKMapView) {
-            guard parent.stickToCurrentLocation else {
-                return
-            }
-            
-            let region = MKCoordinateRegion(center: mapView.userLocation.coordinate, latitudinalMeters: 400, longitudinalMeters: 400)
+        let region = MKCoordinateRegion(center: view.userLocation.coordinate, latitudinalMeters: Self.focusRange, longitudinalMeters: Self.focusRange)
 
-            mapView.setRegion(region, animated: true)
+        view.setRegion(region, animated: true)
+    }
+    
+    private func addPath(to view: MKMapView) {
+        view.removeOverlays(view.overlays)
+        
+        let coordinates = locations.map {
+            CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
         }
+        let route = MKPolyline(coordinates: coordinates, count: coordinates.count)
+        view.addOverlay(route)
     }
 }

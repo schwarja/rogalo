@@ -10,10 +10,7 @@ import Combine
 class MapStore: MapStoring {
     let locationManager: LocationManaging
     
-    var location: AnyPublisher<Location, Never> {
-        locationManager.location
-    }
-    var authorization: AnyPublisher<LocationAuthorization, Never> {
+    lazy var authorization: AnyPublisher<LocationAuthorization, Never> = {
         locationManager
             .authorization
             .removeDuplicates()
@@ -23,13 +20,24 @@ class MapStore: MapStoring {
                 }
             })
             .eraseToAnyPublisher()
-    }
+    }()
+    lazy var currentLocation: AnyPublisher<Location, Never> = {
+        locationManager.location
+    }()
+    lazy var locations: AnyPublisher<[Location], Never> = {
+        currentLocation
+            .scan([Location]()) { (previous, new) -> [Location] in
+                previous + [new]
+            }
+            .share()
+            .eraseToAnyPublisher()
+    }()
     
     private var cancellables = Set<AnyCancellable>()
     
     init(locationManager: LocationManaging) {
         self.locationManager = locationManager
-
+        
         locationManager.requestAuthorization()
     }
 }

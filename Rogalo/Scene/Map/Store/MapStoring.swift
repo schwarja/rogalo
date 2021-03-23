@@ -9,5 +9,6 @@ import Combine
 
 protocol MapStoring {
     var authorization: AnyPublisher<LocationAuthorization, Never> { get }
-    var location: AnyPublisher<Location, Never> { get }
+    var currentLocation: AnyPublisher<Location, Never> { get }
+    var locations: AnyPublisher<[Location], Never> { get }
 }

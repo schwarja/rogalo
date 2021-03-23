@@ -57,6 +57,7 @@ final class LocationManager: NSObject {
 extension LocationManager: LocationManaging {
     var location: AnyPublisher<Location, Never> {
         locationSubject
+            .throttle(for: .seconds(0.5), scheduler: RunLoop.main, latest: true)
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
