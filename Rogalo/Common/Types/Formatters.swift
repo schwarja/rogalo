@@ -19,11 +19,7 @@ enum Formatters {
     }()
     
     static let measurementFormatter: MeasurementFormatter = {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.maximumFractionDigits = 1
-
         let formatter = MeasurementFormatter()
-        formatter.numberFormatter = numberFormatter
 
         return formatter
     }()
@@ -33,6 +29,10 @@ enum Formatters {
             value: temperature,
             unit: UnitTemperature.celsius
         )
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = 0
+        measurementFormatter.numberFormatter = numberFormatter
 
         return measurementFormatter.string(from: measurement)
     }
@@ -42,6 +42,10 @@ enum Formatters {
             value: voltage,
             unit: UnitElectricPotentialDifference.volts
         )
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = 1
+        measurementFormatter.numberFormatter = numberFormatter
 
         return measurementFormatter.string(from: measurement)
     }
@@ -51,6 +55,10 @@ enum Formatters {
             value: speed,
             unit: UnitSpeed.metersPerSecond
         )
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = 0
+        measurementFormatter.numberFormatter = numberFormatter
 
         return measurementFormatter.string(from: measurement)
     }
@@ -62,9 +70,12 @@ enum Formatters {
         let formatter = MeasurementFormatter()
         formatter.numberFormatter = numberFormatter
         formatter.unitStyle = .medium
-        formatter.unitOptions = .naturalScale
+        formatter.unitOptions = .providedUnit
         
-        let measurement = Measurement(value: length, unit: UnitLength.meters)
+        var measurement = Measurement(value: length, unit: UnitLength.meters)
+        if !Locale.current.usesMetricSystem {
+            measurement.convert(to: .feet)
+        }
 
         return formatter.string(from: measurement)
     }

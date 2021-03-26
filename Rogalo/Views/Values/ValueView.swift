@@ -50,6 +50,14 @@ struct CharacteristicView_Previews: PreviewProvider {
             )
             ValueView(store: DeviceValueStore(value: .flightTime(value: 4836))
             )
+            ValueView(store: DeviceValueStore(value: .temperatureEngine(value: 11.3))
+            )
+            ValueView(store: DeviceValueStore(value: .voltage(value: 11.3))
+            )
+            ValueView(store: ValueStore(value: MapValue.speed(speed: 14.8))
+            )
+            ValueView(store: ValueStore(value: MapValue.altitude(altitude: 348.2))
+            )
         }
     }
 }
