@@ -118,7 +118,7 @@ private extension LocationManager {
 // MARK: - CLLocationManagerDelegate methods
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last, location.horizontalAccuracy >= Self.horizontalAccuracyFilter else {
+        guard let location = locations.last, location.horizontalAccuracy <= Self.horizontalAccuracyFilter else {
             return
         }
 

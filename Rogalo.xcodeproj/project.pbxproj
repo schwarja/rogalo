@@ -72,6 +72,7 @@
 		C17F05D02607BBCF000E9917 /* DeviceValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05CF2607BBCF000E9917 /* DeviceValueStore.swift */; };
 		C17F05D42607BE2E000E9917 /* DeviceValueStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05D32607BE2E000E9917 /* DeviceValueStoring.swift */; };
 		C17F05D82607C045000E9917 /* MapValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F05D72607C045000E9917 /* MapValue.swift */; };
+		C17F2DC7260F689000EE243C /* MapDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F2DC6260F689000EE243C /* MapDestinationView.swift */; };
 		C182EAEA25F53E54009B2321 /* SettingsPairedDeviceFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182EAE925F53E54009B2321 /* SettingsPairedDeviceFooterView.swift */; };
 		C182EAED25F53FC1009B2321 /* SettingsAlertHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182EAEC25F53FC1009B2321 /* SettingsAlertHeader.swift */; };
 		C182EAF025F5455D009B2321 /* SettingsViewStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182EAEF25F5455D009B2321 /* SettingsViewStoring.swift */; };
@@ -218,6 +219,7 @@
 		C17F05CF2607BBCF000E9917 /* DeviceValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceValueStore.swift; sourceTree = "<group>"; };
 		C17F05D32607BE2E000E9917 /* DeviceValueStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceValueStoring.swift; sourceTree = "<group>"; };
 		C17F05D72607C045000E9917 /* MapValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapValue.swift; sourceTree = "<group>"; };
+		C17F2DC6260F689000EE243C /* MapDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDestinationView.swift; sourceTree = "<group>"; };
 		C182EAE925F53E54009B2321 /* SettingsPairedDeviceFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPairedDeviceFooterView.swift; sourceTree = "<group>"; };
 		C182EAEC25F53FC1009B2321 /* SettingsAlertHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAlertHeader.swift; sourceTree = "<group>"; };
 		C182EAEF25F5455D009B2321 /* SettingsViewStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewStoring.swift; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 				C1E617672607F52D0043934A /* UIKitMapView.swift */,
 				C1C6822D260F3B77006E5296 /* ZoomSliderView.swift */,
 				C1C68230260F3E3C006E5296 /* MapControlsView.swift */,
+				C17F2DC6260F689000EE243C /* MapDestinationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1156,6 +1159,7 @@
 				C16D9E4E25EAC373009F3ADE /* ValueScale.swift in Sources */,
 				C1C68237260F632E006E5296 /* Coordinate.swift in Sources */,
 				C17F05A92607ABAD000E9917 /* MapStoring.swift in Sources */,
+				C17F2DC7260F689000EE243C /* MapDestinationView.swift in Sources */,
 				C16D9E3C25EA9CC9009F3ADE /* StatusView.swift in Sources */,
 				C1CAE78E2586634700CB60E7 /* DeviceManaging.swift in Sources */,
 				C1CAE76825864B5A00CB60E7 /* AppStorage.swift in Sources */,

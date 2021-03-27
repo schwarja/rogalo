@@ -55,6 +55,11 @@ class MapRenderingCoordinator: NSObject, UIKitMapViewDelegate {
     }
     
     func userDidDropPin(at coordinate: CLLocationCoordinate2D, in mapView: UIKitMapView) {
-        parent.pinCoordinate = Coordinate(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        let userLocation = mapView.userLocation
+        
+        parent.track = (
+            start: Coordinate(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude),
+            end: Coordinate(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        )
     }
 }

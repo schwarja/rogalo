@@ -18,7 +18,7 @@ struct MapView: View {
     @State var locations: [Location] = []
     @State var stickToCurrentLocation = true
     @State var zoomDiameter: Double = 0.004
-    @State var pinCoordinate: Coordinate?
+    @State var track: (start: Coordinate, end: Coordinate)?
 
     var body: some View {
         VStack {
@@ -28,6 +28,18 @@ struct MapView: View {
                     eventHandler: coordinator
                 )
             }
+            Group {
+                if let destination = track?.end, let current = currentLocation {
+                    MapDestinationView(distance: current.coordinate.distance(to: destination)) {
+                        track = nil
+                    }
+                    .frame(minHeight: 56)
+                } else {
+                    AppText(LocalizedString.mapNoDestinationTitle(), style: .body)
+                        .frame(minHeight: 56)
+                }
+            }
+                .padding(.horizontal, 8)
             HStack {
                 ValueView(store: ValueStore(value: MapValue.altitude(altitude: currentLocation?.altitude)))
                     .frame(maxWidth: .infinity)
@@ -36,10 +48,10 @@ struct MapView: View {
             }
             ZStack(alignment: .bottomTrailing) {
                 MapRenderingView(
-                    pinCoordinate: $pinCoordinate,
+                    track: $track,
                     stickToCurrentLocation: $stickToCurrentLocation,
                     zoomRange: $zoomDiameter,
-                    locations: locations
+                    locations: $locations
                 )
                 
                 MapControlsView(
