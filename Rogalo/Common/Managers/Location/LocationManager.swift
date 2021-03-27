@@ -10,6 +10,7 @@ import Combine
 
 final class LocationManager: NSObject {
     static let distanceFilter: CLLocationDistance = 10
+    static let horizontalAccuracyFilter: CLLocationDistance = 50
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     private var locationManager: CLLocationManager!
@@ -117,7 +118,7 @@ private extension LocationManager {
 // MARK: - CLLocationManagerDelegate methods
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else {
+        guard let location = locations.last, location.horizontalAccuracy <= Self.horizontalAccuracyFilter else {
             return
         }
 

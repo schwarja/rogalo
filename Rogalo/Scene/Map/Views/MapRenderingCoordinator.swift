@@ -19,18 +19,37 @@ class MapRenderingCoordinator: NSObject, UIKitMapViewDelegate {
         self.parent = parent
     }
     
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        parent.recenter(view: mapView)
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        switch overlay {
+        case is MKTrackLine:
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.lineWidth = parent.strokeWidth
+            renderer.strokeColor = parent.strokeColorTrack
+            return renderer
+        case is MKRoutePolyline:
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.lineWidth = parent.strokeWidth
+            renderer.strokeColor = parent.strokeColorRoute
+            return renderer
+        default:
+            return MKOverlayRenderer()
+        }
     }
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.lineWidth = parent.strokeWidth
-        renderer.strokeColor = parent.strokeColor
-        return renderer
+    func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+        parent.updateZoom(to: mapView.region.span)
     }
     
     func userDidInteractWithMapView(_ mapView: UIKitMapView) {
         parent.stickToCurrentLocation = false
+    }
+    
+    func userDidDropPin(at coordinate: CLLocationCoordinate2D, in mapView: UIKitMapView) {
+        let userLocation = mapView.userLocation
+        
+        parent.track = (
+            start: Coordinate(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude),
+            end: Coordinate(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        )
     }
 }

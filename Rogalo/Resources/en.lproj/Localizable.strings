@@ -18,6 +18,7 @@
 "general.alert.location.permission.denied.title" = "Permission for location denied";
 "general.alert.location.permission.denied.subtitle" = "If you want to track your altitude, speed and location, please, enable access to Location services in Settings";
 "general.alert.go.to.settings.action" = "Go to Settings";
+"general.action.cancel" = "Cancel";
 
 "device.values.empty" = "-";
 "device.values.no.data" = "No data";
@@ -52,3 +53,5 @@
 "map.title" = "Map";
 "map.altitude.title" = "Altitude";
 "map.speed.title" = "Speed";
+"map.distance.to.destination.title" = "Distance to destination";
+"map.no.destination.title" = "Destination not selected";

@@ -18,6 +18,7 @@
 "general.alert.location.permission.denied.title" = "Aplikace nemá přístup k polohovým službám";
 "general.alert.location.permission.denied.subtitle" = "Pokud chcete získávat údaje o své výšce, rychlosti a poloze, umožněte aplikaci přítup k polohovým službám v Nastavení";
 "general.alert.go.to.settings.action" = "Otevřít Nastavení";
+"general.action.cancel" = "Zrušit";
 
 "device.values.empty" = "-";
 "device.values.no.data" = "Žádná data";
@@ -52,3 +53,5 @@
 "map.title" = "Mapa";
 "map.altitude.title" = "Výška";
 "map.speed.title" = "Rychlost";
+"map.distance.to.destination.title" = "Vzdálenost do cíle";
+"map.no.destination.title" = "Není zvolen cíl";

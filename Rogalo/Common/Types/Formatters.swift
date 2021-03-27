@@ -79,4 +79,18 @@ enum Formatters {
 
         return formatter.string(from: measurement)
     }
+    
+    static func formattedDistance(for length: Double) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = 1
+        
+        let formatter = MeasurementFormatter()
+        formatter.numberFormatter = numberFormatter
+        formatter.unitStyle = .medium
+        formatter.unitOptions = .naturalScale
+        
+        let measurement = Measurement(value: length, unit: UnitLength.meters)
+
+        return formatter.string(from: measurement)
+    }
 }
