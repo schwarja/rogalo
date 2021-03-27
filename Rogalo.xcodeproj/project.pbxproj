@@ -14,6 +14,7 @@
 		C1036CE625EBE8C8003A358B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE525EBE8C8003A358B /* SettingsViewModel.swift */; };
 		C1036CEA25EBEF59003A358B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE925EBEF59003A358B /* Constants.swift */; };
 		C1036CF125EBFAFE003A358B /* PeripheralListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CF025EBFAFE003A358B /* PeripheralListViewModel.swift */; };
+		C1102B67260FBAA500008F82 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1102B66260FBAA500008F82 /* CLLocationCoordinate2D+Equatable.swift */; };
 		C112C726257D774B00B1F8A9 /* EngineCharacteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */; };
 		C112C72A257D7B0100B1F8A9 /* ValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C729257D7B0100B1F8A9 /* ValuesView.swift */; };
 		C112C72F257D7B2000B1F8A9 /* ValuesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C72E257D7B2000B1F8A9 /* ValuesStore.swift */; };
@@ -99,7 +100,6 @@
 		C1B25DB8257D48BF006E808C /* BluetoothManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25DB7257D48BF006E808C /* BluetoothManaging.swift */; };
 		C1C6822E260F3B77006E5296 /* ZoomSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C6822D260F3B77006E5296 /* ZoomSliderView.swift */; };
 		C1C68231260F3E3C006E5296 /* MapControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C68230260F3E3C006E5296 /* MapControlsView.swift */; };
-		C1C68234260F6009006E5296 /* CoordinateSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C68233260F6009006E5296 /* CoordinateSpan.swift */; };
 		C1C68237260F632E006E5296 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C68236260F632E006E5296 /* Coordinate.swift */; };
 		C1C6823B260F66A7006E5296 /* MKOverlay+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C6823A260F66A7006E5296 /* MKOverlay+Custom.swift */; };
 		C1CA846D25F56FF400D16A23 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CA846C25F56FF400D16A23 /* Battery.swift */; };
@@ -160,6 +160,7 @@
 		C1036CE525EBE8C8003A358B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C1036CE925EBEF59003A358B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C1036CF025EBFAFE003A358B /* PeripheralListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralListViewModel.swift; sourceTree = "<group>"; };
+		C1102B66260FBAA500008F82 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
 		C112C725257D774B00B1F8A9 /* EngineCharacteristics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineCharacteristics.swift; sourceTree = "<group>"; };
 		C112C729257D7B0100B1F8A9 /* ValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesView.swift; sourceTree = "<group>"; };
 		C112C72E257D7B2000B1F8A9 /* ValuesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesStore.swift; sourceTree = "<group>"; };
@@ -248,7 +249,6 @@
 		C1B25DB7257D48BF006E808C /* BluetoothManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManaging.swift; sourceTree = "<group>"; };
 		C1C6822D260F3B77006E5296 /* ZoomSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomSliderView.swift; sourceTree = "<group>"; };
 		C1C68230260F3E3C006E5296 /* MapControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapControlsView.swift; sourceTree = "<group>"; };
-		C1C68233260F6009006E5296 /* CoordinateSpan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSpan.swift; sourceTree = "<group>"; };
 		C1C68236260F632E006E5296 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		C1C6823A260F66A7006E5296 /* MKOverlay+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKOverlay+Custom.swift"; sourceTree = "<group>"; };
 		C1CA846C25F56FF400D16A23 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
@@ -748,9 +748,9 @@
 			isa = PBXGroup;
 			children = (
 				C17F05A22607A885000E9917 /* Location.swift */,
-				C1C68233260F6009006E5296 /* CoordinateSpan.swift */,
 				C1C68236260F632E006E5296 /* Coordinate.swift */,
 				C1C6823A260F66A7006E5296 /* MKOverlay+Custom.swift */,
+				C1102B66260FBAA500008F82 /* CLLocationCoordinate2D+Equatable.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -1096,7 +1096,6 @@
 				C1CAE7922586636300CB60E7 /* DeviceManager.swift in Sources */,
 				C149F1F425EA637D00F55965 /* RecordsStore.swift in Sources */,
 				C1F36C7D2586A2BF002930B2 /* ValuesCoordinatorEventHandling.swift in Sources */,
-				C1C68234260F6009006E5296 /* CoordinateSpan.swift in Sources */,
 				C112C72A257D7B0100B1F8A9 /* ValuesView.swift in Sources */,
 				C1B25DAA257D437C006E808C /* ContentView.swift in Sources */,
 				C182EAFA25F547A3009B2321 /* MockSettingsViewStore.swift in Sources */,
@@ -1158,6 +1157,7 @@
 				C17F05C42607B853000E9917 /* MapRenderingView.swift in Sources */,
 				C16D9E4E25EAC373009F3ADE /* ValueScale.swift in Sources */,
 				C1C68237260F632E006E5296 /* Coordinate.swift in Sources */,
+				C1102B67260FBAA500008F82 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				C17F05A92607ABAD000E9917 /* MapStoring.swift in Sources */,
 				C17F2DC7260F689000EE243C /* MapDestinationView.swift in Sources */,
 				C16D9E3C25EA9CC9009F3ADE /* StatusView.swift in Sources */,

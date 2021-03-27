@@ -46,23 +46,31 @@ struct MapView: View {
                 ValueView(store: ValueStore(value: MapValue.speed(speed: currentLocation?.speed)))
                     .frame(maxWidth: .infinity)
             }
-            ZStack(alignment: .bottomTrailing) {
-                MapRenderingView(
-                    track: $track,
-                    stickToCurrentLocation: $stickToCurrentLocation,
-                    zoomRange: $zoomDiameter,
-                    locations: $locations
-                )
-                
-                MapControlsView(
-                    stickToCurrentLocation: $stickToCurrentLocation,
-                    zoomDiameter: $zoomDiameter,
-                    zoomRange: Self.zoomRange)
+            ZStack(alignment: .bottom) {
+                mapView
+                mapControls
             }
         }
         .onReceive(store.authorization, perform: { self.authorization = $0 })
         .onReceive(store.currentLocation, perform: { self.currentLocation = $0 })
         .onReceive(store.locations, perform: { self.locations = $0 })
+    }
+    
+    var mapView: MapRenderingView {
+        MapRenderingView(
+            track: $track,
+            stickToCurrentLocation: $stickToCurrentLocation,
+            zoomRange: $zoomDiameter,
+            locations: $locations
+        )
+    }
+    
+    var mapControls: MapControlsView {
+        MapControlsView(
+            stickToCurrentLocation: $stickToCurrentLocation,
+            zoomDiameter: $zoomDiameter,
+            zoomRange: Self.zoomRange
+        )
     }
 }
 

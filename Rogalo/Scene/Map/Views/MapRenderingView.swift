@@ -20,8 +20,6 @@ struct MapRenderingView: UIViewRepresentable {
     @Binding var zoomRange: Double
     @Binding var locations: [Location]
     
-    private let span = CoordinateSpan()
-    
     func makeUIView(context: Context) -> UIKitMapView {
         let mapView = UIKitMapView()
         mapView.interactionDelegate = context.coordinator
@@ -36,10 +34,9 @@ struct MapRenderingView: UIViewRepresentable {
     func updateUIView(_ view: UIKitMapView, context: Context) {
         context.coordinator.update(parent: self)
         
-        recenter(view: view)
+        updateRegion(in: view)
         addPath(to: view)
         dropPin(in: view)
-        zoom(in: view)
     }
 
     func makeCoordinator() -> MapRenderingCoordinator {
@@ -48,19 +45,24 @@ struct MapRenderingView: UIViewRepresentable {
 }
 
 extension MapRenderingView {
-    func recenter(view: MKMapView) {
-        guard stickToCurrentLocation else {
+    func updateRegion(in view: MKMapView) {
+        let center = stickToCurrentLocation ? view.userLocation.coordinate : view.centerCoordinate
+        
+        guard view.region.span.longitudeDelta != zoomRange || view.region.center != center else {
             return
         }
         
         let span = MKCoordinateSpan(latitudeDelta: zoomRange, longitudeDelta: zoomRange)
-        let region = MKCoordinateRegion(center: view.userLocation.coordinate, span: span)
+        let region = MKCoordinateRegion(center: center, span: span)
         
         view.setRegion(region, animated: true)
     }
-    
+
     private func addPath(to view: MKMapView) {
-        view.removeOverlays(view.overlays)
+        let routeOverlays = view.overlays.filter { $0 is MKRoutePolyline }
+        let trackOverlays = view.overlays.compactMap { $0 as? MKTrackLine }
+        
+        view.removeOverlays(routeOverlays)
         
         let coordinates = locations.map {
             CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
@@ -70,6 +72,7 @@ extension MapRenderingView {
         view.addOverlay(route)
         
         guard let track = track else {
+            view.removeOverlays(trackOverlays)
             return
         }
         
@@ -78,39 +81,39 @@ extension MapRenderingView {
             track.end.clCoordinate
         ]
         let trackOverlay = MKTrackLine(coordinates: trackCoordinates, count: trackCoordinates.count)
+
+        guard trackOverlay.coordinate != trackOverlays.first?.coordinate else {
+            return
+        }
+        
+        view.removeOverlays(trackOverlays)
         view.addOverlay(trackOverlay)
     }
     
-    private func zoom(in view: MKMapView) {
-        guard span.latitude != zoomRange else {
-            return
-        }
-                
-        let span = MKCoordinateSpan(latitudeDelta: zoomRange, longitudeDelta: zoomRange)
-        let region = MKCoordinateRegion(center: view.centerCoordinate, span: span)
-
-        self.span.update(with: span)
-        view.setRegion(region, animated: true)
-    }
-    
     func updateZoom(to span: MKCoordinateSpan) {
-        guard abs(self.span.latitude - span.latitudeDelta) > (0.3*self.span.latitude) else {
+        guard !stickToCurrentLocation && zoomRange != span.longitudeDelta else {
             return
         }
-
-        self.span.update(with: span)
-        zoomRange = span.latitudeDelta
+        
+        zoomRange = span.longitudeDelta
     }
     
     func dropPin(in view: MKMapView) {
+        let destinationCoordinate = track?.end.clCoordinate
+        let annotationCoordinate = view.annotations.first?.coordinate
+        
+        guard destinationCoordinate != annotationCoordinate else {
+            return
+        }
+        
         view.removeAnnotations(view.annotations)
 
-        guard let coordinate = track?.end else {
+        guard let coordinate = destinationCoordinate else {
             return
         }
         
         let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate.clCoordinate
+        annotation.coordinate = coordinate
         view.addAnnotation(annotation)
     }
 }

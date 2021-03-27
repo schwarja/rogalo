@@ -21,10 +21,6 @@ class MapRenderingCoordinator: NSObject, UIKitMapViewDelegate {
         self.parent = parent
     }
     
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        parent.recenter(view: mapView)
-    }
-    
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         switch overlay {
         case is MKTrackLine:
@@ -43,11 +39,7 @@ class MapRenderingCoordinator: NSObject, UIKitMapViewDelegate {
     }
     
     func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-        zoomUpdateThrottler?.invalidate()
-        
-        zoomUpdateThrottler = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { [weak self] _ in
-            self?.parent.updateZoom(to: mapView.region.span)
-        }
+        parent.updateZoom(to: mapView.region.span)
     }
     
     func userDidInteractWithMapView(_ mapView: UIKitMapView) {
