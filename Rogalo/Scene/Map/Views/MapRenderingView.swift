@@ -10,8 +10,12 @@ import MapKit
 
 struct MapRenderingView: UIViewRepresentable {
     let strokeWidth: CGFloat = 5
-    let strokeColor: UIColor = .red
-    
+    // swiftlint:disable:next force_unwrapping
+    let strokeColorRoute: UIColor = R.color.failureIndicationColor()!
+    // swiftlint:disable:next force_unwrapping
+    let strokeColorTrack: UIColor = R.color.tintColor()!
+
+    @Binding var pinCoordinate: Coordinate?
     @Binding var stickToCurrentLocation: Bool
     @Binding var zoomRange: Double
     var locations: [Location]
@@ -24,6 +28,7 @@ struct MapRenderingView: UIViewRepresentable {
         mapView.showsUserLocation = true
         
         addPath(to: mapView)
+        dropPin(in: mapView)
         
         return mapView
     }
@@ -33,6 +38,7 @@ struct MapRenderingView: UIViewRepresentable {
         
         recenter(view: view)
         addPath(to: view)
+        dropPin(in: view)
         zoom(in: view)
     }
 
@@ -59,8 +65,20 @@ extension MapRenderingView {
         let coordinates = locations.map {
             CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
         }
-        let route = MKPolyline(coordinates: coordinates, count: coordinates.count)
+        
+        let route = MKRoutePolyline(coordinates: coordinates, count: coordinates.count)
         view.addOverlay(route)
+        
+        guard let destination = pinCoordinate else {
+            return
+        }
+        
+        let trackCoordinates = [
+            view.userLocation.coordinate,
+            CLLocationCoordinate2D(latitude: destination.latitude, longitude: destination.longitude)
+        ]
+        let track = MKTrackLine(coordinates: trackCoordinates, count: trackCoordinates.count)
+        view.addOverlay(track)
     }
     
     private func zoom(in view: MKMapView) {
@@ -82,5 +100,17 @@ extension MapRenderingView {
 
         self.span.update(with: span)
         zoomRange = span.latitudeDelta
+    }
+    
+    func dropPin(in view: MKMapView) {
+        view.removeAnnotations(view.annotations)
+
+        guard let coordinate = pinCoordinate else {
+            return
+        }
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        view.addAnnotation(annotation)
     }
 }

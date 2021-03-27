@@ -18,6 +18,7 @@ struct MapView: View {
     @State var locations: [Location] = []
     @State var stickToCurrentLocation = true
     @State var zoomDiameter: Double = 0.004
+    @State var pinCoordinate: Coordinate?
 
     var body: some View {
         VStack {
@@ -35,6 +36,7 @@ struct MapView: View {
             }
             ZStack(alignment: .bottomTrailing) {
                 MapRenderingView(
+                    pinCoordinate: $pinCoordinate,
                     stickToCurrentLocation: $stickToCurrentLocation,
                     zoomRange: $zoomDiameter,
                     locations: locations

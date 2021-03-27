@@ -26,10 +26,20 @@ class MapRenderingCoordinator: NSObject, UIKitMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.lineWidth = parent.strokeWidth
-        renderer.strokeColor = parent.strokeColor
-        return renderer
+        switch overlay {
+        case is MKTrackLine:
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.lineWidth = parent.strokeWidth
+            renderer.strokeColor = parent.strokeColorTrack
+            return renderer
+        case is MKRoutePolyline:
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.lineWidth = parent.strokeWidth
+            renderer.strokeColor = parent.strokeColorRoute
+            return renderer
+        default:
+            return MKOverlayRenderer()
+        }
     }
     
     func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
@@ -42,5 +52,9 @@ class MapRenderingCoordinator: NSObject, UIKitMapViewDelegate {
     
     func userDidInteractWithMapView(_ mapView: UIKitMapView) {
         parent.stickToCurrentLocation = false
+    }
+    
+    func userDidDropPin(at coordinate: CLLocationCoordinate2D, in mapView: UIKitMapView) {
+        parent.pinCoordinate = Coordinate(latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
 }
