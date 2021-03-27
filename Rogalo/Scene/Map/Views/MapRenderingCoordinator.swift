@@ -10,6 +10,8 @@ import MapKit
 
 class MapRenderingCoordinator: NSObject, UIKitMapViewDelegate {
     private var parent: MapRenderingView
+    
+    private var zoomUpdateThrottler: Timer?
 
     init(_ parent: MapRenderingView) {
         self.parent = parent
@@ -28,6 +30,14 @@ class MapRenderingCoordinator: NSObject, UIKitMapViewDelegate {
         renderer.lineWidth = parent.strokeWidth
         renderer.strokeColor = parent.strokeColor
         return renderer
+    }
+    
+    func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+        zoomUpdateThrottler?.invalidate()
+        
+        zoomUpdateThrottler = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { [weak self] _ in
+            self?.parent.updateZoom(to: mapView.region.span)
+        }
     }
     
     func userDidInteractWithMapView(_ mapView: UIKitMapView) {

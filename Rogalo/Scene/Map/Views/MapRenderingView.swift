@@ -9,13 +9,14 @@ import SwiftUI
 import MapKit
 
 struct MapRenderingView: UIViewRepresentable {
-    static let focusRange: CLLocationDistance = 400
-    
     let strokeWidth: CGFloat = 5
     let strokeColor: UIColor = .red
     
     @Binding var stickToCurrentLocation: Bool
+    @Binding var zoomRange: Double
     var locations: [Location]
+    
+    private let span = CoordinateSpan()
     
     func makeUIView(context: Context) -> UIKitMapView {
         let mapView = UIKitMapView()
@@ -32,6 +33,7 @@ struct MapRenderingView: UIViewRepresentable {
         
         recenter(view: view)
         addPath(to: view)
+        zoom(in: view)
     }
 
     func makeCoordinator() -> MapRenderingCoordinator {
@@ -45,8 +47,9 @@ extension MapRenderingView {
             return
         }
         
-        let region = MKCoordinateRegion(center: view.userLocation.coordinate, latitudinalMeters: Self.focusRange, longitudinalMeters: Self.focusRange)
-
+        let span = MKCoordinateSpan(latitudeDelta: zoomRange, longitudeDelta: zoomRange)
+        let region = MKCoordinateRegion(center: view.userLocation.coordinate, span: span)
+        
         view.setRegion(region, animated: true)
     }
     
@@ -58,5 +61,26 @@ extension MapRenderingView {
         }
         let route = MKPolyline(coordinates: coordinates, count: coordinates.count)
         view.addOverlay(route)
+    }
+    
+    private func zoom(in view: MKMapView) {
+        guard span.latitude != zoomRange else {
+            return
+        }
+                
+        let span = MKCoordinateSpan(latitudeDelta: zoomRange, longitudeDelta: zoomRange)
+        let region = MKCoordinateRegion(center: view.centerCoordinate, span: span)
+
+        self.span.update(with: span)
+        view.setRegion(region, animated: true)
+    }
+    
+    func updateZoom(to span: MKCoordinateSpan) {
+        guard abs(self.span.latitude - span.latitudeDelta) > (0.1*self.span.latitude) else {
+            return
+        }
+
+        self.span.update(with: span)
+        zoomRange = span.latitudeDelta
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MapView: View {
+    static let zoomRange: ClosedRange<Double> = 0.001...0.1
+    
     let store: MapStoring
     weak var coordinator: MapTabEventHandling?
 
@@ -15,6 +17,7 @@ struct MapView: View {
     @State var currentLocation: Location?
     @State var locations: [Location] = []
     @State var stickToCurrentLocation = true
+    @State var zoomDiameter: Double = 0.004
 
     var body: some View {
         VStack {
@@ -31,19 +34,16 @@ struct MapView: View {
                     .frame(maxWidth: .infinity)
             }
             ZStack(alignment: .bottomTrailing) {
-                MapRenderingView(stickToCurrentLocation: $stickToCurrentLocation, locations: locations)
-                Button(
-                    action: {
-                        stickToCurrentLocation = true
-                    },
-                    label: {
-                        Image(systemName: "location.north.fill")
-                            .padding()
-                    }
+                MapRenderingView(
+                    stickToCurrentLocation: $stickToCurrentLocation,
+                    zoomRange: $zoomDiameter,
+                    locations: locations
                 )
-                .background(Color.appBackgroundInverted.opacity(0.3))
-                .cornerRadius(8)
-                .padding(24)
+                
+                MapControlsView(
+                    stickToCurrentLocation: $stickToCurrentLocation,
+                    zoomDiameter: $zoomDiameter,
+                    zoomRange: Self.zoomRange)
             }
         }
         .onReceive(store.authorization, perform: { self.authorization = $0 })

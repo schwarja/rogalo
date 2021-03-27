@@ -96,6 +96,9 @@
 		C1B25DAF257D43F9006E808C /* SettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25DAE257D43F9006E808C /* SettingsTab.swift */; };
 		C1B25DB3257D48A2006E808C /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25DB2257D48A2006E808C /* BluetoothManager.swift */; };
 		C1B25DB8257D48BF006E808C /* BluetoothManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B25DB7257D48BF006E808C /* BluetoothManaging.swift */; };
+		C1C6822E260F3B77006E5296 /* ZoomSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C6822D260F3B77006E5296 /* ZoomSliderView.swift */; };
+		C1C68231260F3E3C006E5296 /* MapControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C68230260F3E3C006E5296 /* MapControlsView.swift */; };
+		C1C68234260F6009006E5296 /* CoordinateSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C68233260F6009006E5296 /* CoordinateSpan.swift */; };
 		C1CA846D25F56FF400D16A23 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CA846C25F56FF400D16A23 /* Battery.swift */; };
 		C1CA847125F57C5E00D16A23 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CA847025F57C5E00D16A23 /* Order.swift */; };
 		C1CAE7252586394700CB60E7 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CAE7242586394700CB60E7 /* SceneCoordinator.swift */; };
@@ -239,6 +242,9 @@
 		C1B25DAE257D43F9006E808C /* SettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTab.swift; sourceTree = "<group>"; };
 		C1B25DB2257D48A2006E808C /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		C1B25DB7257D48BF006E808C /* BluetoothManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManaging.swift; sourceTree = "<group>"; };
+		C1C6822D260F3B77006E5296 /* ZoomSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomSliderView.swift; sourceTree = "<group>"; };
+		C1C68230260F3E3C006E5296 /* MapControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapControlsView.swift; sourceTree = "<group>"; };
+		C1C68233260F6009006E5296 /* CoordinateSpan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSpan.swift; sourceTree = "<group>"; };
 		C1CA846C25F56FF400D16A23 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
 		C1CA847025F57C5E00D16A23 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		C1CAE7242586394700CB60E7 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
@@ -406,6 +412,7 @@
 				C1CA847025F57C5E00D16A23 /* Order.swift */,
 				C155E190257D4C3E00A845B9 /* Peripheral.swift */,
 				C17F05A22607A885000E9917 /* Location.swift */,
+				C1C68233260F6009006E5296 /* CoordinateSpan.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -499,6 +506,8 @@
 				C1E61782260A42EA0043934A /* MapRenderingCoordinator.swift */,
 				C17F05C32607B853000E9917 /* MapRenderingView.swift */,
 				C1E617672607F52D0043934A /* UIKitMapView.swift */,
+				C1C6822D260F3B77006E5296 /* ZoomSliderView.swift */,
+				C1C68230260F3E3C006E5296 /* MapControlsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1053,6 +1062,7 @@
 				C1F36C6D258696F6002930B2 /* SettingsTabEventHandling.swift in Sources */,
 				C1E617622607EB290043934A /* LocationAuthorization+StatusViewModel.swift in Sources */,
 				C17F05B12607ABD2000E9917 /* MapCoordinator.swift in Sources */,
+				C1C6822E260F3B77006E5296 /* ZoomSliderView.swift in Sources */,
 				C149F1DB25EA531E00F55965 /* NotificationAuthorizationStatus.swift in Sources */,
 				C149F1EA25EA62C100F55965 /* RecordsCoordinator.swift in Sources */,
 				C112C733257D7D9200B1F8A9 /* ValuesTab.swift in Sources */,
@@ -1069,6 +1079,7 @@
 				C1CAE7922586636300CB60E7 /* DeviceManager.swift in Sources */,
 				C149F1F425EA637D00F55965 /* RecordsStore.swift in Sources */,
 				C1F36C7D2586A2BF002930B2 /* ValuesCoordinatorEventHandling.swift in Sources */,
+				C1C68234260F6009006E5296 /* CoordinateSpan.swift in Sources */,
 				C112C72A257D7B0100B1F8A9 /* ValuesView.swift in Sources */,
 				C1B25DAA257D437C006E808C /* ContentView.swift in Sources */,
 				C182EAFA25F547A3009B2321 /* MockSettingsViewStore.swift in Sources */,
@@ -1134,6 +1145,7 @@
 				C1CAE78E2586634700CB60E7 /* DeviceManaging.swift in Sources */,
 				C1CAE76825864B5A00CB60E7 /* AppStorage.swift in Sources */,
 				C1CAE74B2586424800CB60E7 /* PairingCoordinator.swift in Sources */,
+				C1C68231260F3E3C006E5296 /* MapControlsView.swift in Sources */,
 				C1A4AC2325EBCAAF00290AE2 /* AppText.swift in Sources */,
 				C1A4AC2925EBCC7700290AE2 /* Text+AppStyles.swift in Sources */,
 				C1CAE7292586397100CB60E7 /* SceneCoordinating.swift in Sources */,

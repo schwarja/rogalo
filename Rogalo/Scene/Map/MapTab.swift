@@ -17,13 +17,10 @@ struct MapTab: View {
     }
 
     var body: some View {
-        NavigationView {
-            MapView(
-                store: store,
-                coordinator: coordinator
-            )
-            .navigationBarTitle(LocalizedString.mapTitle())
-        }
+        MapView(
+            store: store,
+            coordinator: coordinator
+        )
     }
 }
 
