@@ -10,8 +10,6 @@ import MapKit
 
 class MapRenderingCoordinator: NSObject, UIKitMapViewDelegate {
     private var parent: MapRenderingView
-    
-    private var zoomUpdateThrottler: Timer?
 
     init(_ parent: MapRenderingView) {
         self.parent = parent
