@@ -1350,7 +1350,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = BackgroundColor;
 				CODE_SIGN_IDENTITY = "Apple Development: Jan Pacek (XT97TS9CAT)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = D6532TRNCE;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Rogalo/Resources/Info.plist;
@@ -1358,6 +1358,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = enterprise.com.strv.test.rogalo.Rogalo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development enterprise.com.strv.*";
@@ -1374,7 +1375,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = BackgroundColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: STRV s.r.o.";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = D6532TRNCE;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Rogalo/Resources/Info.plist;
@@ -1382,6 +1383,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = enterprise.com.strv.test.rogalo.Rogalo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match InHouse enterprise.com.strv.*";
