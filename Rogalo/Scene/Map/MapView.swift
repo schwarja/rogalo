@@ -19,6 +19,7 @@ struct MapView: View {
     @State var stickToCurrentLocation = true
     @State var zoomDiameter: Double = 0.004
     @State var track: (start: Coordinate, end: Coordinate)?
+    @State var mapType: MapRenderingView.MapType = .default
 
     var body: some View {
         VStack {
@@ -46,9 +47,12 @@ struct MapView: View {
                 ValueView(store: ValueStore(value: MapValue.speed(speed: currentLocation?.speed)))
                     .frame(maxWidth: .infinity)
             }
-            ZStack(alignment: .bottom) {
-                mapView
-                mapControls
+            ZStack(alignment: .top) {
+                ZStack(alignment: .bottom) {
+                    mapView
+                    mapControls
+                }
+                MapTypePickerView(mapType: $mapType).padding()
             }
         }
         .onReceive(store.authorization, perform: { self.authorization = $0 })
@@ -61,7 +65,8 @@ struct MapView: View {
             track: $track,
             stickToCurrentLocation: $stickToCurrentLocation,
             zoomRange: $zoomDiameter,
-            locations: $locations
+            locations: $locations,
+            type: $mapType
         )
     }
     
