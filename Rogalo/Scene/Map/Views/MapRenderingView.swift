@@ -9,6 +9,33 @@ import SwiftUI
 import MapKit
 
 struct MapRenderingView: UIViewRepresentable {
+    enum MapType: String, CaseIterable, Identifiable {
+        case `default`
+        case satelite
+        
+        var id: String {
+            rawValue
+        }
+        
+        var title: String {
+            switch self {
+            case .default:
+                return LocalizedString.mapTypeDefault()
+            case .satelite:
+                return LocalizedString.mapTypeSatelite()
+            }
+        }
+        
+        var mkType: MKMapType {
+            switch self {
+            case .default:
+                return .standard
+            case .satelite:
+                return .satellite
+            }
+        }
+    }
+    
     let strokeWidth: CGFloat = 5
     // swiftlint:disable:next force_unwrapping
     let strokeColorRoute: UIColor = R.color.failureIndicationColor()!
@@ -19,11 +46,13 @@ struct MapRenderingView: UIViewRepresentable {
     @Binding var stickToCurrentLocation: Bool
     @Binding var zoomRange: Double
     @Binding var locations: [Location]
+    @Binding var type: MapType
     
     func makeUIView(context: Context) -> UIKitMapView {
         let mapView = UIKitMapView()
         mapView.interactionDelegate = context.coordinator
         mapView.showsUserLocation = true
+        mapView.mapType = type.mkType
         
         addPath(to: mapView)
         dropPin(in: mapView)
@@ -33,7 +62,8 @@ struct MapRenderingView: UIViewRepresentable {
 
     func updateUIView(_ view: UIKitMapView, context: Context) {
         context.coordinator.update(parent: self)
-        
+
+        updateMapType(for: view)
         updateRegion(in: view)
         addPath(to: view)
         dropPin(in: view)
@@ -115,5 +145,13 @@ extension MapRenderingView {
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         view.addAnnotation(annotation)
+    }
+    
+    private func updateMapType(for view: MKMapView) {
+        guard view.mapType != type.mkType else {
+            return
+        }
+        
+        view.mapType = type.mkType
     }
 }
