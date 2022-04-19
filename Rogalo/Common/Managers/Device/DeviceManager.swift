@@ -59,9 +59,9 @@ private extension DeviceManager {
     func setup() {
         device
             .compactMap(\.temperatureEngine)
-            .filter { $0 >= TemperatureSignificantValues.risk.rawValue }
-            .compactMap { temperature -> TemperatureSignificantValues? in
-                for value in TemperatureSignificantValues.sortedValues where temperature >= value.rawValue {
+            .removeDuplicates()
+            .compactMap { temperature -> EngineTemperatureSignificantEvents? in
+                for value in EngineTemperatureSignificantEvents.sortedValues where temperature >= value.rawValue {
                     return value
                 }
                 
@@ -76,21 +76,48 @@ private extension DeviceManager {
             .store(in: &cancellables)
         
         device
-            .compactMap(\.temperatureExhaust)
-            .filter { $0 >= ExhaustSignificantValues.emergency.rawValue }
-            .compactMap { temperature -> ExhaustSignificantValues? in
-                for value in ExhaustSignificantValues.sortedValues where temperature >= value.rawValue {
-                    return value
-                }
-                
-                return nil
+            .map(\.state)
+            .removeDuplicates()
+            .map { state -> ConnectivitySignificantEvents in
+                state == .connected ? .connected : .disconnected
+            }
+            .removeDuplicates()
+            .sink { [weak self] value in
+                self?.notificationManager.sendNotification(for: .connectivityEvent(type: value))
+            }
+            .store(in: &cancellables)
+
+        Publishers.CombineLatest(storage.battery, device.compactMap(\.voltage))
+            .map { battery, voltage -> GeneralSignificantEvents? in
+                voltage < battery.range.min ? .notCharging : nil
             }
             .removeDuplicates()
             .debounce(for: .seconds(10), scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { [weak self] value in
-                self?.notificationManager.sendNotification(for: .exhaustAlert(type: value))
+                guard let value = value else {
+                    return
+                }
+                
+                self?.notificationManager.sendNotification(for: .general(type: value))
             }
             .store(in: &cancellables)
-    }
+
+        device.compactMap(\.isFuelCritical)
+            .removeDuplicates()
+            .map { fuel -> GeneralSignificantEvents? in
+                fuel ? .outOfFuel : nil
+            }
+            .removeDuplicates()
+            .debounce(for: .seconds(10), scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink { [weak self] value in
+                guard let value = value else {
+                    return
+                }
+                
+                self?.notificationManager.sendNotification(for: .general(type: value))
+            }
+            .store(in: &cancellables)
+   }
 }

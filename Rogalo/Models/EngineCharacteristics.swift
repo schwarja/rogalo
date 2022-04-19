@@ -7,18 +7,18 @@
 
 import Foundation
 
-enum EngineCharacteristic: Int {
-    case empty
-    case speed
-    case speedMax
-    case voltage
-    case flightMinutes
-    case flightHours
-    case motoMinutes
-    case motoHours
-    case temperatureEngineMax
-    case temperatureEngine
-    case fuel
-    case temperatureExhaust
-    case temperatureExhaustMax
+enum EngineCharacteristic: String, CaseIterable {
+    case speed = "A"
+    case speedMax = "B"
+    case voltage = "L"
+    case flightMinutes = "I"
+    case flightHours = "J"
+    case motoMinutes = "H"
+    case motoHours = "G"
+    case temperatureEngineMax = "D"
+    case temperatureEngine = "C"
+    case fuel = "K"
+    case temperatureExhaust = "E"
+    case temperatureExhaustMax = "F"
+    case firmware = "M"
 }

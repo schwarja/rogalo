@@ -15,7 +15,7 @@ class MockMapStore: MapStoring {
     
     var currentLocation: AnyPublisher<Location, Never> {
         Just(
-            Location(latitude: 50, longitude: 15, speed: 10, altitude: 250)
+            Location(latitude: 50, longitude: 15, speed: 10, altitude: 250, course: 0)
         )
         .eraseToAnyPublisher()
     }

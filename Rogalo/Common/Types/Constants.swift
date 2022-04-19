@@ -15,4 +15,12 @@ enum Constants {
         
         return url
     }()
+    
+    static var currentLocalization: SupportedLocalization {
+        guard Bundle.main.preferredLocalizations.first != SupportedLocalization.czech.rawValue else {
+            return .czech
+        }
+        
+        return .english
+    }
 }

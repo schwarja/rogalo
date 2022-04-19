@@ -11,6 +11,8 @@ import UIKit
 import UserNotifications
 
 class NotificationManager: NotificationManaging {
+    typealias Event = TitleSpecifying & ResourceSpecifying
+    
     private let player = AVPlayer()
     private let generator = UINotificationFeedbackGenerator()
     
@@ -80,9 +82,10 @@ private extension NotificationManager {
     func sendPushNotification(for event: NotificationEvent) {
         let content: UNMutableNotificationContent
         switch event {
-        case let .temperatureAlert(type):
-            content = notificationContent(for: type)
-        case let .exhaustAlert(type):
+        case .temperatureAlert(let type as Event),
+                .exhaustAlert(let type as Event),
+                .connectivityEvent(let type as Event),
+                .general(let type as Event):
             content = notificationContent(for: type)
         }
         
@@ -91,26 +94,11 @@ private extension NotificationManager {
         UNUserNotificationCenter.current().add(request)
     }
     
-    func notificationContent(for temperature: TemperatureSignificantValues) -> UNMutableNotificationContent {
-        let temperatureRaw = temperature.rawValue
-        let formTemperature = Formatters.formattedTemperature(for: temperatureRaw)
-        
+    func notificationContent(for event: Event) -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
-        content.title = "\(LocalizedString.generalNotificationTemperatureEngineTitle()): \(LocalizedString.generalNotificationTemperatureSubtitle()) \(formTemperature)"
+        content.title = event.title
         content.sound = UNNotificationSound
-            .criticalSoundNamed(UNNotificationSoundName(temperature.fileName))
-        
-        return content
-    }
-    
-    func notificationContent(for temperature: ExhaustSignificantValues) -> UNMutableNotificationContent {
-        let temperatureRaw = temperature.rawValue
-        let formTemperature = Formatters.formattedTemperature(for: temperatureRaw)
-        
-        let content = UNMutableNotificationContent()
-        content.title = "\(LocalizedString.generalNotificationTemperatureExhaustTitle()): \(LocalizedString.generalNotificationTemperatureSubtitle()) \(formTemperature)"
-        content.sound = UNNotificationSound
-            .criticalSoundNamed(UNNotificationSoundName(temperature.fileName))
+            .criticalSoundNamed(UNNotificationSoundName(event.fileName))
         
         return content
     }
@@ -121,9 +109,10 @@ private extension NotificationManager {
     func playNotification(for event: NotificationEvent) {
         let item: AVPlayerItem?
         switch event {
-        case let .temperatureAlert(type):
-            item = notificationPlayerItem(for: type)
-        case let .exhaustAlert(type):
+        case .temperatureAlert(let type as ResourceSpecifying),
+                .exhaustAlert(let type as ResourceSpecifying),
+                .connectivityEvent(let type as ResourceSpecifying),
+                .general(let type as ResourceSpecifying):
             item = notificationPlayerItem(for: type)
         }
 

@@ -7,8 +7,14 @@
 */
 
 "general.notification.temperature.engine.title" = "Příliš vysoká teplota motoru";
+"general.notification.temperature.engine.ok" = "Teplota motoru je v pořádku";
 "general.notification.temperature.exhaust.title" = "Příliš vysoká teplota výfuku";
 "general.notification.temperature.subtitle" = "Teplota na hodnotě";
+"general.notification.connectivity.connected" = "Senzory jsou připojeny";
+"general.notification.connectivity.disconnected" = "Senzory jsou odpojeny";
+"general.notification.no.fuel" = "Dochází palivo";
+"general.notification.not.charging" = "Baterie se nedobíjí";
+
 "general.alert.bluetooth.permission.denied.title" = "Aplikace nemá přístup k Bluetooth";
 "general.alert.bluetooth.permission.denied.subtitle" = "Pokud se chcete připojit k zařízení, umožněte aplikaci přístup k Bluetooth v Nastavení";
 "general.alert.notification.permission.denied.title" = "Aplikace nemá povolené posílání notifikací";

@@ -67,6 +67,7 @@ struct MapRenderingView: UIViewRepresentable {
         updateRegion(in: view)
         addPath(to: view)
         dropPin(in: view)
+        updateDirection(in: view)
     }
 
     func makeCoordinator() -> MapRenderingCoordinator {
@@ -85,7 +86,20 @@ extension MapRenderingView {
         let span = MKCoordinateSpan(latitudeDelta: zoomRange, longitudeDelta: zoomRange)
         let region = MKCoordinateRegion(center: center, span: span)
         
-        view.setRegion(region, animated: true)
+        view.setRegion(region, animated: false)
+    }
+    
+    func updateDirection(in view: MKMapView) {
+        guard locations.count > 1 else {
+            return
+        }
+        
+        let currentLocation = locations[locations.count-1]
+        let previousLocation = locations[locations.count-2]
+        
+        let course = (currentLocation.course+previousLocation.course)/2
+        
+        view.camera.heading = course
     }
 
     private func addPath(to view: MKMapView) {

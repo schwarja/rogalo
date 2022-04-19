@@ -15,6 +15,6 @@ protocol ResourceSpecifying {
 
 extension ResourceSpecifying {
     var fileName: String {
-        "\(resourceName).\(extensionName)"
+        "\(resourceName)-\(Constants.currentLocalization.rawValue).\(extensionName)"
     }
 }

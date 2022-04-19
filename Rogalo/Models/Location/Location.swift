@@ -11,6 +11,7 @@ struct Location {
     let coordinate: Coordinate
     let speed: Double
     let altitude: Double
+    let course: Double
     
     var latitude: Double {
         coordinate.latitude
@@ -19,9 +20,10 @@ struct Location {
         coordinate.longitude
     }
 
-    init(latitude: Double, longitude: Double, speed: Double, altitude: Double) {
+    init(latitude: Double, longitude: Double, speed: Double, altitude: Double, course: Double) {
         self.coordinate = Coordinate(latitude: latitude, longitude: longitude)
         self.speed = speed
         self.altitude = altitude
+        self.course = course
     }
 }

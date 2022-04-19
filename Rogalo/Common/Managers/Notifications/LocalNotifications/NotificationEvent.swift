@@ -8,6 +8,8 @@
 import Foundation
 
 enum NotificationEvent {
-    case temperatureAlert(type: TemperatureSignificantValues)
+    case general(type: GeneralSignificantEvents)
+    case temperatureAlert(type: EngineTemperatureSignificantEvents)
     case exhaustAlert(type: ExhaustSignificantValues)
+    case connectivityEvent(type: ConnectivitySignificantEvents)
 }

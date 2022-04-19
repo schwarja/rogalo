@@ -7,13 +7,23 @@
 
 import Foundation
 
-enum ExhaustSignificantValues: Double, CaseIterable, ResourceSpecifying {
+enum ExhaustSignificantValues: Double, CaseIterable {
     case emergency = 600
     
     static var sortedValues: [Self] {
         Self.allCases.sorted(by: { $0.rawValue >= $1.rawValue })
     }
-    
+}
+
+extension ExhaustSignificantValues: TitleSpecifying {
+    var title: String {
+        let formTemperature = Formatters.formattedTemperature(for: rawValue)
+
+        return "\(LocalizedString.generalNotificationTemperatureExhaustTitle()): \(LocalizedString.generalNotificationTemperatureSubtitle()) \(formTemperature)"
+    }
+}
+
+extension ExhaustSignificantValues: ResourceSpecifying {
     var resourceName: String {
         switch self {
         case .emergency:

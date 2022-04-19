@@ -7,8 +7,14 @@
 */
 
 "general.notification.temperature.engine.title" = "Engine temperature alert";
+"general.notification.temperature.engine.ok" = "Engine temperature is ok";
 "general.notification.temperature.exhaust.title" = "Exhaust temperature alert";
 "general.notification.temperature.subtitle" = "Temperature at";
+"general.notification.connectivity.connected" = "Sensors are connected";
+"general.notification.connectivity.disconnected" = "Sensors are disconnected";
+"general.notification.no.fuel" = "Running out of fuel";
+"general.notification.not.charging" = "Battery does not charge";
+
 "general.alert.bluetooth.permission.denied.title" = "Permission for Bluetooth denied";
 "general.alert.bluetooth.permission.denied.subtitle" = "If you want to connect to a device, please, enable access to Bluetooth services in Settings";
 "general.alert.notification.permission.denied.title" = "Permission for notifications denied";

@@ -52,7 +52,9 @@ struct MapView: View {
                     mapView
                     mapControls
                 }
-                MapTypePickerView(mapType: $mapType).padding()
+                MapTypePickerView(mapType: $mapType)
+                    .padding([.vertical, .leading], 12)
+                    .padding(.trailing, 64)
             }
         }
         .onReceive(store.authorization, perform: { self.authorization = $0 })
