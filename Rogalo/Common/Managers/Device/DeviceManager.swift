@@ -82,6 +82,7 @@ private extension DeviceManager {
                 state == .connected ? .connected : .disconnected
             }
             .removeDuplicates()
+            .dropFirst()
             .sink { [weak self] value in
                 self?.notificationManager.sendNotification(for: .connectivityEvent(type: value))
             }

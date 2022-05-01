@@ -14,7 +14,11 @@ protocol ResourceSpecifying {
 }
 
 extension ResourceSpecifying {
+    var localizedResourceName: String {
+        "\(resourceName)-\(Constants.currentLocalization.rawValue)"
+    }
+    
     var fileName: String {
-        "\(resourceName)-\(Constants.currentLocalization.rawValue).\(extensionName)"
+        "\(localizedResourceName).\(extensionName)"
     }
 }

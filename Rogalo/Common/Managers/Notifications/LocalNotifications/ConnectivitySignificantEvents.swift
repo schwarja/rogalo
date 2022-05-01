@@ -34,6 +34,6 @@ extension ConnectivitySignificantEvents: ResourceSpecifying {
     }
     
     var extensionName: String {
-        "m4a"
+        "mp3"
     }
 }

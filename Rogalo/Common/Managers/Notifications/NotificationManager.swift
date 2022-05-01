@@ -13,7 +13,7 @@ import UserNotifications
 class NotificationManager: NotificationManaging {
     typealias Event = TitleSpecifying & ResourceSpecifying
     
-    private let player = AVPlayer()
+    private let player = AVQueuePlayer()
     private let generator = UINotificationFeedbackGenerator()
     
     private var isSceneActive = true
@@ -115,8 +115,12 @@ private extension NotificationManager {
                 .general(let type as ResourceSpecifying):
             item = notificationPlayerItem(for: type)
         }
+        
+        guard let item = item else {
+            return
+        }
 
-        player.replaceCurrentItem(with: item)
+        player.insert(item, after: player.items().last)
         player.play()
         
         generator.notificationOccurred(.warning)
@@ -124,7 +128,7 @@ private extension NotificationManager {
     
     func notificationPlayerItem(for resource: ResourceSpecifying) -> AVPlayerItem? {
         guard let url = Bundle.main.url(
-            forResource: resource.resourceName,
+            forResource: resource.localizedResourceName,
             withExtension: resource.extensionName
         ) else {
             return nil

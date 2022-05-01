@@ -37,11 +37,11 @@ extension EngineTemperatureSignificantEvents: ResourceSpecifying {
         case .normal:
             return "engine_temp_is_ok"
         case .risk:
-            return "TemperatureRisk-180"
+            return "engine_temp_is_more_than_180"
         case .highRisk:
-            return "TemperatureHighRist-185"
+            return "engine_temp_is_more_than_190"
         case .emergency:
-            return "TemperatureCritical-190"
+            return "engine_temp_is_more_than_200"
         }
     }
     
