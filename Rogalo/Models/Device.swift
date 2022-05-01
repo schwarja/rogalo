@@ -13,7 +13,7 @@ struct Device {
     
     static let mock = Device(peripheral: .mock, state: .connecting)
     
-    private var characteristics: [String] = []
+    private var characteristics: [EngineCharacteristic: String] = [:]
     private var incompleteValue = ""
     
     private let peripheral: Peripheral
@@ -48,14 +48,14 @@ struct Device {
         }
         
         incompleteValue = ""
-        characteristics = components
+        characteristics.merge(components, uniquingKeysWith: { $1 })
     }
 }
 
 // MARK: - Computed properties {
 extension Device {
     var rpm: Int? {
-        guard let stringValue = characteristics[safe: EngineCharacteristic.speed.rawValue] else {
+        guard let stringValue = characteristics[.speed] else {
             return nil
         }
         
@@ -67,7 +67,7 @@ extension Device {
     }
     
     var rpmMax: Int? {
-        guard let stringValue = characteristics[safe: EngineCharacteristic.speedMax.rawValue] else {
+        guard let stringValue = characteristics[.speedMax] else {
             return nil
         }
         
@@ -79,19 +79,27 @@ extension Device {
     }
     
     var voltage: Double? {
-        guard let value = characteristics[safe: EngineCharacteristic.voltage.rawValue] else {
+        guard let value = characteristics[.voltage] else {
             return nil
         }
         
         return Double(value)
     }
     
+    var isFuelCritical: Bool? {
+        guard let value = characteristics[.fuel] else {
+            return nil
+        }
+        
+        return value == "1"
+    }
+
     var flightTime: TimeInterval? {
-        guard let hoursString = characteristics[safe: EngineCharacteristic.flightHours.rawValue],
+        guard let hoursString = characteristics[.flightHours],
               let hours = TimeInterval(hoursString) else {
             return nil
         }
-        guard let minutesString = characteristics[safe: EngineCharacteristic.flightMinutes.rawValue],
+        guard let minutesString = characteristics[.flightMinutes],
               let minutes = TimeInterval(minutesString) else {
             return nil
         }
@@ -100,11 +108,11 @@ extension Device {
     }
     
     var motoTime: TimeInterval? {
-        guard let hoursString = characteristics[safe: EngineCharacteristic.motoHours.rawValue],
+        guard let hoursString = characteristics[.motoHours],
               let hours = TimeInterval(hoursString) else {
             return nil
         }
-        guard let minutesString = characteristics[safe: EngineCharacteristic.motoMinutes.rawValue],
+        guard let minutesString = characteristics[.motoMinutes],
               let minutes = TimeInterval(minutesString) else {
             return nil
         }
@@ -113,7 +121,7 @@ extension Device {
     }
     
     var temperatureEngine: Double? {
-        guard let value = characteristics[safe: EngineCharacteristic.temperatureEngine.rawValue] else {
+        guard let value = characteristics[.temperatureEngine] else {
             return nil
         }
         
@@ -121,7 +129,7 @@ extension Device {
     }
     
     var temperatureEngineMax: Double? {
-        guard let value = characteristics[safe: EngineCharacteristic.temperatureEngineMax.rawValue] else {
+        guard let value = characteristics[.temperatureEngineMax] else {
             return nil
         }
         
@@ -129,7 +137,7 @@ extension Device {
     }
     
     var temperatureExhaust: Double? {
-        guard let value = characteristics[safe: EngineCharacteristic.temperatureExhaust.rawValue] else {
+        guard let value = characteristics[.temperatureExhaust] else {
             return nil
         }
         
@@ -137,7 +145,7 @@ extension Device {
     }
     
     var temperatureExhaustMax: Double? {
-        guard let value = characteristics[safe: EngineCharacteristic.temperatureExhaustMax.rawValue] else {
+        guard let value = characteristics[.temperatureExhaustMax] else {
             return nil
         }
         
@@ -147,14 +155,37 @@ extension Device {
 
 // MARK: - Processing
 private extension Device {
-    func process(value: String) -> [String]? {
+    func process(value: String) -> [EngineCharacteristic: String]? {
         guard let range = value.range(of: Self.terminationSequence) else {
             return nil
         }
         
         let prefix = value.prefix(upTo: range.lowerBound)
         
-        return prefix.components(separatedBy: Self.separator)
+        var result = [EngineCharacteristic: String]()
+        var currentCharacteristic: EngineCharacteristic?
+        var currentString = ""
+        
+        for char in prefix {
+            let character = String(char)
+            guard let characteristic = EngineCharacteristic.allCases.first(where: { character == $0.rawValue }) else {
+                currentString += String(char)
+                continue
+            }
+            
+            if let characteristic = currentCharacteristic {
+                result[characteristic] = currentString
+            }
+            
+            currentCharacteristic = characteristic
+            currentString = ""
+        }
+        
+        if let characteristic = currentCharacteristic {
+            result[characteristic] = currentString
+        }
+        
+        return result
     }
     
     mutating func stateUpdated() {

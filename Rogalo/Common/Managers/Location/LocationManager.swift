@@ -126,7 +126,8 @@ extension LocationManager: CLLocationManagerDelegate {
             latitude: location.coordinate.latitude,
             longitude: location.coordinate.longitude,
             speed: location.speed,
-            altitude: location.altitude
+            altitude: location.altitude,
+            course: location.course
         )
 
         locationSubject.send(receivedLocation)

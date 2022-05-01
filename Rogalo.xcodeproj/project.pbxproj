@@ -8,6 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		29775D21CA51DBB63BC25491 /* Pods_Rogalo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144E9CDB07CAEC5B095BE877 /* Pods_Rogalo.framework */; };
+		ADA1AC71280EC642007FC9DF /* ConnectivitySignificantEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1AC70280EC642007FC9DF /* ConnectivitySignificantEvents.swift */; };
+		ADA1AC73280EC934007FC9DF /* GeneralSignificantEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1AC72280EC934007FC9DF /* GeneralSignificantEvent.swift */; };
+		ADA1AC75280ECA22007FC9DF /* TitleSpecifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1AC74280ECA22007FC9DF /* TitleSpecifying.swift */; };
+		ADA1AC81280EEF4C007FC9DF /* connected-cs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC77280EEF4B007FC9DF /* connected-cs.mp3 */; };
+		ADA1AC82280EEF4C007FC9DF /* connected-en.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC78280EEF4B007FC9DF /* connected-en.mp3 */; };
+		ADA1AC83280EEF4C007FC9DF /* battery_not_charge-en.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC79280EEF4B007FC9DF /* battery_not_charge-en.mp3 */; };
+		ADA1AC84280EEF4C007FC9DF /* running_out_of_fuel-cs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC7A280EEF4B007FC9DF /* running_out_of_fuel-cs.mp3 */; };
+		ADA1AC85280EEF4C007FC9DF /* battery_not_charge-cs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC7B280EEF4B007FC9DF /* battery_not_charge-cs.mp3 */; };
+		ADA1AC86280EEF4C007FC9DF /* disconnected-cs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC7C280EEF4C007FC9DF /* disconnected-cs.mp3 */; };
+		ADA1AC88280EEF4C007FC9DF /* running_out_of_fuel-en.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC7E280EEF4C007FC9DF /* running_out_of_fuel-en.mp3 */; };
+		ADA1AC8A280EEF4C007FC9DF /* disconnected-en.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC80280EEF4C007FC9DF /* disconnected-en.mp3 */; };
+		ADA1AC8D280EF19F007FC9DF /* SupportedLocalizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1AC8C280EF19F007FC9DF /* SupportedLocalizations.swift */; };
+		ADA1AC92280EF432007FC9DF /* engine_temp_is_more_than_200-en.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC8E280EF408007FC9DF /* engine_temp_is_more_than_200-en.m4a */; };
+		ADA1AC93280EF432007FC9DF /* engine_temp_is_more_than_180-en.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC8F280EF408007FC9DF /* engine_temp_is_more_than_180-en.m4a */; };
+		ADA1AC94280EF432007FC9DF /* engine_temp_is_ok-en.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC90280EF408007FC9DF /* engine_temp_is_ok-en.m4a */; };
+		ADA1AC95280EF432007FC9DF /* engine_temp_is_more_than_190-en.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC91280EF408007FC9DF /* engine_temp_is_more_than_190-en.m4a */; };
+		ADA1AC97280EF45C007FC9DF /* engine_temp_is_ok-cs.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC96280EF45C007FC9DF /* engine_temp_is_ok-cs.m4a */; };
+		ADA1AC9B280EF508007FC9DF /* engine_temp_is_more_than_190-cs.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC98280EF508007FC9DF /* engine_temp_is_more_than_190-cs.m4a */; };
+		ADA1AC9C280EF508007FC9DF /* engine_temp_is_more_than_200-cs.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC99280EF508007FC9DF /* engine_temp_is_more_than_200-cs.m4a */; };
+		ADA1AC9D280EF508007FC9DF /* engine_temp_is_more_than_180-cs.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ADA1AC9A280EF508007FC9DF /* engine_temp_is_more_than_180-cs.m4a */; };
 		C1036CDD25EBDEC0003A358B /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CDC25EBDEC0003A358B /* DeviceState.swift */; };
 		C1036CE025EBE575003A358B /* ViewWithBackgroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CDF25EBE575003A358B /* ViewWithBackgroundStyle.swift */; };
 		C1036CE325EBE682003A358B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1036CE225EBE682003A358B /* SettingsView.swift */; };
@@ -22,15 +42,11 @@
 		C112C733257D7D9200B1F8A9 /* ValuesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112C732257D7D9200B1F8A9 /* ValuesTab.swift */; };
 		C133B2F625EA91A200F070C1 /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133B2F525EA91A200F070C1 /* ValueView.swift */; };
 		C133B2FA25EA91C500F070C1 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133B2F925EA91C500F070C1 /* ValueStore.swift */; };
-		C13FFE422603E6D000D91BF7 /* ExhaustCritical-600.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C13FFE412603E6D000D91BF7 /* ExhaustCritical-600.m4a */; };
 		C13FFE452603E72D00D91BF7 /* ExhaustSignificantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FFE442603E72D00D91BF7 /* ExhaustSignificantValues.swift */; };
-		C13FFE492603E8EF00D91BF7 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FFE482603E8EF00D91BF7 /* Resource.swift */; };
+		C13FFE492603E8EF00D91BF7 /* ResourceSpecifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FFE482603E8EF00D91BF7 /* ResourceSpecifying.swift */; };
 		C149F1C525EA455700F55965 /* NotificationManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1C425EA455700F55965 /* NotificationManaging.swift */; };
 		C149F1C925EA456E00F55965 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1C825EA456E00F55965 /* NotificationManager.swift */; };
-		C149F1CC25EA472800F55965 /* TemperatureSignificantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */; };
-		C149F1D225EA4EF200F55965 /* TemperatureCritical-190.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1CF25EA4EF200F55965 /* TemperatureCritical-190.m4a */; };
-		C149F1D325EA4EF200F55965 /* TemperatureHighRist-185.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D025EA4EF200F55965 /* TemperatureHighRist-185.m4a */; };
-		C149F1D425EA4EF200F55965 /* TemperatureRisk-180.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C149F1D125EA4EF200F55965 /* TemperatureRisk-180.m4a */; };
+		C149F1CC25EA472800F55965 /* EngineTemperatureSignificantEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1CB25EA472800F55965 /* EngineTemperatureSignificantEvents.swift */; };
 		C149F1D825EA51F900F55965 /* NotificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1D725EA51F900F55965 /* NotificationEvent.swift */; };
 		C149F1DB25EA531E00F55965 /* NotificationAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1DA25EA531E00F55965 /* NotificationAuthorizationStatus.swift */; };
 		C149F1E325EA627A00F55965 /* RecordsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F1E225EA627A00F55965 /* RecordsTab.swift */; };
@@ -154,6 +170,26 @@
 /* Begin PBXFileReference section */
 		144E9CDB07CAEC5B095BE877 /* Pods_Rogalo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rogalo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		314A82F4509C07DF597258A0 /* Pods-Rogalo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rogalo.debug.xcconfig"; path = "Target Support Files/Pods-Rogalo/Pods-Rogalo.debug.xcconfig"; sourceTree = "<group>"; };
+		ADA1AC70280EC642007FC9DF /* ConnectivitySignificantEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivitySignificantEvents.swift; sourceTree = "<group>"; };
+		ADA1AC72280EC934007FC9DF /* GeneralSignificantEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSignificantEvent.swift; sourceTree = "<group>"; };
+		ADA1AC74280ECA22007FC9DF /* TitleSpecifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSpecifying.swift; sourceTree = "<group>"; };
+		ADA1AC77280EEF4B007FC9DF /* connected-cs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "connected-cs.mp3"; sourceTree = "<group>"; };
+		ADA1AC78280EEF4B007FC9DF /* connected-en.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "connected-en.mp3"; sourceTree = "<group>"; };
+		ADA1AC79280EEF4B007FC9DF /* battery_not_charge-en.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "battery_not_charge-en.mp3"; sourceTree = "<group>"; };
+		ADA1AC7A280EEF4B007FC9DF /* running_out_of_fuel-cs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "running_out_of_fuel-cs.mp3"; sourceTree = "<group>"; };
+		ADA1AC7B280EEF4B007FC9DF /* battery_not_charge-cs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "battery_not_charge-cs.mp3"; sourceTree = "<group>"; };
+		ADA1AC7C280EEF4C007FC9DF /* disconnected-cs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "disconnected-cs.mp3"; sourceTree = "<group>"; };
+		ADA1AC7E280EEF4C007FC9DF /* running_out_of_fuel-en.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "running_out_of_fuel-en.mp3"; sourceTree = "<group>"; };
+		ADA1AC80280EEF4C007FC9DF /* disconnected-en.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "disconnected-en.mp3"; sourceTree = "<group>"; };
+		ADA1AC8C280EF19F007FC9DF /* SupportedLocalizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedLocalizations.swift; sourceTree = "<group>"; };
+		ADA1AC8E280EF408007FC9DF /* engine_temp_is_more_than_200-en.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "engine_temp_is_more_than_200-en.m4a"; sourceTree = "<group>"; };
+		ADA1AC8F280EF408007FC9DF /* engine_temp_is_more_than_180-en.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "engine_temp_is_more_than_180-en.m4a"; sourceTree = "<group>"; };
+		ADA1AC90280EF408007FC9DF /* engine_temp_is_ok-en.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "engine_temp_is_ok-en.m4a"; sourceTree = "<group>"; };
+		ADA1AC91280EF408007FC9DF /* engine_temp_is_more_than_190-en.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "engine_temp_is_more_than_190-en.m4a"; sourceTree = "<group>"; };
+		ADA1AC96280EF45C007FC9DF /* engine_temp_is_ok-cs.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "engine_temp_is_ok-cs.m4a"; sourceTree = "<group>"; };
+		ADA1AC98280EF508007FC9DF /* engine_temp_is_more_than_190-cs.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "engine_temp_is_more_than_190-cs.m4a"; sourceTree = "<group>"; };
+		ADA1AC99280EF508007FC9DF /* engine_temp_is_more_than_200-cs.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "engine_temp_is_more_than_200-cs.m4a"; sourceTree = "<group>"; };
+		ADA1AC9A280EF508007FC9DF /* engine_temp_is_more_than_180-cs.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "engine_temp_is_more_than_180-cs.m4a"; sourceTree = "<group>"; };
 		BEE09EE8BCF9541E40B534B2 /* Pods-Rogalo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rogalo.release.xcconfig"; path = "Target Support Files/Pods-Rogalo/Pods-Rogalo.release.xcconfig"; sourceTree = "<group>"; };
 		C1036CDC25EBDEC0003A358B /* DeviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceState.swift; sourceTree = "<group>"; };
 		C1036CDF25EBE575003A358B /* ViewWithBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithBackgroundStyle.swift; sourceTree = "<group>"; };
@@ -169,15 +205,11 @@
 		C112C732257D7D9200B1F8A9 /* ValuesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesTab.swift; sourceTree = "<group>"; };
 		C133B2F525EA91A200F070C1 /* ValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
 		C133B2F925EA91C500F070C1 /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
-		C13FFE412603E6D000D91BF7 /* ExhaustCritical-600.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ExhaustCritical-600.m4a"; sourceTree = "<group>"; };
 		C13FFE442603E72D00D91BF7 /* ExhaustSignificantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhaustSignificantValues.swift; sourceTree = "<group>"; };
-		C13FFE482603E8EF00D91BF7 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		C13FFE482603E8EF00D91BF7 /* ResourceSpecifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSpecifying.swift; sourceTree = "<group>"; };
 		C149F1C425EA455700F55965 /* NotificationManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManaging.swift; sourceTree = "<group>"; };
 		C149F1C825EA456E00F55965 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSignificantValues.swift; sourceTree = "<group>"; };
-		C149F1CF25EA4EF200F55965 /* TemperatureCritical-190.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TemperatureCritical-190.m4a"; sourceTree = "<group>"; };
-		C149F1D025EA4EF200F55965 /* TemperatureHighRist-185.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TemperatureHighRist-185.m4a"; sourceTree = "<group>"; };
-		C149F1D125EA4EF200F55965 /* TemperatureRisk-180.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TemperatureRisk-180.m4a"; sourceTree = "<group>"; };
+		C149F1CB25EA472800F55965 /* EngineTemperatureSignificantEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineTemperatureSignificantEvents.swift; sourceTree = "<group>"; };
 		C149F1D725EA51F900F55965 /* NotificationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEvent.swift; sourceTree = "<group>"; };
 		C149F1DA25EA531E00F55965 /* NotificationAuthorizationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAuthorizationStatus.swift; sourceTree = "<group>"; };
 		C149F1E225EA627A00F55965 /* RecordsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTab.swift; sourceTree = "<group>"; };
@@ -313,6 +345,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ADA1AC6F280EC614007FC9DF /* LocalNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				C13FFE442603E72D00D91BF7 /* ExhaustSignificantValues.swift */,
+				C149F1D725EA51F900F55965 /* NotificationEvent.swift */,
+				C149F1CB25EA472800F55965 /* EngineTemperatureSignificantEvents.swift */,
+				ADA1AC70280EC642007FC9DF /* ConnectivitySignificantEvents.swift */,
+				ADA1AC72280EC934007FC9DF /* GeneralSignificantEvent.swift */,
+			);
+			path = LocalNotifications;
+			sourceTree = "<group>";
+		};
+		ADA1AC8B280EF18D007FC9DF /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				C16D9E7025EBB2E2009F3ADE /* LocalizedString.swift */,
+				ADA1AC8C280EF19F007FC9DF /* SupportedLocalizations.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		BBCF7C325E0C816D488988AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,11 +409,9 @@
 		C149F1C325EA454100F55965 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				ADA1AC6F280EC614007FC9DF /* LocalNotifications */,
 				C149F1C425EA455700F55965 /* NotificationManaging.swift */,
 				C149F1C825EA456E00F55965 /* NotificationManager.swift */,
-				C149F1CB25EA472800F55965 /* TemperatureSignificantValues.swift */,
-				C13FFE442603E72D00D91BF7 /* ExhaustSignificantValues.swift */,
-				C149F1D725EA51F900F55965 /* NotificationEvent.swift */,
 				C149F1DA25EA531E00F55965 /* NotificationAuthorizationStatus.swift */,
 			);
 			path = Notifications;
@@ -369,10 +420,22 @@
 		C149F1CE25EA4E8600F55965 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				C13FFE412603E6D000D91BF7 /* ExhaustCritical-600.m4a */,
-				C149F1D125EA4EF200F55965 /* TemperatureRisk-180.m4a */,
-				C149F1D025EA4EF200F55965 /* TemperatureHighRist-185.m4a */,
-				C149F1CF25EA4EF200F55965 /* TemperatureCritical-190.m4a */,
+				ADA1AC7B280EEF4B007FC9DF /* battery_not_charge-cs.mp3 */,
+				ADA1AC79280EEF4B007FC9DF /* battery_not_charge-en.mp3 */,
+				ADA1AC8F280EF408007FC9DF /* engine_temp_is_more_than_180-en.m4a */,
+				ADA1AC91280EF408007FC9DF /* engine_temp_is_more_than_190-en.m4a */,
+				ADA1AC8E280EF408007FC9DF /* engine_temp_is_more_than_200-en.m4a */,
+				ADA1AC9A280EF508007FC9DF /* engine_temp_is_more_than_180-cs.m4a */,
+				ADA1AC98280EF508007FC9DF /* engine_temp_is_more_than_190-cs.m4a */,
+				ADA1AC99280EF508007FC9DF /* engine_temp_is_more_than_200-cs.m4a */,
+				ADA1AC90280EF408007FC9DF /* engine_temp_is_ok-en.m4a */,
+				ADA1AC96280EF45C007FC9DF /* engine_temp_is_ok-cs.m4a */,
+				ADA1AC77280EEF4B007FC9DF /* connected-cs.mp3 */,
+				ADA1AC78280EEF4B007FC9DF /* connected-en.mp3 */,
+				ADA1AC7C280EEF4C007FC9DF /* disconnected-cs.mp3 */,
+				ADA1AC80280EEF4C007FC9DF /* disconnected-en.mp3 */,
+				ADA1AC7A280EEF4B007FC9DF /* running_out_of_fuel-cs.mp3 */,
+				ADA1AC7E280EEF4C007FC9DF /* running_out_of_fuel-en.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -773,7 +836,8 @@
 				C1CAE73C25863CCF00CB60E7 /* DependencyInjection */,
 				C1CAE73825863BB200CB60E7 /* Coordinators */,
 				C1A4AC2B25EBCD6900290AE2 /* Styles */,
-				C13FFE482603E8EF00D91BF7 /* Resource.swift */,
+				C13FFE482603E8EF00D91BF7 /* ResourceSpecifying.swift */,
+				ADA1AC74280ECA22007FC9DF /* TitleSpecifying.swift */,
 				C17F05C72607B9F1000E9917 /* Value.swift */,
 			);
 			path = Protocols;
@@ -803,11 +867,11 @@
 		C1CAE74025863EC000CB60E7 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				ADA1AC8B280EF18D007FC9DF /* Localization */,
 				C1A4AC3025EBCDE900290AE2 /* Styles */,
 				C1CAE74125863ED000CB60E7 /* ActiveSceneSession.swift */,
 				C1F36C6925867BA2002930B2 /* AppError.swift */,
 				C16D9E4225EAA488009F3ADE /* Formatters.swift */,
-				C16D9E7025EBB2E2009F3ADE /* LocalizedString.swift */,
 				C1036CE925EBEF59003A358B /* Constants.swift */,
 			);
 			path = Types;
@@ -967,13 +1031,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C149F1D425EA4EF200F55965 /* TemperatureRisk-180.m4a in Resources */,
-				C13FFE422603E6D000D91BF7 /* ExhaustCritical-600.m4a in Resources */,
+				ADA1AC94280EF432007FC9DF /* engine_temp_is_ok-en.m4a in Resources */,
+				ADA1AC9C280EF508007FC9DF /* engine_temp_is_more_than_200-cs.m4a in Resources */,
+				ADA1AC97280EF45C007FC9DF /* engine_temp_is_ok-cs.m4a in Resources */,
+				ADA1AC85280EEF4C007FC9DF /* battery_not_charge-cs.mp3 in Resources */,
 				C16D9E6A25EBB1E2009F3ADE /* Localizable.strings in Resources */,
-				C149F1D225EA4EF200F55965 /* TemperatureCritical-190.m4a in Resources */,
+				ADA1AC93280EF432007FC9DF /* engine_temp_is_more_than_180-en.m4a in Resources */,
+				ADA1AC82280EEF4C007FC9DF /* connected-en.mp3 in Resources */,
+				ADA1AC8A280EEF4C007FC9DF /* disconnected-en.mp3 in Resources */,
+				ADA1AC92280EF432007FC9DF /* engine_temp_is_more_than_200-en.m4a in Resources */,
+				ADA1AC95280EF432007FC9DF /* engine_temp_is_more_than_190-en.m4a in Resources */,
+				ADA1AC84280EEF4C007FC9DF /* running_out_of_fuel-cs.mp3 in Resources */,
+				ADA1AC81280EEF4C007FC9DF /* connected-cs.mp3 in Resources */,
 				C1B25D8F257D4095006E808C /* LaunchScreen.storyboard in Resources */,
+				ADA1AC88280EEF4C007FC9DF /* running_out_of_fuel-en.mp3 in Resources */,
+				ADA1AC9B280EF508007FC9DF /* engine_temp_is_more_than_190-cs.m4a in Resources */,
 				C1B25D89257D4095006E808C /* Assets.xcassets in Resources */,
-				C149F1D325EA4EF200F55965 /* TemperatureHighRist-185.m4a in Resources */,
+				ADA1AC86280EEF4C007FC9DF /* disconnected-cs.mp3 in Resources */,
+				ADA1AC9D280EF508007FC9DF /* engine_temp_is_more_than_180-cs.m4a in Resources */,
+				ADA1AC83280EEF4C007FC9DF /* battery_not_charge-en.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1073,6 +1149,7 @@
 				C1036CDD25EBDEC0003A358B /* DeviceState.swift in Sources */,
 				C1CA847125F57C5E00D16A23 /* Order.swift in Sources */,
 				C182EAED25F53FC1009B2321 /* SettingsAlertHeader.swift in Sources */,
+				ADA1AC8D280EF19F007FC9DF /* SupportedLocalizations.swift in Sources */,
 				C16D9E4A25EAC016009F3ADE /* Triangle.swift in Sources */,
 				C1E6175E2607EA850043934A /* NotificationAuthorizationStatus+StatusViewModel.swift in Sources */,
 				C1CA846D25F56FF400D16A23 /* Battery.swift in Sources */,
@@ -1128,7 +1205,7 @@
 				C1B25DA1257D426A006E808C /* PairingStore.swift in Sources */,
 				C1CAE775258653FD00CB60E7 /* MockContentStore.swift in Sources */,
 				C1CAE76525864B4600CB60E7 /* Storage.swift in Sources */,
-				C149F1CC25EA472800F55965 /* TemperatureSignificantValues.swift in Sources */,
+				C149F1CC25EA472800F55965 /* EngineTemperatureSignificantEvents.swift in Sources */,
 				C13FFE452603E72D00D91BF7 /* ExhaustSignificantValues.swift in Sources */,
 				C1F36C7125869986002930B2 /* SettingsCoordinator.swift in Sources */,
 				C182EAEA25F53E54009B2321 /* SettingsPairedDeviceFooterView.swift in Sources */,
@@ -1145,7 +1222,7 @@
 				C155E19D257D730200A845B9 /* Device.swift in Sources */,
 				C155E195257D4FD600A845B9 /* PairingStoreState.swift in Sources */,
 				C149F1C525EA455700F55965 /* NotificationManaging.swift in Sources */,
-				C13FFE492603E8EF00D91BF7 /* Resource.swift in Sources */,
+				C13FFE492603E8EF00D91BF7 /* ResourceSpecifying.swift in Sources */,
 				C1CAE75E2586478800CB60E7 /* MockPairingStore.swift in Sources */,
 				C1CAE74F258643AD00CB60E7 /* ViewCoordinator.swift in Sources */,
 				C1B25DAF257D43F9006E808C /* SettingsTab.swift in Sources */,
@@ -1155,6 +1232,7 @@
 				C17F059D2607A835000E9917 /* LocationManging.swift in Sources */,
 				C133B2F625EA91A200F070C1 /* ValueView.swift in Sources */,
 				C1A4AC3225EBCE0200290AE2 /* AppButtonStyle.swift in Sources */,
+				ADA1AC75280ECA22007FC9DF /* TitleSpecifying.swift in Sources */,
 				C149F1C925EA456E00F55965 /* NotificationManager.swift in Sources */,
 				C1CAE73A25863BCB00CB60E7 /* Coordinator.swift in Sources */,
 				C17F05C42607B853000E9917 /* MapRenderingView.swift in Sources */,
@@ -1167,9 +1245,11 @@
 				C1CAE78E2586634700CB60E7 /* DeviceManaging.swift in Sources */,
 				C1CAE76825864B5A00CB60E7 /* AppStorage.swift in Sources */,
 				C1CAE74B2586424800CB60E7 /* PairingCoordinator.swift in Sources */,
+				ADA1AC73280EC934007FC9DF /* GeneralSignificantEvent.swift in Sources */,
 				C1C68231260F3E3C006E5296 /* MapControlsView.swift in Sources */,
 				C1A4AC2325EBCAAF00290AE2 /* AppText.swift in Sources */,
 				C1A4AC2925EBCC7700290AE2 /* Text+AppStyles.swift in Sources */,
+				ADA1AC71280EC642007FC9DF /* ConnectivitySignificantEvents.swift in Sources */,
 				C1C6823B260F66A7006E5296 /* MKOverlay+Custom.swift in Sources */,
 				C1CAE7292586397100CB60E7 /* SceneCoordinating.swift in Sources */,
 				C17F05BD2607AD79000E9917 /* MapView.swift in Sources */,
@@ -1276,7 +1356,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1332,7 +1412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1348,7 +1428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = BackgroundColor;
-				CODE_SIGN_IDENTITY = "Apple Development: Jan Pacek (XT97TS9CAT)";
+				CODE_SIGN_IDENTITY = "Apple Development: Jan Schwarz (L8HG2RF4WH)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = D6532TRNCE;

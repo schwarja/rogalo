@@ -193,7 +193,7 @@ private extension BluetoothManager {
             return
         }
         
-        central.scanForPeripherals(withServices: [service])
+        central.scanForPeripherals(withServices: nil)
     }
     
     func stopScanning() {
